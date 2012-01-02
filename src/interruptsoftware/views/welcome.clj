@@ -6,4 +6,4 @@
 
 (defpage "/welcome" []
          (common/layout
-           [:p "Welcome to interruptsoftware"]))
+           [:p "Welcome to Interrupt Software"]))
