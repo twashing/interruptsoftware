@@ -1,0 +1,9 @@
+#main-pane {
+  background: #A5A9A2; }
+
+#overlay-pane {
+  background: #CCCFC9;
+  width: 1024px;
+  height: 1000px;
+  position: absolute;
+  top: 0px; }
