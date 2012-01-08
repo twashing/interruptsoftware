@@ -63,9 +63,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, ../templ/scss/index.scss */
+/* line 9, ../templ/scss/index.scss */
 #main-pane {
   background: #A5A9A2;
+  z-index: -2;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -73,16 +74,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   right: 0;
 }
 
-/* line 13, ../templ/scss/index.scss */
+/* line 15, ../templ/scss/index.scss */
 #overlay-pane {
   background: #CCCFC9;
   width: 1024px;
   height: 1000px;
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 20px;
-  -moz-box-shadow: 5px 5px 5px #4d4d4d;
-  -webkit-box-shadow: 5px 5px 5px #4d4d4d;
-  -o-box-shadow: 5px 5px 5px #4d4d4d;
-  box-shadow: 5px 5px 5px #4d4d4d;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -o-border-bottom-left-radius: 8px;
+  -ms-border-bottom-left-radius: 8px;
+  -khtml-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -o-border-bottom-right-radius: 8px;
+  -ms-border-bottom-right-radius: 8px;
+  -khtml-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* line 26, ../templ/scss/index.scss */
+#overlay-pane:before, #overlay-pane:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 10px;
+  left: 10px;
+  width: 50%;
+  height: 20%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+/* line 43, ../templ/scss/index.scss */
+#overlay-pane:after {
+  right: 10px;
+  left: auto;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg);
 }

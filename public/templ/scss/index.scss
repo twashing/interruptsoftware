@@ -2,11 +2,13 @@
 @import "compass/reset/utilities";
 @import "compass/layout/stretching";
 @import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
 
 @include global-reset;
 
 #main-pane { 
   background: #A5A9A2;
+  z-index: -2;
   @include stretch;
 }
 
@@ -14,9 +16,36 @@
   background: #CCCFC9;
   width: 1024px;
   height: 1000px;
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 20px;
+  
+  //@include box-shadow(#4D4D4D, 5px, 5px, 5px);
+  @include border-bottom-radius(8px);
 
-  @include box-shadow(#4D4D4D, 5px, 5px, 5px);
+  &:before , &:after { 
+    content:"";
+    position:absolute;
+    z-index: -1;
+    bottom:10px;
+    left:10px;
+    width:50%;
+    height:20%;
+    max-width:300px;
+    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    -o-transform:rotate(-3deg);
+    transform:rotate(-3deg);
+  }
+  &:after {
+    right:10px;
+    left:auto;
+    -webkit-transform:rotate(3deg);
+    -moz-transform:rotate(3deg);
+    -o-transform:rotate(3deg);
+    transform:rotate(3deg);
+  }
 }
