@@ -161,15 +161,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Ribbon menu items 
  */
 /* line 89, ../templ/scss/index.scss */
-.menu-item {
-  background: #319adb;
-  padding: 10px;
-  width: 150px;
+.menu {
   position: absolute;
   right: -20px;
 }
-/* line 96, ../templ/scss/index.scss */
-.menu-item:after {
+/* line 93, ../templ/scss/index.scss */
+.menu .menu-item {
+  background: #319adb;
+  padding: 10px;
+  width: 150px;
+  position: relative;
+}
+/* line 99, ../templ/scss/index.scss */
+.menu .menu-item:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -182,12 +186,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 0;
 }
 
-/* line 109, ../templ/scss/index.scss */
-#item-about {
+/*
+#item-about { 
   top: 60px;
 }
-
-/* line 112, ../templ/scss/index.scss */
-#item-portfolio {
+#item-portfolio { 
   top: 120px;
 }
+*/
