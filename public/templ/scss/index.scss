@@ -1,6 +1,13 @@
 
+@import "compass/reset/utilities";
+@import "compass/layout/stretching";
+@import "compass/css3/box-shadow";
+
+@include global-reset;
+
 #main-pane { 
   background: #A5A9A2;
+  @include stretch;
 }
 
 #overlay-pane { 
@@ -9,4 +16,7 @@
   height: 1000px;
   position: absolute;
   top: 0px;
+  left: 20px;
+
+  @include box-shadow(#4D4D4D, 5px, 5px, 5px);
 }

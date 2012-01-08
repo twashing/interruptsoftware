@@ -1,8 +1,6 @@
 # Require any additional compass plugins here.
 
 require 'libnotify'
-require 'guard-coffeescript'
-require 'guard-sass'
 
 
 # Set this to the root of your project when deployed:
