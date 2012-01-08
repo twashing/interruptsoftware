@@ -51,6 +51,39 @@
   }
 }
 
+/* Ribbon Main 
+ */
+#main-ribbon { 
+  color: white;
+  background: #0027D6;
+
+  position: relative; 
+  top: 0px;
+  left: 70px;
+  width: 80px;
+  height: 120px;
+
+  @include box-shadow(black 3px 3px 7px);
+  
+   &:before , &:after { 
+    content: "";
+    position: absolute;
+    bottom: -40px; 
+    border-color: transparent transparent transparent #0027D6;
+    border-style: solid;
+    border-width: 40px;
+    border-height: 20px;
+    height: 0;
+    width: 0;
+    //@include box-shadow(black 3px 3px 7px);
+  } 
+  
+  &:after { 
+    border-color: transparent #0027D6 transparent transparent;
+  }
+}
+
+
 /* Ribbon menu items 
  */
 .menu-item { 

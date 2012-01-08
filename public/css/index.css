@@ -125,9 +125,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: rotate(3deg);
 }
 
-/* Ribbon menu items 
+/* Ribbon Main 
  */
 /* line 56, ../templ/scss/index.scss */
+#main-ribbon {
+  color: white;
+  background: #0027D6;
+  position: relative;
+  top: 0px;
+  left: 70px;
+  width: 80px;
+  height: 120px;
+  -moz-box-shadow: black 3px 3px 7px;
+  -webkit-box-shadow: black 3px 3px 7px;
+  -o-box-shadow: black 3px 3px 7px;
+  box-shadow: black 3px 3px 7px;
+}
+/* line 68, ../templ/scss/index.scss */
+#main-ribbon:before, #main-ribbon:after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  border-color: transparent transparent transparent #0027D6;
+  border-style: solid;
+  border-width: 40px;
+  border-height: 20px;
+  height: 0;
+  width: 0;
+}
+/* line 81, ../templ/scss/index.scss */
+#main-ribbon:after {
+  border-color: transparent #0027D6 transparent transparent;
+}
+
+/* Ribbon menu items 
+ */
+/* line 89, ../templ/scss/index.scss */
 .menu-item {
   background: #319adb;
   padding: 10px;
@@ -135,7 +168,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: absolute;
   right: -20px;
 }
-/* line 63, ../templ/scss/index.scss */
+/* line 96, ../templ/scss/index.scss */
 .menu-item:after {
   z-index: -1;
   content: "";
@@ -149,12 +182,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 0;
 }
 
-/* line 76, ../templ/scss/index.scss */
+/* line 109, ../templ/scss/index.scss */
 #item-about {
   top: 60px;
 }
 
-/* line 79, ../templ/scss/index.scss */
+/* line 112, ../templ/scss/index.scss */
 #item-portfolio {
   top: 120px;
 }
