@@ -1,0 +1,21 @@
+
+group 'include' do
+  guard 'haml', :input => "haml" , :output => "include" do
+    watch(%r{haml/(.+)\.html\.haml$})    
+  end
+end 
+
+guard 'haml' do
+ watch('landing.html.haml')
+ watch('index.html.haml')
+end
+
+guard 'coffeescript', :input => "coffeescript", :output => "js"
+
+guard 'livereload' do
+ watch(/^.+\.html$/)
+ watch(%r{include/.+\.html})
+ watch(%r{css/.+\.css})
+ watch(%r{js/.+\.js})
+end
+
