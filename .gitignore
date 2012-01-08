@@ -1,5 +1,7 @@
+changes
 pom.xml
 *jar
-/lib/
-/classes/
+lib/
+classes/
 .lein-deps-sum
+public/.sass-cache/
