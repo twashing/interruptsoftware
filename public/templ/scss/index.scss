@@ -20,9 +20,10 @@
   top: 0px;
   left: 20px;
   
-  //@include box-shadow(#4D4D4D, 5px, 5px, 5px);
   @include border-bottom-radius(8px);
-
+  
+  /* page curl effect 
+   */
   &:before , &:after { 
     content:"";
     position:absolute;
@@ -49,3 +50,34 @@
     transform:rotate(3deg);
   }
 }
+
+/* Ribbon menu items 
+ */
+.menu-item { 
+  background: #319adb;
+  padding: 10px;
+  width: 150px;
+  position: absolute; 
+  right: -20px;
+
+  &:after { 
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 18px; 
+    right: -18px;
+    border-color: transparent transparent transparent #1c84c6;
+    border-style: solid;
+    border-width: 18px;
+    height: 0;
+    width: 0;
+  }
+}
+#item-about { 
+  top: 60px;
+}
+#item-portfolio { 
+  top: 120px;
+}
+
+
