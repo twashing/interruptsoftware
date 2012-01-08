@@ -1,7 +1,7 @@
 
 group 'include' do
-  guard 'haml', :input => "haml" , :output => "include" do
-    watch(%r{haml/(.+)\.html\.haml$})    
+  guard 'haml', :input => "templ/haml" , :output => "include" do
+    watch(%r{templ/haml/(.+)\.html\.haml$})    
   end
 end 
 
@@ -10,7 +10,8 @@ guard 'haml' do
  watch('index.html.haml')
 end
 
-guard 'coffeescript', :input => "coffeescript", :output => "js"
+guard 'sass', :input => "templ/scss", :output => "css"
+guard 'coffeescript', :input => "templ/coffeescript", :output => "js"
 
 guard 'livereload' do
  watch(/^.+\.html$/)
@@ -18,4 +19,5 @@ guard 'livereload' do
  watch(%r{css/.+\.css})
  watch(%r{js/.+\.js})
 end
+
 
