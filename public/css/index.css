@@ -63,14 +63,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 9, ../templ/scss/index.scss */
+/* line 11, ../templ/scss/index.scss */
 html, body {
   min-width: 1000px;
   min-height: 1024px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-/* line 15, ../templ/scss/index.scss */
+/* line 17, ../templ/scss/index.scss */
 #main-pane {
   background: #A5A9A2;
   z-index: -2;
@@ -81,7 +81,7 @@ html, body {
   right: 0;
 }
 
-/* line 21, ../templ/scss/index.scss */
+/* line 23, ../templ/scss/index.scss */
 #overlay-pane {
   background: #CCCFC9;
   width: 860px;
@@ -104,7 +104,7 @@ html, body {
   /* page curl effect 
    */
 }
-/* line 30, ../templ/scss/index.scss */
+/* line 32, ../templ/scss/index.scss */
 #overlay-pane #centre-column {
   position: relative;
   float: left;
@@ -113,8 +113,25 @@ html, body {
   left: 100px;
   width: 500px;
   font-size: 3em;
+  text-shadow: #555555 -3px 2px 3px;
+  -moz-transition-property: text-shadow;
+  -webkit-transition-property: text-shadow;
+  -o-transition-property: text-shadow;
+  transition-property: text-shadow;
+  -moz-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
 }
-/* line 43, ../templ/scss/index.scss */
+/* line 45, ../templ/scss/index.scss */
+#overlay-pane #centre-column:hover {
+  text-shadow: #666666 -5px 2px 5px;
+}
+/* line 52, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {
   content: "";
   position: absolute;
@@ -132,7 +149,7 @@ html, body {
   -o-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-/* line 60, ../templ/scss/index.scss */
+/* line 69, ../templ/scss/index.scss */
 #overlay-pane:after {
   right: 10px;
   left: auto;
@@ -144,7 +161,7 @@ html, body {
 
 /* Ribbon Main 
  */
-/* line 72, ../templ/scss/index.scss */
+/* line 81, ../templ/scss/index.scss */
 #main-ribbon {
   color: white;
   background: #0027D6;
@@ -159,7 +176,7 @@ html, body {
   -o-box-shadow: black 3px 3px 7px;
   box-shadow: black 3px 3px 7px;
 }
-/* line 85, ../templ/scss/index.scss */
+/* line 94, ../templ/scss/index.scss */
 #main-ribbon:before, #main-ribbon:after {
   content: "";
   position: absolute;
@@ -171,27 +188,27 @@ html, body {
   height: 0;
   width: 0;
 }
-/* line 98, ../templ/scss/index.scss */
+/* line 107, ../templ/scss/index.scss */
 #main-ribbon:after {
   border-color: transparent #0027D6 transparent transparent;
 }
 
 /* Ribbon menu items 
  */
-/* line 106, ../templ/scss/index.scss */
+/* line 115, ../templ/scss/index.scss */
 .menu {
   position: absolute;
   right: -20px;
   top: 65px;
 }
-/* line 111, ../templ/scss/index.scss */
+/* line 120, ../templ/scss/index.scss */
 .menu .menu-item {
   background: #319adb;
   padding: 10px;
   width: 150px;
   position: relative;
 }
-/* line 117, ../templ/scss/index.scss */
+/* line 126, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";
