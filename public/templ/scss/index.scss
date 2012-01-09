@@ -50,7 +50,7 @@ html, body {
      */
     @include single-text-shadow(#555, -2px, 2px, 3px);
     @include transition-property(text-shadow);
-    @include transition-duration(1s);
+    @include transition-duration(0.25s);
     @include transition-timing-function(ease-in); 
     &:hover {
       @include single-text-shadow(#666, -4px, 2px, 5px);
@@ -105,7 +105,7 @@ $ribbon-color: #0027D6;
   /* transition for top location
    */
   @include transition-property(top);
-  @include transition-duration(0.5s);
+  @include transition-duration(0.51s);
   @include transition-timing-function(ease-in); 
   &:hover {
     top: -1px;
@@ -148,6 +148,13 @@ $menu-item-color: #319adb;
     position: relative; 
     @include background( linear-gradient(left, $overlay-color, $menu-item-color) );
   
+    @include transition-property(text-shadow);
+    @include transition-duration(0s);
+    @include transition-timing-function(ease-in); 
+    &:hover {
+      @include single-text-shadow(#666, -2px, 2px, 3px);
+    }
+    
     &:after { 
       z-index: -1;
       content: "";

@@ -121,10 +121,10 @@ html, body {
   -webkit-transition-property: text-shadow;
   -o-transition-property: text-shadow;
   transition-property: text-shadow;
-  -moz-transition-duration: 1s;
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -moz-transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
   -moz-transition-timing-function: ease-in;
   -webkit-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
@@ -180,10 +180,10 @@ html, body {
   -webkit-transition-property: top;
   -o-transition-property: top;
   transition-property: top;
-  -moz-transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -moz-transition-duration: 0.51s;
+  -webkit-transition-duration: 0.51s;
+  -o-transition-duration: 0.51s;
+  transition-duration: 0.51s;
   -moz-transition-timing-function: ease-in;
   -webkit-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
@@ -233,8 +233,24 @@ html, body {
   background: -o-linear-gradient(left, #f1efcf, #319adb);
   background: -ms-linear-gradient(left, #f1efcf, #319adb);
   background: linear-gradient(left, #f1efcf, #319adb);
+  -moz-transition-property: text-shadow;
+  -webkit-transition-property: text-shadow;
+  -o-transition-property: text-shadow;
+  transition-property: text-shadow;
+  -moz-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
 }
-/* line 151, ../templ/scss/index.scss */
+/* line 154, ../templ/scss/index.scss */
+.menu .menu-item:hover {
+  text-shadow: #666666 -2px 2px 3px;
+}
+/* line 158, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";
