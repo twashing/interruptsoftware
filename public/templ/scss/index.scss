@@ -22,9 +22,10 @@ html, body {
   z-index: -2;
   @include stretch;
   
-  background: white;
+  //background: white;
   //background: #A5A9A2;
-  //@include background( linear-gradient(white, white 990px, black 1024px) );
+  //@include background( image-url("/images/thrush-1.jpg") ); 
+  //background: url("/images/thrush-1.jpg") white no-repeat; 
 }
 
 #overlay-pane { 
@@ -44,7 +45,7 @@ html, body {
     left: 100px;
     width: 500px;
     color: $main-text-color;
-    font-size: 3em;
+    font-size: 3.2em;
      
     /* text shadow with transitions
      */

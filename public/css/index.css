@@ -78,10 +78,9 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
 }
 
-/* line 30, ../templ/scss/index.scss */
+/* line 31, ../templ/scss/index.scss */
 #overlay-pane {
   background: #f1efcf;
   width: 860px;
@@ -104,7 +103,7 @@ html, body {
   /* page curl effect 
    */
 }
-/* line 39, ../templ/scss/index.scss */
+/* line 40, ../templ/scss/index.scss */
 #overlay-pane #centre-column {
   position: relative;
   float: left;
@@ -113,7 +112,7 @@ html, body {
   left: 100px;
   width: 500px;
   color: #1a1a1a;
-  font-size: 3em;
+  font-size: 3.2em;
   /* text shadow with transitions
    */
   text-shadow: #555555 -2px 2px 3px;
@@ -130,11 +129,11 @@ html, body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 55, ../templ/scss/index.scss */
+/* line 56, ../templ/scss/index.scss */
 #overlay-pane #centre-column:hover {
   text-shadow: #666666 -4px 2px 5px;
 }
-/* line 62, ../templ/scss/index.scss */
+/* line 63, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {
   content: "";
   position: absolute;
@@ -152,7 +151,7 @@ html, body {
   -o-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-/* line 79, ../templ/scss/index.scss */
+/* line 80, ../templ/scss/index.scss */
 #overlay-pane:after {
   right: 10px;
   left: auto;
@@ -164,7 +163,7 @@ html, body {
 
 /* Ribbon Main 
  */
-/* line 94, ../templ/scss/index.scss */
+/* line 95, ../templ/scss/index.scss */
 #main-ribbon {
   color: white;
   background: #0027d6;
@@ -193,11 +192,11 @@ html, body {
   -o-box-shadow: black 3px 3px 7px;
   box-shadow: black 3px 3px 7px;
 }
-/* line 110, ../templ/scss/index.scss */
+/* line 111, ../templ/scss/index.scss */
 #main-ribbon:hover {
   top: -1px;
 }
-/* line 117, ../templ/scss/index.scss */
+/* line 118, ../templ/scss/index.scss */
 #main-ribbon:before, #main-ribbon:after {
   content: "";
   position: absolute;
@@ -209,20 +208,20 @@ html, body {
   height: 0;
   width: 0;
 }
-/* line 130, ../templ/scss/index.scss */
+/* line 131, ../templ/scss/index.scss */
 #main-ribbon:after {
   border-color: transparent #0027d6 transparent transparent;
 }
 
 /* Ribbon menu items 
  */
-/* line 139, ../templ/scss/index.scss */
+/* line 140, ../templ/scss/index.scss */
 .menu {
   position: absolute;
   right: -20px;
   top: 65px;
 }
-/* line 144, ../templ/scss/index.scss */
+/* line 145, ../templ/scss/index.scss */
 .menu .menu-item {
   padding: 10px;
   width: 150px;
@@ -246,11 +245,11 @@ html, body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 154, ../templ/scss/index.scss */
+/* line 155, ../templ/scss/index.scss */
 .menu .menu-item:hover {
   text-shadow: #666666 -2px 2px 3px;
 }
-/* line 158, ../templ/scss/index.scss */
+/* line 159, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";
