@@ -4,8 +4,12 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/text-shadow";
 @import "compass/css3/transition";
+@import "compass/css3/images"; 
 
 @include global-reset;
+
+
+$main-text-color: #1a1a1a;
 
 
 html, body { 
@@ -15,13 +19,16 @@ html, body {
 }
 
 #main-pane { 
-  background: #A5A9A2;
   z-index: -2;
   @include stretch;
+  
+  background: white;
+  //background: #A5A9A2;
+  //@include background( linear-gradient(white, white 990px, black 1024px) );
 }
 
 #overlay-pane { 
-  background: #CCCFC9;
+  background: #f1efcf;
   width: 860px;
   height: 800px;
   position: relative;
@@ -36,6 +43,7 @@ html, body {
     top: 65px;
     left: 100px;
     width: 500px;
+    color: $main-text-color;
     font-size: 3em;
      
     /* text shadow with transitions
@@ -80,9 +88,12 @@ html, body {
 
 /* Ribbon Main 
  */
+
+//$ribbon-color: #bd3201; 
+$ribbon-color: #0027D6; 
 #main-ribbon { 
   color: white;
-  background: #0027D6;
+  background: $ribbon-color;
 
   position: relative; 
   float: left;
@@ -107,7 +118,7 @@ html, body {
     content: "";
     position: absolute;
     bottom: -40px; 
-    border-color: transparent transparent transparent #0027D6;
+    border-color: transparent transparent transparent $ribbon-color;
     border-style: solid;
     border-width: 40px;
     border-height: 20px;
@@ -117,7 +128,7 @@ html, body {
   } 
   
   &:after { 
-    border-color: transparent #0027D6 transparent transparent;
+    border-color: transparent $ribbon-color transparent transparent;
   }
 }
 
