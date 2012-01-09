@@ -113,7 +113,7 @@ html, body {
   left: 100px;
   width: 500px;
   font-size: 3em;
-  text-shadow: #555555 -3px 2px 3px;
+  text-shadow: #555555 -2px 2px 3px;
   -moz-transition-property: text-shadow;
   -webkit-transition-property: text-shadow;
   -o-transition-property: text-shadow;
@@ -129,7 +129,7 @@ html, body {
 }
 /* line 45, ../templ/scss/index.scss */
 #overlay-pane #centre-column:hover {
-  text-shadow: #666666 -5px 2px 5px;
+  text-shadow: #666666 -4px 2px 5px;
 }
 /* line 52, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {

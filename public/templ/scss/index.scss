@@ -38,12 +38,12 @@ html, body {
     width: 500px;
     font-size: 3em;
      
-    @include single-text-shadow(#555, -3px, 2px, 3px);
+    @include single-text-shadow(#555, -2px, 2px, 3px);
     @include transition-property(text-shadow);
     @include transition-duration(1s);
     @include transition-timing-function(ease-in); 
     &:hover {
-      @include single-text-shadow(#666, -5px, 2px, 5px);
+      @include single-text-shadow(#666, -4px, 2px, 5px);
     }
   }
   
