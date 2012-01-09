@@ -10,7 +10,7 @@
 
 
 $main-text-color: #1a1a1a;
-
+$overlay-color: #f1efcf;
 
 html, body { 
   min-width: 1000px;
@@ -28,7 +28,7 @@ html, body {
 }
 
 #overlay-pane { 
-  background: #f1efcf;
+  background: $overlay-color;
   width: 860px;
   height: 800px;
   position: relative;
@@ -135,16 +135,18 @@ $ribbon-color: #0027D6;
 
 /* Ribbon menu items 
  */
+$menu-item-color: #319adb;
 .menu {
   position: absolute;
   right: -20px;
   top: 65px;
   
   .menu-item { 
-    background: #319adb;
+    //background: #319adb;
     padding: 10px;
     width: 150px;
     position: relative; 
+    @include background( linear-gradient(left, $overlay-color, $menu-item-color) );
   
     &:after { 
       z-index: -1;
