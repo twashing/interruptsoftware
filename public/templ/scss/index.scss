@@ -25,12 +25,12 @@ html, body {
   position: relative;
   top: 0px;
   left: 40px;
-  
   @include border-bottom-radius(8px);
   
   #centre-column {
     position: relative;
     float: left;
+    font-family: Courier, sans-serif;
     top: 65px;
     left: 100px;
     width: 500px;
@@ -128,14 +128,4 @@ html, body {
     }
   }
 }
-
-/*
-#item-about { 
-  top: 60px;
-}
-#item-portfolio { 
-  top: 120px;
-}
-*/
-
 

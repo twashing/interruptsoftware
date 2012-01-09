@@ -104,10 +104,11 @@ html, body {
   /* page curl effect 
    */
 }
-/* line 31, ../templ/scss/index.scss */
+/* line 30, ../templ/scss/index.scss */
 #overlay-pane #centre-column {
   position: relative;
   float: left;
+  font-family: Courier, sans-serif;
   top: 65px;
   left: 100px;
   width: 500px;
@@ -203,12 +204,3 @@ html, body {
   height: 0;
   width: 0;
 }
-
-/*
-#item-about { 
-  top: 60px;
-}
-#item-portfolio { 
-  top: 120px;
-}
-*/
