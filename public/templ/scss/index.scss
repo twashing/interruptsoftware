@@ -6,6 +6,12 @@
 @include global-reset;
 
 
+html, body { 
+  min-width: 1000px;
+  min-height: 1024px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
 #main-pane { 
   background: #A5A9A2;
   z-index: -2;
@@ -14,14 +20,24 @@
 
 #overlay-pane { 
   background: #CCCFC9;
-  width: 1024px;
-  height: 1000px;
+  width: 860px;
+  height: 800px;
   position: relative;
   top: 0px;
   left: 40px;
   
   @include border-bottom-radius(8px);
   
+  #centre-column {
+    position: relative;
+    float: left;
+    top: 65px;
+    left: 100px;
+    width: 500px;
+    font-size: 3em;
+  }
+  
+
   /* page curl effect 
    */
   &:before , &:after { 
@@ -58,7 +74,8 @@
   background: #0027D6;
 
   position: relative; 
-  top: 0px;
+  float: left;
+  top: -10px;
   left: 70px;
   width: 80px;
   height: 120px;
@@ -89,6 +106,7 @@
 .menu {
   position: absolute;
   right: -20px;
+  top: 65px;
   
   .menu-item { 
     background: #319adb;

@@ -64,6 +64,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 9, ../templ/scss/index.scss */
+html, body {
+  min-width: 1000px;
+  min-height: 1024px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+/* line 15, ../templ/scss/index.scss */
 #main-pane {
   background: #A5A9A2;
   z-index: -2;
@@ -74,11 +81,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   right: 0;
 }
 
-/* line 15, ../templ/scss/index.scss */
+/* line 21, ../templ/scss/index.scss */
 #overlay-pane {
   background: #CCCFC9;
-  width: 1024px;
-  height: 1000px;
+  width: 860px;
+  height: 800px;
   position: relative;
   top: 0px;
   left: 40px;
@@ -97,7 +104,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* page curl effect 
    */
 }
-/* line 27, ../templ/scss/index.scss */
+/* line 31, ../templ/scss/index.scss */
+#overlay-pane #centre-column {
+  position: relative;
+  float: left;
+  top: 65px;
+  left: 100px;
+  width: 500px;
+  font-size: 3em;
+}
+/* line 43, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {
   content: "";
   position: absolute;
@@ -115,7 +131,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-/* line 44, ../templ/scss/index.scss */
+/* line 60, ../templ/scss/index.scss */
 #overlay-pane:after {
   right: 10px;
   left: auto;
@@ -127,12 +143,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Ribbon Main 
  */
-/* line 56, ../templ/scss/index.scss */
+/* line 72, ../templ/scss/index.scss */
 #main-ribbon {
   color: white;
   background: #0027D6;
   position: relative;
-  top: 0px;
+  float: left;
+  top: -10px;
   left: 70px;
   width: 80px;
   height: 120px;
@@ -141,7 +158,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-box-shadow: black 3px 3px 7px;
   box-shadow: black 3px 3px 7px;
 }
-/* line 68, ../templ/scss/index.scss */
+/* line 85, ../templ/scss/index.scss */
 #main-ribbon:before, #main-ribbon:after {
   content: "";
   position: absolute;
@@ -153,26 +170,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 0;
   width: 0;
 }
-/* line 81, ../templ/scss/index.scss */
+/* line 98, ../templ/scss/index.scss */
 #main-ribbon:after {
   border-color: transparent #0027D6 transparent transparent;
 }
 
 /* Ribbon menu items 
  */
-/* line 89, ../templ/scss/index.scss */
+/* line 106, ../templ/scss/index.scss */
 .menu {
   position: absolute;
   right: -20px;
+  top: 65px;
 }
-/* line 93, ../templ/scss/index.scss */
+/* line 111, ../templ/scss/index.scss */
 .menu .menu-item {
   background: #319adb;
   padding: 10px;
   width: 150px;
   position: relative;
 }
-/* line 99, ../templ/scss/index.scss */
+/* line 117, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";
