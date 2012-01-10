@@ -10,12 +10,13 @@
 
 
 $main-text-color: #1a1a1a;
+$main-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $overlay-color: #f1efcf;
 
 html, body { 
   min-width: 1000px;
   min-height: 1024px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: $main-font-family;
 }
 
 #main-pane { 
@@ -66,6 +67,26 @@ html, body {
     @include transition-timing-function(ease-in); 
     &:hover {
       @include single-text-shadow(#666, -4px, 2px, 5px);
+    }
+
+    #centre-content {
+      font-family: $main-font-family;
+      font-size: 1em;
+      text-shadow: none; 
+
+      position: relative;
+      top: 100px;
+
+      .centre-content-emphasis {
+        //font-weight: bold;
+        //font-style: italic;
+      }
+
+      #centre-contact {
+        position: relative;
+        top: 200px; 
+        font-size: 15px;
+      }
     }
   }
   
