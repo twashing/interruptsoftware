@@ -72,7 +72,7 @@ html, body {
 
 /* line 21, ../templ/scss/index.scss */
 #main-pane {
-  z-index: -2;
+  z-index: -3;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -81,6 +81,17 @@ html, body {
 }
 
 /* line 31, ../templ/scss/index.scss */
+#background-pane {
+  position: absolute;
+  top: 0px;
+  left: 570px;
+  z-index: -2;
+  width: 800px;
+  height: 800px;
+  background: url("/images/transistor.jpg") white no-repeat;
+}
+
+/* line 42, ../templ/scss/index.scss */
 #overlay-pane {
   background: #f1efcf;
   width: 860px;
@@ -103,7 +114,7 @@ html, body {
   /* page curl effect 
    */
 }
-/* line 40, ../templ/scss/index.scss */
+/* line 51, ../templ/scss/index.scss */
 #overlay-pane #centre-column {
   position: relative;
   float: left;
@@ -129,11 +140,11 @@ html, body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 56, ../templ/scss/index.scss */
+/* line 67, ../templ/scss/index.scss */
 #overlay-pane #centre-column:hover {
   text-shadow: #666666 -4px 2px 5px;
 }
-/* line 63, ../templ/scss/index.scss */
+/* line 74, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {
   content: "";
   position: absolute;
@@ -151,7 +162,7 @@ html, body {
   -o-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-/* line 80, ../templ/scss/index.scss */
+/* line 91, ../templ/scss/index.scss */
 #overlay-pane:after {
   right: 10px;
   left: auto;
@@ -163,7 +174,7 @@ html, body {
 
 /* Ribbon Main 
  */
-/* line 95, ../templ/scss/index.scss */
+/* line 106, ../templ/scss/index.scss */
 #main-ribbon {
   color: white;
   background: #0027d6;
@@ -192,11 +203,11 @@ html, body {
   -o-box-shadow: black 3px 3px 7px;
   box-shadow: black 3px 3px 7px;
 }
-/* line 111, ../templ/scss/index.scss */
+/* line 122, ../templ/scss/index.scss */
 #main-ribbon:hover {
   top: -1px;
 }
-/* line 118, ../templ/scss/index.scss */
+/* line 129, ../templ/scss/index.scss */
 #main-ribbon:before, #main-ribbon:after {
   content: "";
   position: absolute;
@@ -208,20 +219,20 @@ html, body {
   height: 0;
   width: 0;
 }
-/* line 131, ../templ/scss/index.scss */
+/* line 142, ../templ/scss/index.scss */
 #main-ribbon:after {
   border-color: transparent #0027d6 transparent transparent;
 }
 
 /* Ribbon menu items 
  */
-/* line 140, ../templ/scss/index.scss */
+/* line 151, ../templ/scss/index.scss */
 .menu {
   position: absolute;
   right: -20px;
   top: 65px;
 }
-/* line 145, ../templ/scss/index.scss */
+/* line 156, ../templ/scss/index.scss */
 .menu .menu-item {
   padding: 10px;
   width: 150px;
@@ -245,11 +256,11 @@ html, body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 155, ../templ/scss/index.scss */
+/* line 166, ../templ/scss/index.scss */
 .menu .menu-item:hover {
   text-shadow: #666666 -2px 2px 3px;
 }
-/* line 159, ../templ/scss/index.scss */
+/* line 170, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";

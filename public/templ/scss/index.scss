@@ -19,13 +19,24 @@ html, body {
 }
 
 #main-pane { 
-  z-index: -2;
+  z-index: -3;
   @include stretch;
   
   //background: white;
   //background: #A5A9A2;
   //@include background( image-url("/images/thrush-1.jpg") ); 
   //background: url("/images/thrush-1.jpg") white no-repeat; 
+}
+
+#background-pane {
+  
+  position: absolute;
+  top: 0px;
+  left: 570px;
+  z-index: -2;
+  width: 800px; 
+  height: 800px;
+  background: url("/images/transistor.jpg") white no-repeat; 
 }
 
 #overlay-pane { 
