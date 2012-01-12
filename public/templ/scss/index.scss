@@ -13,6 +13,10 @@ $main-text-color: #1a1a1a;
 $main-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $overlay-color: #f1efcf;
 
+$font-regular: 30px;
+$font-small: 15px;
+
+
 html, body { 
   min-width: 1000px;
   min-height: 1024px;
@@ -88,6 +92,16 @@ html, body {
         top: 200px; 
         font-size: 15px;
       }
+    }
+
+    .centre-title , .centre-copy {
+      
+      font-family: $main-font-family;
+      font-size: $font-regular;
+      text-shadow: none; 
+    }
+    .centre-copy {
+      font-size: $font-small;
     }
   }
   

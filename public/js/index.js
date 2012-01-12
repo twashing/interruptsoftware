@@ -2,7 +2,7 @@
   /* JQuery document ready handler */;  $(document).ready(function() {
     /* 
       Load the index content 
-    */    $("#centre-content").load("/include/main.html");
+    */    $("#centre-content").load("/include/profile.html");
     /*
         Add handlers for 
           1. right menu items and 

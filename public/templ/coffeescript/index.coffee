@@ -5,7 +5,7 @@ $(document).ready ->
   ### 
     Load the index content 
   ###
-  $("#centre-content").load("/include/main.html")
+  $("#centre-content").load("/include/profile.html")
   
   
   ###
