@@ -188,7 +188,11 @@ a:hover {
   margin-top: 20px;
   font-size: 15px;
 }
-/* line 125, ../templ/scss/index.scss */
+/* line 121, ../templ/scss/index.scss */
+#overlay-pane #centre-column #centre-title-tools {
+  margin-top: 20px;
+}
+/* line 128, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {
   content: "";
   position: absolute;
@@ -206,7 +210,7 @@ a:hover {
   -o-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-/* line 142, ../templ/scss/index.scss */
+/* line 145, ../templ/scss/index.scss */
 #overlay-pane:after {
   right: 10px;
   left: auto;
@@ -218,7 +222,7 @@ a:hover {
 
 /* Ribbon Main 
  */
-/* line 157, ../templ/scss/index.scss */
+/* line 160, ../templ/scss/index.scss */
 #main-ribbon {
   color: white;
   background: #0027d6;
@@ -248,11 +252,11 @@ a:hover {
   -o-box-shadow: black 3px 3px 7px;
   box-shadow: black 3px 3px 7px;
 }
-/* line 174, ../templ/scss/index.scss */
+/* line 177, ../templ/scss/index.scss */
 #main-ribbon:hover {
   top: -1px;
 }
-/* line 181, ../templ/scss/index.scss */
+/* line 184, ../templ/scss/index.scss */
 #main-ribbon:before, #main-ribbon:after {
   content: "";
   position: absolute;
@@ -264,20 +268,20 @@ a:hover {
   height: 0;
   width: 0;
 }
-/* line 194, ../templ/scss/index.scss */
+/* line 197, ../templ/scss/index.scss */
 #main-ribbon:after {
   border-color: transparent #0027d6 transparent transparent;
 }
 
 /* Ribbon menu items 
  */
-/* line 204, ../templ/scss/index.scss */
+/* line 207, ../templ/scss/index.scss */
 .menu {
   position: absolute;
   right: -20px;
   top: 65px;
 }
-/* line 209, ../templ/scss/index.scss */
+/* line 212, ../templ/scss/index.scss */
 .menu .menu-item {
   padding: 10px;
   width: 150px;
@@ -302,11 +306,11 @@ a:hover {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 220, ../templ/scss/index.scss */
+/* line 223, ../templ/scss/index.scss */
 .menu .menu-item:hover {
   text-shadow: #666666 -2px 2px 3px;
 }
-/* line 224, ../templ/scss/index.scss */
+/* line 227, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";
