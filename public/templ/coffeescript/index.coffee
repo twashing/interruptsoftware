@@ -5,7 +5,7 @@ $(document).ready ->
   ### 
     Load the index content 
   ###
-  $("#centre-column").load("/include/main.html")
+  $("#centre-content").load("/include/main.html")
   
   
   ###
@@ -13,8 +13,8 @@ $(document).ready ->
       1. right menu items and 
       2. main ribbon 
   ###
-  $("#item-about").click -> $("#centre-column").load("/include/profile.html")
-  $("item-portfolio").click -> $("#centre-column").load("/include/portfolio.html")
+  $("#item-about").click -> $("#centre-content").load("/include/profile.html")
+  $("#item-portfolio").click -> $("#centre-content").load("/include/portfolio.html")
   
-  $("#main-ribbon").click -> $("#centre-column").load("/include/main.html")
+  $("#item-main , #main-ribbon").click -> $("#centre-content").load("/include/main.html")
 
