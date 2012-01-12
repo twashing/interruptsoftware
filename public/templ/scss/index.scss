@@ -142,7 +142,8 @@ $ribbon-color: #0027D6;
 #main-ribbon { 
   color: white;
   background: $ribbon-color;
-
+  cursor: pointer; 
+  
   position: relative; 
   float: left;
   top: -10px;
@@ -184,6 +185,7 @@ $ribbon-color: #0027D6;
 /* Ribbon menu items 
  */
 $menu-item-color: #319adb;
+
 .menu {
   position: absolute;
   right: -20px;
@@ -194,8 +196,9 @@ $menu-item-color: #319adb;
     padding: 10px;
     width: 150px;
     position: relative; 
+    cursor: pointer; 
+    
     @include background( linear-gradient(left, $overlay-color, $menu-item-color) );
-  
     @include transition-property(text-shadow);
     @include transition-duration(0s);
     @include transition-timing-function(ease-in); 
