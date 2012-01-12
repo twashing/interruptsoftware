@@ -23,6 +23,15 @@ html, body {
   font-family: $main-font-family;
 }
 
+a {
+  text-decoration: none; 
+  color: black; 
+  &:hover {
+    @include single-text-shadow(black, -1px, 1px, 0px);
+  }
+}
+
+
 #main-pane { 
   z-index: -3;
   @include stretch;
@@ -99,8 +108,14 @@ html, body {
       font-family: $main-font-family;
       font-size: $font-regular;
       text-shadow: none; 
+
+      .copy-item-label {
+        font-weight: bold; 
+        float: left;
+      }
     }
     .centre-copy {
+      margin-top: 20px;
       font-size: $font-small;
     }
   }
