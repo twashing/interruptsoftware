@@ -35,11 +35,6 @@ a {
 #main-pane { 
   z-index: -3;
   @include stretch;
-  
-  //background: white;
-  //background: #A5A9A2;
-  //@include background( image-url("/images/thrush-1.jpg") ); 
-  //background: url("/images/thrush-1.jpg") white no-repeat; 
 }
 
 #background-pane {
@@ -96,8 +91,6 @@ a {
       top: 100px;
       
       .centre-content-copy {
-        //font-weight: bold;
-        //font-style: italic;
         font-size: 30px;
       }
 
@@ -200,7 +193,6 @@ $ribbon-color: #0027D6;
     border-height: 20px;
     height: 0;
     width: 0;
-    //@include box-shadow(black 3px 3px 7px);
   } 
   
   &:after { 
@@ -219,7 +211,6 @@ $menu-item-color: #319adb;
   top: 65px;
   
   .menu-item { 
-    //background: #319adb;
     padding: 10px;
     width: 150px;
     position: relative; 

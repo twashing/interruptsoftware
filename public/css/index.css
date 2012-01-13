@@ -90,7 +90,7 @@ a:hover {
   right: 0;
 }
 
-/* line 45, ../templ/scss/index.scss */
+/* line 40, ../templ/scss/index.scss */
 #background-pane {
   position: absolute;
   top: 0px;
@@ -101,7 +101,7 @@ a:hover {
   background: url("/images/transistor.jpg") white no-repeat;
 }
 
-/* line 61, ../templ/scss/index.scss */
+/* line 56, ../templ/scss/index.scss */
 #overlay-pane {
   background: #f1efcf;
   width: 860px;
@@ -124,7 +124,7 @@ a:hover {
   /* page curl effect 
    */
 }
-/* line 70, ../templ/scss/index.scss */
+/* line 65, ../templ/scss/index.scss */
 #overlay-pane #centre-column {
   position: relative;
   float: left;
@@ -150,11 +150,11 @@ a:hover {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 86, ../templ/scss/index.scss */
+/* line 81, ../templ/scss/index.scss */
 #overlay-pane #centre-column:hover {
   text-shadow: #666666 -4px 2px 5px;
 }
-/* line 90, ../templ/scss/index.scss */
+/* line 85, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1em;
@@ -162,42 +162,42 @@ a:hover {
   position: relative;
   top: 100px;
 }
-/* line 98, ../templ/scss/index.scss */
+/* line 93, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content .centre-content-copy {
   font-size: 30px;
 }
-/* line 104, ../templ/scss/index.scss */
+/* line 97, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content #centre-contact {
   position: relative;
   top: 200px;
   font-size: 15px;
 }
-/* line 109, ../templ/scss/index.scss */
+/* line 102, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content #centre-contact .copy-item-label {
   font-weight: bold;
   float: left;
 }
-/* line 115, ../templ/scss/index.scss */
+/* line 108, ../templ/scss/index.scss */
 #overlay-pane #centre-column .centre-title, #overlay-pane #centre-column .centre-copy {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 30px;
   text-shadow: none;
 }
-/* line 121, ../templ/scss/index.scss */
+/* line 114, ../templ/scss/index.scss */
 #overlay-pane #centre-column .centre-title .copy-item-label, #overlay-pane #centre-column .centre-copy .copy-item-label {
   font-weight: bold;
   float: left;
 }
-/* line 126, ../templ/scss/index.scss */
+/* line 119, ../templ/scss/index.scss */
 #overlay-pane #centre-column .centre-copy {
   margin-top: 20px;
   font-size: 15px;
 }
-/* line 130, ../templ/scss/index.scss */
+/* line 123, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-title-tools {
   margin-top: 20px;
 }
-/* line 137, ../templ/scss/index.scss */
+/* line 130, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {
   content: "";
   position: absolute;
@@ -215,7 +215,7 @@ a:hover {
   -o-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-/* line 154, ../templ/scss/index.scss */
+/* line 147, ../templ/scss/index.scss */
 #overlay-pane:after {
   right: 10px;
   left: auto;
@@ -227,7 +227,7 @@ a:hover {
 
 /* Ribbon Main 
  */
-/* line 169, ../templ/scss/index.scss */
+/* line 162, ../templ/scss/index.scss */
 #main-ribbon {
   color: white;
   background: #0027d6;
@@ -257,11 +257,11 @@ a:hover {
   -o-box-shadow: black 3px 3px 7px;
   box-shadow: black 3px 3px 7px;
 }
-/* line 186, ../templ/scss/index.scss */
+/* line 179, ../templ/scss/index.scss */
 #main-ribbon:hover {
   top: -1px;
 }
-/* line 193, ../templ/scss/index.scss */
+/* line 186, ../templ/scss/index.scss */
 #main-ribbon:before, #main-ribbon:after {
   content: "";
   position: absolute;
@@ -273,20 +273,20 @@ a:hover {
   height: 0;
   width: 0;
 }
-/* line 206, ../templ/scss/index.scss */
+/* line 198, ../templ/scss/index.scss */
 #main-ribbon:after {
   border-color: transparent #0027d6 transparent transparent;
 }
 
 /* Ribbon menu items 
  */
-/* line 216, ../templ/scss/index.scss */
+/* line 208, ../templ/scss/index.scss */
 .menu {
   position: absolute;
   right: -20px;
   top: 65px;
 }
-/* line 221, ../templ/scss/index.scss */
+/* line 213, ../templ/scss/index.scss */
 .menu .menu-item {
   padding: 10px;
   width: 150px;
@@ -311,11 +311,11 @@ a:hover {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 232, ../templ/scss/index.scss */
+/* line 223, ../templ/scss/index.scss */
 .menu .menu-item:hover {
   text-shadow: #666666 -2px 2px 3px;
 }
-/* line 236, ../templ/scss/index.scss */
+/* line 227, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";
