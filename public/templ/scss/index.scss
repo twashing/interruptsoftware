@@ -53,6 +53,11 @@ a {
   background: url("/images/transistor.jpg") white no-repeat; 
 }
 
+@mixin copy-item-label {
+  font-weight: bold; 
+  float: left;
+}
+
 #overlay-pane { 
   background: $overlay-color;
   width: 860px;
@@ -100,19 +105,23 @@ a {
         position: relative;
         top: 200px; 
         font-size: 15px;
+        
+        .copy-item-label {
+          @include copy-item-label;
+        }
       }
     }
-
+    
     .centre-title , .centre-copy {
       
       font-family: $main-font-family;
       font-size: $font-regular;
       text-shadow: none; 
-
+      
       .copy-item-label {
-        font-weight: bold; 
-        float: left;
+        @include copy-item-label;
       }
+      
     }
     .centre-copy {
       margin-top: 20px;
