@@ -80,7 +80,12 @@ a:hover {
   text-shadow: black -1px 1px 0px;
 }
 
-/* line 35, ../templ/scss/index.scss */
+/* line 34, ../templ/scss/index.scss */
+li > div {
+  margin-right: 5px;
+}
+
+/* line 38, ../templ/scss/index.scss */
 #main-pane {
   z-index: -3;
   position: absolute;
@@ -90,7 +95,7 @@ a:hover {
   right: 0;
 }
 
-/* line 40, ../templ/scss/index.scss */
+/* line 43, ../templ/scss/index.scss */
 #background-pane {
   position: absolute;
   top: 0px;
@@ -101,7 +106,7 @@ a:hover {
   background: url("/images/transistor.jpg") white no-repeat;
 }
 
-/* line 56, ../templ/scss/index.scss */
+/* line 59, ../templ/scss/index.scss */
 #overlay-pane {
   background: #f1efcf;
   width: 860px;
@@ -124,7 +129,7 @@ a:hover {
   /* page curl effect 
    */
 }
-/* line 65, ../templ/scss/index.scss */
+/* line 68, ../templ/scss/index.scss */
 #overlay-pane #centre-column {
   position: relative;
   float: left;
@@ -150,11 +155,11 @@ a:hover {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 81, ../templ/scss/index.scss */
+/* line 84, ../templ/scss/index.scss */
 #overlay-pane #centre-column:hover {
   text-shadow: #666666 -4px 2px 5px;
 }
-/* line 85, ../templ/scss/index.scss */
+/* line 88, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1em;
@@ -162,43 +167,43 @@ a:hover {
   position: relative;
   top: 100px;
 }
-/* line 93, ../templ/scss/index.scss */
+/* line 96, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content .centre-content-copy {
   font-size: 25px;
   color: #555;
 }
-/* line 98, ../templ/scss/index.scss */
+/* line 101, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content #centre-contact {
   position: relative;
   top: 200px;
   font-size: 15px;
 }
-/* line 103, ../templ/scss/index.scss */
+/* line 106, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-content #centre-contact .copy-item-label {
   font-weight: bold;
   float: left;
 }
-/* line 109, ../templ/scss/index.scss */
+/* line 112, ../templ/scss/index.scss */
 #overlay-pane #centre-column .centre-title, #overlay-pane #centre-column .centre-copy {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 30px;
   text-shadow: none;
 }
-/* line 115, ../templ/scss/index.scss */
+/* line 118, ../templ/scss/index.scss */
 #overlay-pane #centre-column .centre-title .copy-item-label, #overlay-pane #centre-column .centre-copy .copy-item-label {
   font-weight: bold;
   float: left;
 }
-/* line 120, ../templ/scss/index.scss */
+/* line 123, ../templ/scss/index.scss */
 #overlay-pane #centre-column .centre-copy {
   margin-top: 20px;
   font-size: 15px;
 }
-/* line 124, ../templ/scss/index.scss */
+/* line 127, ../templ/scss/index.scss */
 #overlay-pane #centre-column #centre-title-tools {
   margin-top: 20px;
 }
-/* line 131, ../templ/scss/index.scss */
+/* line 134, ../templ/scss/index.scss */
 #overlay-pane:before, #overlay-pane:after {
   content: "";
   position: absolute;
@@ -216,7 +221,7 @@ a:hover {
   -o-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-/* line 148, ../templ/scss/index.scss */
+/* line 151, ../templ/scss/index.scss */
 #overlay-pane:after {
   right: 10px;
   left: auto;
@@ -228,7 +233,7 @@ a:hover {
 
 /* Ribbon Main 
  */
-/* line 163, ../templ/scss/index.scss */
+/* line 166, ../templ/scss/index.scss */
 #main-ribbon {
   color: white;
   background: #0027d6;
@@ -258,11 +263,11 @@ a:hover {
   -o-box-shadow: black 3px 3px 7px;
   box-shadow: black 3px 3px 7px;
 }
-/* line 180, ../templ/scss/index.scss */
+/* line 183, ../templ/scss/index.scss */
 #main-ribbon:hover {
   top: -1px;
 }
-/* line 187, ../templ/scss/index.scss */
+/* line 190, ../templ/scss/index.scss */
 #main-ribbon:before, #main-ribbon:after {
   content: "";
   position: absolute;
@@ -274,20 +279,20 @@ a:hover {
   height: 0;
   width: 0;
 }
-/* line 199, ../templ/scss/index.scss */
+/* line 202, ../templ/scss/index.scss */
 #main-ribbon:after {
   border-color: transparent #0027d6 transparent transparent;
 }
 
 /* Ribbon menu items 
  */
-/* line 209, ../templ/scss/index.scss */
+/* line 212, ../templ/scss/index.scss */
 .menu {
   position: absolute;
   right: -20px;
   top: 65px;
 }
-/* line 214, ../templ/scss/index.scss */
+/* line 217, ../templ/scss/index.scss */
 .menu .menu-item {
   padding: 10px;
   width: 150px;
@@ -312,11 +317,11 @@ a:hover {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 224, ../templ/scss/index.scss */
+/* line 227, ../templ/scss/index.scss */
 .menu .menu-item:hover {
   text-shadow: #666666 -2px 2px 3px;
 }
-/* line 228, ../templ/scss/index.scss */
+/* line 231, ../templ/scss/index.scss */
 .menu .menu-item:after {
   z-index: -1;
   content: "";
