@@ -13,27 +13,10 @@
 #right-nav {
   border: 1px black solid;
   width: 18rem;
-  height: 40rem; }
-  #right-nav .nav-item {
-    border: 1px black solid;
-    width: 3.6rem;
-    height: 3.6rem;
-    margin-bottom: 0.5rem;
-    position: relative;
-    float: left;
-    text-align: center;
-    font-size: 1.7rem;
-    line-height: 3.5rem; }
-  #right-nav .nav-item-label {
-    border: 1px black solid;
-    position: relative;
-    float: left;
-    width: 11rem;
-    height: 3.6rem;
-    margin-bottom: 0.5rem;
-    padding-left: 0.8rem;
-    font-size: 1.7rem;
-    line-height: 3.5rem; }
+  height: 40rem;
+  /* colors for nov items */
+  /* generic nav-item */
+  /* label to the right */ }
   #right-nav #home {
     background-color: #ffcf00; }
   #right-nav #introduction {
@@ -44,3 +27,30 @@
     background-color: #da2020; }
   #right-nav #about {
     background-color: #172f4e; }
+  #right-nav .nav-item {
+    width: 3.6rem;
+    height: 3.6rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 3.5rem;
+    /* For Modern CSS icons */ }
+    #right-nav .nav-item .metrouicss {
+      top: 0.4rem; }
+      #right-nav .nav-item .metrouicss .icons > li {
+        list-style-type: none;
+        zoom: 3; }
+  #right-nav .nav-item-label {
+    position: relative;
+    float: left;
+    width: 11rem;
+    height: 3.6rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.8rem;
+    font-size: 1.7rem;
+    line-height: 3.5rem; }
+  #right-nav .squeeze {
+    margin: 0;
+    height: 3.2rem; }
