@@ -1,3 +1,6 @@
+body {
+  background: #759d20; }
+
 .circle {
   border-radius: 50%; }
 
@@ -12,8 +15,11 @@
 
 #right-nav {
   border: 1px black solid;
-  width: 18rem;
-  height: 40rem;
+  width: 14rem;
+  height: 36rem;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 0.5rem;
   /* colors for nov items */
   /* generic nav-item */
   /* label to the right */ }
@@ -45,7 +51,7 @@
   #right-nav .nav-item-label {
     position: relative;
     float: left;
-    width: 11rem;
+    width: 9rem;
     height: 3.6rem;
     margin-bottom: 0.5rem;
     padding-left: 0.8rem;
@@ -54,3 +60,5 @@
   #right-nav .squeeze {
     margin: 0;
     height: 3.2rem; }
+  #right-nav .spacer {
+    height: 2rem; }
