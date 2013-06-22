@@ -1,0 +1,9 @@
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 4rem;
+  color: darkblue;
+  background: url("/images/transistor.jpg") 11% no-repeat; }
