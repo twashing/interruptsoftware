@@ -1,10 +1,17 @@
 (ns interruptsoftware.handler
   (:use compojure.core)
   (:require [compojure.handler :as handler]
-            [compojure.route :as route]))
+            [compojure.route :as route]
+
+            [clojure.java.io :as io]
+            [ring.util.response :as ring-resp]))
 
 (defroutes app-routes
-  (GET "/" [] "Hello World")
+
+  (GET "/" [] 
+    
+    (-> (ring-resp/response (slurp (io/resource "include/index.html")))
+        (ring-resp/content-type "text/html")))
 
   ;; ======
   ;; Resource Routes
