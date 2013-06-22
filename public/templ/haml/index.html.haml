@@ -1,63 +1,14 @@
 %html
   %head
     %meta( charset="UTF-8" )
-    %title Edgar: At your command
+    %meta( name="viewport" content="width=device-width, initial-scale=1.0" )
+    %title ;) Interrupt Software
 
   %body
-    #content
 
-      #tabs.tabbable.tabs-left
-        %ul.nav.nav-tabs
-          %li.active
-            %a( href="#tab-one" data-toggle="tab" )
-              Main Deck
-          %li 
-            %a( href="#tab-two" data-toggle="tab" )
-              Filter Deck
+    .container
+      Fubar
 
-        .tab-content
-          #tab-one.tab-pane.active
-
-            .navbar
-              .navbar-inner
-                .container
-                  %ul.nav
-                    %li 
-                      %a.brand( href="#" )
-                        Edgar
-                    %li 
-                      %a( href="#live-stream" )
-                        Live Stream
-                    %li 
-                      %a( href="#historical-data" )
-                        Historical Data
-
-            .body-container
-              #live-stream
-                .graph-group-header
-                  %button#live-initialize.btn.btn-success( type="button" )
-                    Initialize
-                  %button#live-stop.btn.btn-danger( type="button" )
-                    Stop
-                  .input-append
-                    %input.span2#freeform-live-input( type="text" )
-                    %button.btn#freeform-live( type="button" )
-                      Submit
-
-                #live-stock-graph
-
-              #historical-data
-                .graph-group-header
-                  .input-append
-                    %input.span2#freeform-historical-input( type="text" )
-                    %button.btn#freeform-historical( type="button" )
-                      Submit
-
-                #historical-stock-graph
-
-            .body-summary
-
-          #tab-two.tab-pane
 
   %link( rel="stylesheet" href="/include/vendor/bootstrap/css/bootstrap.min.css" )
   %link( rel="stylesheet" href="/include/vendor/bootstrap/css/bootstrap-responsive.min.css" )
