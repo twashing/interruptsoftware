@@ -4,19 +4,42 @@
 }
 
 .logo {
-  width: 100px;
-  height: 100px; 
+  border: 1px #eee solid;
+  width: 8rem;
+  height: 8rem; 
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.75;
   font-size: 4rem;
-  color: darkblue;
   background: url('/images/transistor.jpg') 11% no-repeat;
 }
 
 #right-nav {
+
+  border: 1px black solid;
+  width: 18rem;
+  height: 40rem;
   .nav-item {
-    width: 65px;
-    height: 65px;
+    border: 1px black solid;
+    width: 3.6rem;
+    height: 3.6rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    float: left;
+
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 3.5rem;
+  }
+  .nav-item-label {
+    border: 1px black solid;
+    position: relative;
+    float: left;
+    width: 11rem;
+    height: 3.6rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.8rem;
+    font-size: 1.7rem;
+    line-height: 3.5rem;
   }
   #home { background-color: #ffcf00; }
   #introduction { background-color: #0fa7d2; }
