@@ -10,8 +10,8 @@ guard 'haml' do
  watch('index.html.haml')
 end
 
-# guard 'sass', :input => "templ/scss", :output => "css"
-guard 'coffeescript', :input => "templ/coffeescript", :output => "js"
+guard 'sass', :input => "templ/scss", :output => "include/css"
+guard 'coffeescript', :input => "templ/coffeescript", :output => "include/js"
 
 guard 'livereload' do
  watch(/^.+\.html$/)
