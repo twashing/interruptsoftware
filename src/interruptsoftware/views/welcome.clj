@@ -11,8 +11,7 @@
            [:p "Welcome to Interrupt Software"]))
 
 (defpage "/" []
-  (let  [templ (enlive/html-resource "index.html")
-        ]
+  (let  [templ (enlive/html-resource "index.html")]
     (enlive/emit* templ)
   )
 )

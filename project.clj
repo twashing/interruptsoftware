@@ -4,6 +4,5 @@
                            [noir "1.2.1"]
                            [enlive "1.0.0"]]
 
-            :resources-path ".:public/"
+            :resource-paths ["." "public/"]
             :main interruptsoftware.server)
-
