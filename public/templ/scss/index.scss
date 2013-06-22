@@ -1,6 +1,9 @@
 
 .circle {
   border-radius: 50%;
+}
+
+.logo {
   width: 100px;
   height: 100px; 
   text-align: center;
@@ -10,3 +13,14 @@
   background: url('/images/transistor.jpg') 11% no-repeat;
 }
 
+#right-nav {
+  .nav-item {
+    width: 65px;
+    height: 65px;
+  }
+  #home { background-color: #ffcf00; }
+  #introduction { background-color: #0fa7d2; }
+  #approach { background-color: #81ba10; }
+  #services { background-color: #da2020; }
+  #about {  background-color: #172f4e; }
+}
