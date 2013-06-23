@@ -1,5 +1,15 @@
+@font-face {
+  font-family: 'league-gothic';
+  src: url("/include/fonts/League-Gothic/LeagueGothic-Regular.otf"); }
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("/include/fonts/open-sans/OpenSans-Regular.ttf"); }
+
 body {
-  background: #759d20; }
+  background: #81ba10;
+  font-family: 'League Gothic';
+  -webkit-font-smoothing: antialiased; }
 
 .circle {
   border-radius: 50%; }
@@ -10,16 +20,26 @@ body {
   height: 8rem;
   text-align: center;
   line-height: 1.75;
+  font-family: 'open-sans', serif;
   font-size: 4rem;
   background: url("/images/transistor.jpg") 11% no-repeat; }
 
+.primary-title {
+  font-family: 'league-gothic', 'regular', serif;
+  font-size: 10rem;
+  font-weight: lighter; }
+
+.secondary-title {
+  font-family: 'open-sans', serif;
+  font-size: 2rem; }
+
 #right-nav {
-  border: 1px black solid;
   width: 14rem;
   height: 36rem;
   float: right;
-  background-color: rgba(255, 255, 255, 0.75);
   padding: 0.5rem;
+  border-radius: 5;
+  background-color: rgba(255, 255, 255, 0.9);
   /* colors for nov items */
   /* generic nav-item */
   /* label to the right */ }
@@ -40,6 +60,7 @@ body {
     position: relative;
     float: left;
     text-align: center;
+    font-family: 'open-sans', serif;
     font-size: 1.7rem;
     line-height: 3.5rem;
     /* For Modern CSS icons */ }
@@ -55,6 +76,7 @@ body {
     height: 3.6rem;
     margin-bottom: 0.5rem;
     padding-left: 0.8rem;
+    font-family: 'open-sans', serif;
     font-size: 1.7rem;
     line-height: 3.5rem; }
   #right-nav .squeeze {
