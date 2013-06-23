@@ -61,70 +61,76 @@ body {
 }
 
 
-.container {
-  
-  border: 1px solid black;
+.navigation {
+    
   margin-top: 12rem;
-  //position: absolute;
-  //top: 0;
-  //left: 0;
-  #right-nav {
-  
-    width: 14rem;
-    height: 36rem;
-    float: right;
-    padding: 0.5rem;
-    border-radius: 5;
-    background-color: rgba(255, 255, 255, 0.9);
-  
-    /* colors for nov items */
-    #home { background-color: #ffcf00; }
-    #introduction { background-color: #0fa7d2; }
-    #approach { background-color: #81ba10; }
-    #services { background-color: #da2020; }
-    #about {  background-color: #172f4e; }
-  
-    /* generic nav-item */
-    .nav-item {
-      width: 3.6rem;
-      height: 3.6rem;
-      margin-bottom: 0.5rem;
-      position: relative;
-      float: left;
-  
-      text-align: center;
-      font-family: 'open-sans', serif;
-      font-size: 1.7rem;
-      line-height: 3.5rem;
-  
-      /* For Modern CSS icons */
-      .metrouicss {
-        top: 0.4rem;
-        .icons > li {
-          list-style-type: none;
-          zoom: 3;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .container {
+    
+    border: 1px solid black;
+    width: 1200px;
+    #right-nav {
+    
+      width: 14rem;
+      height: 36rem;
+      float: right;
+      padding: 0.5rem;
+      border-radius: 5;
+      background-color: rgba(255, 255, 255, 0.9);
+    
+      /* colors for nov items */
+      #home { background-color: #ffcf00; }
+      #introduction { background-color: #0fa7d2; }
+      #approach { background-color: #81ba10; }
+      #services { background-color: #da2020; }
+      #about {  background-color: #172f4e; }
+    
+      /* generic nav-item */
+      .nav-item {
+        width: 3.6rem;
+        height: 3.6rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        float: left;
+    
+        text-align: center;
+        font-family: 'open-sans', serif;
+        font-size: 1.7rem;
+        line-height: 3.5rem;
+    
+        /* For Modern CSS icons */
+        .metrouicss {
+          top: 0.4rem;
+          .icons > li {
+            list-style-type: none;
+            zoom: 3;
+          }
         }
       }
+    
+      /* label to the right */
+      .nav-item-label {
+        position: relative;
+        float: left;
+        width: 9rem;
+        height: 3.6rem;
+        margin-bottom: 0.5rem;
+        padding-left: 0.8rem;
+        font-family: 'open-sans', serif;
+        font-size: 1.7rem;
+        line-height: 3.5rem;
+      }
+      .squeeze {
+        margin: 0;
+        height: 3.2rem;
+      }
+      .spacer { height: 2rem; }
     }
-  
-    /* label to the right */
-    .nav-item-label {
-      position: relative;
-      float: left;
-      width: 9rem;
-      height: 3.6rem;
-      margin-bottom: 0.5rem;
-      padding-left: 0.8rem;
-      font-family: 'open-sans', serif;
-      font-size: 1.7rem;
-      line-height: 3.5rem;
-    }
-    .squeeze {
-      margin: 0;
-      height: 3.2rem;
-    }
-    .spacer { height: 2rem; }
   }
 }
+
 
 
