@@ -1,4 +1,5 @@
-%html
+!!!
+%html( lang="en" )
   %head
     %meta( charset="UTF-8" )
     %meta( name="viewport" content="width=device-width, initial-scale=1.0" )
@@ -6,16 +7,17 @@
 
   %body
 
+    .slider
+      .slide-container
+        .slide-container-content
+          .circle.logo
+            ; )
+          %h1.primary-title
+            Interrupt Software
+          %h3.secondary-title
+            Custom Software Development; Advanced Functionality &amp; Design Excellence
+
     .container
-      .circle.logo
-        ; )
-
-
-      %h1.primary-title
-        Interrupt Software
-      %h3.secondary-title
-        Custom Software Development; Advanced Functionality &amp; Design Excellence
-
       #right-nav
         .nav-item.circle#home
           ; )
@@ -78,8 +80,6 @@
                 .icon-linkedin
         .nav-item-label.squeeze
           linkedIn
-
-
 
   %link( rel="stylesheet" href="/include/vendor/bootstrap/css/bootstrap.min.css" )
   %link( rel="stylesheet" href="/include/vendor/bootstrap/css/bootstrap-responsive.min.css" )

@@ -16,10 +16,12 @@ body {
 
 .logo {
   border: 1px #eee solid;
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  float: left;
   text-align: center;
-  line-height: 1.75;
+  line-height: 1.25;
   font-family: 'open-sans', serif;
   font-size: 4rem;
   background: url("/images/transistor.jpg") 11% no-repeat; }
@@ -33,54 +35,71 @@ body {
   font-family: 'open-sans', serif;
   font-size: 2rem; }
 
-#right-nav {
-  width: 14rem;
-  height: 36rem;
-  float: right;
-  padding: 0.5rem;
-  border-radius: 5;
-  background-color: rgba(255, 255, 255, 0.9);
-  /* colors for nov items */
-  /* generic nav-item */
-  /* label to the right */ }
-  #right-nav #home {
-    background-color: #ffcf00; }
-  #right-nav #introduction {
-    background-color: #0fa7d2; }
-  #right-nav #approach {
-    background-color: #81ba10; }
-  #right-nav #services {
-    background-color: #da2020; }
-  #right-nav #about {
-    background-color: #172f4e; }
-  #right-nav .nav-item {
-    width: 3.6rem;
-    height: 3.6rem;
-    margin-bottom: 0.5rem;
+.slider {
+  width: 100%;
+  position: relative;
+  margin-top: 12rem; }
+  .slider .slide-container {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
     position: relative;
-    float: left;
-    text-align: center;
-    font-family: 'open-sans', serif;
-    font-size: 1.7rem;
-    line-height: 3.5rem;
-    /* For Modern CSS icons */ }
-    #right-nav .nav-item .metrouicss {
-      top: 0.4rem; }
-      #right-nav .nav-item .metrouicss .icons > li {
-        list-style-type: none;
-        zoom: 3; }
-  #right-nav .nav-item-label {
-    position: relative;
-    float: left;
-    width: 9rem;
-    height: 3.6rem;
-    margin-bottom: 0.5rem;
-    padding-left: 0.8rem;
-    font-family: 'open-sans', serif;
-    font-size: 1.7rem;
-    line-height: 3.5rem; }
-  #right-nav .squeeze {
-    margin: 0;
-    height: 3.2rem; }
-  #right-nav .spacer {
-    height: 2rem; }
+    top: 0; }
+    .slider .slide-container .slide-container-content {
+      width: 930px; }
+
+.container {
+  border: 1px solid black;
+  margin-top: 12rem; }
+  .container #right-nav {
+    width: 14rem;
+    height: 36rem;
+    float: right;
+    padding: 0.5rem;
+    border-radius: 5;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* colors for nov items */
+    /* generic nav-item */
+    /* label to the right */ }
+    .container #right-nav #home {
+      background-color: #ffcf00; }
+    .container #right-nav #introduction {
+      background-color: #0fa7d2; }
+    .container #right-nav #approach {
+      background-color: #81ba10; }
+    .container #right-nav #services {
+      background-color: #da2020; }
+    .container #right-nav #about {
+      background-color: #172f4e; }
+    .container #right-nav .nav-item {
+      width: 3.6rem;
+      height: 3.6rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      float: left;
+      text-align: center;
+      font-family: 'open-sans', serif;
+      font-size: 1.7rem;
+      line-height: 3.5rem;
+      /* For Modern CSS icons */ }
+      .container #right-nav .nav-item .metrouicss {
+        top: 0.4rem; }
+        .container #right-nav .nav-item .metrouicss .icons > li {
+          list-style-type: none;
+          zoom: 3; }
+    .container #right-nav .nav-item-label {
+      position: relative;
+      float: left;
+      width: 9rem;
+      height: 3.6rem;
+      margin-bottom: 0.5rem;
+      padding-left: 0.8rem;
+      font-family: 'open-sans', serif;
+      font-size: 1.7rem;
+      line-height: 3.5rem; }
+    .container #right-nav .squeeze {
+      margin: 0;
+      height: 3.2rem; }
+    .container #right-nav .spacer {
+      height: 2rem; }
