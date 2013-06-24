@@ -41,18 +41,20 @@ body {
   line-height: 1.6rem; }
 
 .slider {
-  width: 100%;
-  position: relative;
+  border: 1px solid red;
   margin-top: 12rem; }
-  .slider .slide-container {
-    border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
-    position: relative;
-    top: 0; }
-    .slider .slide-container .slide-container-content {
-      width: 930px; }
+  .slider .slide-stretchable .slide-wrapper {
+    border: 1px solid blue;
+    float: left;
+    width: 100%; }
+    .slider .slide-stretchable .slide-wrapper .slide-container {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 1200px;
+      top: 0; }
+      .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
+        width: 930px; }
 
 .navigation {
   margin-top: 12rem;

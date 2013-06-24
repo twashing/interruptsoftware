@@ -1,21 +1,21 @@
 
 /* Common handler for page transitions */
-transitionPageHandler = (ctxt, purl, proute) -> 
+transitionPageHandler = (ctxt, purl, proute) ->
   
   centreC = $("#centre-content")
   ctxtObj = $(ctxt)
   
   ctxtObj.click ->
     centreC.fadeOut(200, "linear", () ->
-        centreC.load(purl, () -> 
+        centreC.load(purl, () ->
 
           /* interruptRouter.navigate(proute) */
           centreC.fadeIn(500, "linear")
         )
       )
 
-/* JQuery document ready handler */ 
-$(document).ready -> 
+/* JQuery document ready handler */
+$(document).ready ->
   
   ### 
     Load the index content 
@@ -40,17 +40,17 @@ $(document).ready ->
     Backbone Router URLs
   ###
   interruptRouter = Backbone.Router.extend(
-    routes: 
+    routes:
       "/" : "indexRoute"
       "/profile" : "profileRoute"
       "/portfolio" : "portfolioRoute"
   )
   
-  indexRoute = -> 
+  indexRoute = ->
     $("#item-main").click()
-  profileRoute = -> 
+  profileRoute = ->
     $("#item-about").click()
-  portfolioRoute = -> 
+  portfolioRoute = ->
     $("#item-portfolio").click()
   
   /* Backbone.history.start( pushState: true) */
