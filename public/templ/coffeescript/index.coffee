@@ -32,6 +32,7 @@ $(document).ready ->
   
   $(".nav-item").click(->
     $('.slider').scrollTo($("#wrapper-#{$(this).attr("id")}"), 500, { axis:'x' , easing: 'easeInOutQuad'})
+    $("body").animate({backgroundColor: $(this).css("background-color")}, 500)
   )
 
 

@@ -37,10 +37,13 @@
       force: true
     });
     return $(".nav-item").click(function() {
-      return $('.slider').scrollTo($("#wrapper-" + ($(this).attr("id"))), 500, {
+      $('.slider').scrollTo($("#wrapper-" + ($(this).attr("id"))), 500, {
         axis: 'x',
         easing: 'easeInOutQuad'
       });
+      return $("body").animate({
+        backgroundColor: $(this).css("background-color")
+      }, 500);
     });
   });
 }).call(this);
