@@ -2,24 +2,31 @@
 # $(".slider").serialScroll({ target: '.slider', items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach', duration: 500, axis: 'x', force: true }) 
 # $('.slider').scrollTo($('#wrapper-approach'), 500, { axis:'x' , easing: 'easeInOutQuad'}) 
 
-/* Common handler for page transitions */
-transitionPageHandler = (ctxt, purl, proute) ->
-  
-  centreC = $("#centre-content")
-  ctxtObj = $(ctxt)
-  
-  ctxtObj.click ->
-    centreC.fadeOut(200, "linear", () ->
-        centreC.load(purl, () ->
-
-          /* interruptRouter.navigate(proute) */
-          centreC.fadeIn(500, "linear")
-        )
-      )
 
 /* JQuery document ready handler */
 $(document).ready ->
   
+  ###
+    Hide nav label
+  ###
+  #$(".nav-item-label").css('visibility', 'hidden')
+  $(".nav-item-label").animate({opacity:0}, 500)
+  $("#home span:first").animate({opacity:0}, 500)
+
+  ###
+    Show label on hover
+  ###
+  $(".nav-item").hover(
+                        (elem) ->
+                          $(@).next().animate({opacity:1}, 100)
+                          $(@).find("span:first").animate({opacity:1}, 100)
+                        ,
+                        (elem) ->
+                          $(@).next().animate({opacity:0}, 100)
+                          $(@).find("span:first").animate({opacity:0}, 100)
+                      )
+
+
   ### 
     Load the index content 
   ###
@@ -39,23 +46,3 @@ $(document).ready ->
   transitionPageHandler("#item-main , #main-ribbon", "/include/main.html", "/")
   
   
-  ###
-    Backbone Router URLs
-  ###
-  interruptRouter = Backbone.Router.extend(
-    routes:
-      "/" : "indexRoute"
-      "/profile" : "profileRoute"
-      "/portfolio" : "portfolioRoute"
-  )
-  
-  indexRoute = ->
-    $("#item-main").click()
-  profileRoute = ->
-    $("#item-about").click()
-  portfolioRoute = ->
-    $("#item-portfolio").click()
-  
-  /* Backbone.history.start( pushState: true) */
-
-
