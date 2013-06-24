@@ -26,17 +26,21 @@
         opacity: 0
       }, 100);
     });
-    /* 
-      Load the index content 
-    */
-    $("#centre-content").css('display', 'none').load("/include/main.html").fadeIn(500, "linear");
     /*
-        Add handlers for 
-          1. right menu items and 
-          2. main ribbon 
+        Initialize and instrument horizontal sliding
       */
-    transitionPageHandler("#item-about", "/include/profile.html", "/profile");
-    transitionPageHandler("#item-portfolio", "/include/portfolio.html", "/portfolio");
-    return transitionPageHandler("#item-main , #main-ribbon", "/include/main.html", "/");
+    $(".slider").serialScroll({
+      target: '.slider',
+      items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach',
+      duration: 500,
+      axis: 'x',
+      force: true
+    });
+    return $(".nav-item").click(function() {
+      return $('.slider').scrollTo($("#wrapper-" + ($(this).attr("id"))), 500, {
+        axis: 'x',
+        easing: 'easeInOutQuad'
+      });
+    });
   });
 }).call(this);
