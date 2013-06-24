@@ -1,4 +1,7 @@
 
+# $(".slider").serialScroll({ target: '.slider', items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach', duration: 500, axis: 'x', force: true }) 
+# $('.slider').scrollTo($('#wrapper-approach'), 500, { axis:'x' , easing: 'easeInOutQuad'}) 
+
 /* Common handler for page transitions */
 transitionPageHandler = (ctxt, purl, proute) ->
   

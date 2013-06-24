@@ -79,19 +79,9 @@ body {
       padding: 0.5rem;
       border-radius: 5;
       background-color: rgba(255, 255, 255, 0.9);
-      /* colors for nov items */
       /* generic nav-item */
+      /* colors for nov items */
       /* label to the right */ }
-      .navigation .container #right-nav #home {
-        background-color: #ffcf00; }
-      .navigation .container #right-nav #introduction {
-        background-color: #0fa7d2; }
-      .navigation .container #right-nav #approach {
-        background-color: #81ba10; }
-      .navigation .container #right-nav #services {
-        background-color: #da2020; }
-      .navigation .container #right-nav #about {
-        background-color: #172f4e; }
       .navigation .container #right-nav .nav-item {
         width: 3.6rem;
         height: 3.6rem;
@@ -107,7 +97,20 @@ body {
           top: 0.4rem; }
           .navigation .container #right-nav .nav-item .metrouicss .icons > li {
             list-style-type: none;
-            zoom: 3; }
+            zoom: 2; }
+      .navigation .container #right-nav #home {
+        width: 3.4rem;
+        height: 3.4rem;
+        border: 1px #eee solid;
+        line-height: 3.1rem; }
+      .navigation .container #right-nav #introduction {
+        background-color: #ffcf00; }
+      .navigation .container #right-nav #approach {
+        background-color: #81ba10; }
+      .navigation .container #right-nav #services {
+        background-color: #da2020; }
+      .navigation .container #right-nav #about {
+        background-color: #0fa7d2; }
       .navigation .container #right-nav .nav-item-label {
         position: relative;
         float: left;
@@ -120,6 +123,7 @@ body {
         line-height: 3.5rem; }
       .navigation .container #right-nav .squeeze {
         margin: 0;
-        height: 3.2rem; }
+        height: 3.2rem;
+        line-height: 2rem; }
       .navigation .container #right-nav .spacer {
         height: 2rem; }
