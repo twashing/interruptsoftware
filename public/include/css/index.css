@@ -40,30 +40,13 @@ body {
   font-size: 1.3rem;
   line-height: 1.6rem; }
 
-#parent {
-  width: 100%;
-  height: 200px;
-  background: red;
-  overflow-x: scroll;
-  overflow-y: hidden; }
-  #parent #stretchable-div {
-    background: darkblue;
-    width: 100%;
-    white-space: nowrap; }
-    #parent #stretchable-div .child {
-      background: blue;
-      width: 100%;
-      height: 150px;
-      display: inline-block; }
-
+/* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
 .slider {
-  border: 1px solid red;
   margin-top: 12rem;
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden; }
   .slider .slide-stretchable {
-    background: grey;
     width: 100%;
     white-space: nowrap; }
     .slider .slide-stretchable .slide-wrapper {
