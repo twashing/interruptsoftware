@@ -8,6 +8,9 @@
 
   :plugins [[lein-ring "0.8.5"]]
   :ring {:handler interruptsoftware.handler/app}
-  :profiles
-  {:dev { :resource-paths ["public/"]
-          :dependencies [[ring-mock "0.1.5"]]}})
+  :profiles { :dev {:resource-paths ["public/"]
+                    :dependencies [[ring-mock "0.1.5"]]}}
+  
+  :min-lein-version "2.0.0"
+)
+

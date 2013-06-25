@@ -52,7 +52,7 @@
         Clink redirects for twitter link et al
       */
     $("#cv").unbind("click").click(function() {
-      return window.open("", '_blank');
+      return window.open("/include/TimothyWashington-contract.pdf", '_blank');
     });
     $("#email").unbind("click").click(function() {
       return window.open("mailto:twashing@gmail.com", '_blank');
