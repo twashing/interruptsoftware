@@ -61,7 +61,8 @@ body {
         width: 1200px;
         top: 0; }
         .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
-          width: 930px; }
+          width: 930px;
+          white-space: normal; }
 
 .navigation {
   margin-top: 12rem;
