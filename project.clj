@@ -4,7 +4,8 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [compojure "1.1.5"]
                  [ring/ring-core "1.2.0-beta1"
-                  :exclusions [javax.servlet/servlet-api]]]
+                  :exclusions [javax.servlet/servlet-api]]
+                 [ring/ring-servlet "1.2.0-RC1"]]
 
   :plugins [[lein-ring "0.8.5"]]
   :ring {:handler interruptsoftware.handler/app}
