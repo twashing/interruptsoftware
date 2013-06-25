@@ -36,7 +36,7 @@
       axis: 'x',
       force: true
     });
-    return $(".nav-item").click(function() {
+    $(".nav-item").click(function() {
       $('.slider').scrollTo($("#wrapper-" + ($(this).attr("id"))), 500, {
         axis: 'x',
         easing: 'easeInOutQuad'
@@ -47,6 +47,21 @@
       return $(".slide-container-content").animate({
         color: $(this).attr("id") === "services" ? "white" : "black"
       }, 500);
+    });
+    /*
+        Clink redirects for twitter link et al
+      */
+    $("#cv").unbind("click").click(function() {
+      return window.open("", '_blank');
+    });
+    $("#email").unbind("click").click(function() {
+      return window.open("mailto:twashing@gmail.com", '_blank');
+    });
+    $("#twitter").unbind("click").click(function() {
+      return window.open("https://twitter.com/nutritioustim", '_blank');
+    });
+    return $("#linkedin").unbind("click").click(function() {
+      return window.open("http://linkedin.com/pub/0/9b2/506", '_blank');
     });
   });
 }).call(this);

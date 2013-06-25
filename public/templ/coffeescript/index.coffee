@@ -42,4 +42,12 @@ $(document).ready ->
                                           }, 500)
   )
 
+  ###
+    Clink redirects for twitter link et al
+  ###
+  $("#cv").unbind("click").click(-> window.open("", '_blank'))
+  $("#email").unbind("click").click(-> window.open("mailto:twashing@gmail.com", '_blank'))
+  $("#twitter").unbind("click").click(-> window.open("https://twitter.com/nutritioustim", '_blank'))
+  $("#linkedin").unbind("click").click(-> window.open("http://linkedin.com/pub/0/9b2/506", '_blank'))
+  
 
