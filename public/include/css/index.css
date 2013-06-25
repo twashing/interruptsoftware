@@ -38,6 +38,9 @@ body {
   font-family: 'open-sans', serif;
   font-size: 1.3rem;
   line-height: 1.6rem; }
+  .slide-content .colleague {
+    font-style: italic;
+    color: #999; }
 
 /* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
 .slider {
