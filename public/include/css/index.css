@@ -43,7 +43,7 @@ body {
 .slider {
   margin-top: 12rem;
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden; }
   .slider .slide-stretchable {
     width: 100%;
