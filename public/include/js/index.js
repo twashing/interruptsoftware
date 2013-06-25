@@ -41,8 +41,11 @@
         axis: 'x',
         easing: 'easeInOutQuad'
       });
-      return $("body").animate({
+      $("body").animate({
         backgroundColor: $(this).css("background-color")
+      }, 500);
+      return $(".slide-container-content").animate({
+        color: $(this).attr("id") === "services" ? "white" : "black"
       }, 500);
     });
   });

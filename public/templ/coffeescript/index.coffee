@@ -31,8 +31,15 @@ $(document).ready ->
   $(".slider").serialScroll({ target: '.slider', items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach', duration: 500, axis: 'x', force: true })
   
   $(".nav-item").click(->
+
+    # slide to the relevant section
     $('.slider').scrollTo($("#wrapper-#{$(this).attr("id")}"), 500, { axis:'x' , easing: 'easeInOutQuad'})
-    $("body").animate({backgroundColor: $(this).css("background-color")}, 500)
+    
+    # change background color accordingly
+    $("body").animate({ backgroundColor: $(this).css("background-color") }, 500)
+    $(".slide-container-content").animate({
+                                            color: if $(this).attr("id") is "services" then "white" else "black"
+                                          }, 500)
   )
 
 
