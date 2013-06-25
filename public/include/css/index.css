@@ -49,7 +49,6 @@ body {
     width: 100%;
     white-space: nowrap; }
     .slider .slide-stretchable .slide-wrapper {
-      border: 1px solid blue;
       width: 100%;
       display: inline-block;
       vertical-align: top; }
@@ -71,14 +70,13 @@ body {
   top: 0;
   left: 0; }
   .navigation .container {
-    border: 1px solid black;
     width: 1200px; }
     .navigation .container #right-nav {
       width: 14rem;
       height: 36rem;
       float: right;
       padding: 0.5rem;
-      border-radius: 5;
+      border-radius: 5px;
       background-color: rgba(255, 255, 255, 0.9);
       /* generic nav-item */
       /* colors for nov items */
