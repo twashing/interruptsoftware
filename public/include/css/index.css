@@ -6,9 +6,11 @@
   font-family: 'open-sans';
   src: url("/include/fonts/open-sans/OpenSans-Regular.ttf"); }
 
-body {
-  font-family: 'League Gothic';
-  -webkit-font-smoothing: antialiased; }
+html {
+  zoom: 0.6; }
+  html body {
+    font-family: 'League Gothic';
+    -webkit-font-smoothing: antialiased; }
 
 .circle {
   border-radius: 50%; }
