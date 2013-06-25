@@ -51,7 +51,8 @@ body {
     .slider .slide-stretchable .slide-wrapper {
       border: 1px solid blue;
       width: 100%;
-      display: inline-block; }
+      display: inline-block;
+      vertical-align: top; }
       .slider .slide-stretchable .slide-wrapper .slide-container {
         position: relative;
         display: block;
