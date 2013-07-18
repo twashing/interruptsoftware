@@ -75,6 +75,10 @@ html {
           font-family: league-gothic, regular, serif;
           font-size: 160px;
           font-weight: normal; }
+        .slider .slide-stretchable .slide-wrapper .slide-container #me-pic {
+          background: url("/images/me.jpg") no-repeat;
+          background-size: 17rem;
+          background-position-x: -3rem; }
         .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
           width: 930px;
           white-space: normal; }

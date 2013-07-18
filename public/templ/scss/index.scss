@@ -101,6 +101,11 @@ html {
           font-size: 160px;
           font-weight: normal;
         }
+        #me-pic {
+          background: url('/images/me.jpg') no-repeat;
+          background-size: 17rem;
+          background-position-x: -3rem;
+        }
 
         .slide-container-content {
           width: 930px;
