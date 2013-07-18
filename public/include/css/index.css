@@ -6,6 +6,14 @@
   font-family: 'open-sans';
   src: url("/include/fonts/open-sans/OpenSans-Regular.ttf"); }
 
+.centered-content, html body .header .header-content, .slider .slide-stretchable .slide-wrapper .slide-container {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  top: 0; }
+
 html {
   zoom: 0.6;
   height: 100%; }
@@ -76,31 +84,24 @@ html {
       margin-top: 12rem;
       display: inline-block;
       vertical-align: top; }
-      .slider .slide-stretchable .slide-wrapper .slide-container {
-        position: relative;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 1200px;
-        top: 0; }
-        .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
-          width: 10rem;
-          height: 10rem;
-          margin-top: 2rem;
-          top: -6rem;
-          left: -10.4rem;
-          line-height: 1;
-          position: absolute;
-          font-family: league-gothic, regular, serif;
-          font-size: 160px;
-          font-weight: normal; }
-        .slider .slide-stretchable .slide-wrapper .slide-container #me-pic {
-          background: url("/images/me.jpg") no-repeat;
-          background-size: 17rem;
-          background-position-x: -3rem; }
-        .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
-          width: 930px;
-          white-space: normal; }
+      .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
+        width: 10rem;
+        height: 10rem;
+        margin-top: 2rem;
+        top: -6rem;
+        left: -10.4rem;
+        line-height: 1;
+        position: absolute;
+        font-family: league-gothic, regular, serif;
+        font-size: 160px;
+        font-weight: normal; }
+      .slider .slide-stretchable .slide-wrapper .slide-container #me-pic {
+        background: url("/images/me.jpg") no-repeat;
+        background-size: 17rem;
+        background-position-x: -3rem; }
+      .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
+        width: 930px;
+        white-space: normal; }
 
 .navigation {
   margin-top: 12rem;
