@@ -164,7 +164,7 @@ html {
       .navigation .container #right-nav #home {
         width: 3.4rem;
         height: 3.4rem;
-        border: 1px #eee solid;
+        box-shadow: 2px 2px 3px #ddd;
         line-height: 3.1rem; }
       .navigation .container #right-nav #introduction {
         background-color: #ffcf00; }
