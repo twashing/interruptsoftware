@@ -76,4 +76,7 @@
   $("#bkeeping-entry").unbind("click").click(function() {
     return window.open("http://bkeeping.com", '_blank');
   });
+  $("#cloudeditor-entry").unbind("click").click(function() {
+    return window.open("http://storydesk.com/cloudeditor", '_blank');
+  });
 }).call(this);

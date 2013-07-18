@@ -59,11 +59,18 @@ html {
 
           font-family: "Gentium Book Basic", serif;
           font-style: italic;
-          font-size: 48px;
+          font-size: 40px;
           font-weight: bold;
 
           margin-top: 23px;
+          margin-right: 2rem;
+          float: left;
           cursor: pointer;
+        }
+        #cloudeditor-entry {
+          font-family: 'PT Sans', Arial, Tahoma, Verdana, sans-serif;
+          font-style: normal;
+          font-weight: normal;
         }
       }
     }

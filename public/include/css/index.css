@@ -42,10 +42,16 @@ html {
       html body .header .header-content .header-content-entry {
         font-family: "Gentium Book Basic", serif;
         font-style: italic;
-        font-size: 48px;
+        font-size: 40px;
         font-weight: bold;
         margin-top: 23px;
+        margin-right: 2rem;
+        float: left;
         cursor: pointer; }
+      html body .header .header-content #cloudeditor-entry {
+        font-family: 'PT Sans', Arial, Tahoma, Verdana, sans-serif;
+        font-style: normal;
+        font-weight: normal; }
     html body .footer {
       background: #f88;
       position: absolute;

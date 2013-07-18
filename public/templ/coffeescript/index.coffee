@@ -60,3 +60,4 @@ $(document).ready ->
   $("#linkedin").unbind("click").click(-> window.open("http://linkedin.com/pub/0/9b2/506", '_blank'))
 
   $("#bkeeping-entry").unbind("click").click(-> window.open("http://bkeeping.com", '_blank'))
+  $("#cloudeditor-entry").unbind("click").click(-> window.open("http://storydesk.com/cloudeditor", '_blank'))
