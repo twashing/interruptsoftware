@@ -12,7 +12,7 @@ html {
     font-family: 'League Gothic';
     -webkit-font-smoothing: antialiased; }
 
-.circle {
+.circle, .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
   border-radius: 50%; }
 
 .logo {
@@ -54,18 +54,27 @@ html {
     width: 100%;
     white-space: nowrap; }
     .slider .slide-stretchable .slide-wrapper {
-      border: 1px black solid;
       width: 100%;
       display: inline-block;
       vertical-align: top; }
       .slider .slide-stretchable .slide-wrapper .slide-container {
-        border: 1px red solid;
         position: relative;
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 1200px;
         top: 0; }
+        .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
+          width: 10rem;
+          height: 10rem;
+          margin-top: 2rem;
+          top: -6rem;
+          left: -10.4rem;
+          line-height: 1;
+          position: absolute;
+          font-family: league-gothic, regular, serif;
+          font-size: 160px;
+          font-weight: normal; }
         .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
           width: 930px;
           white-space: normal; }
