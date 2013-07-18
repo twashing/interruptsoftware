@@ -60,8 +60,11 @@
     $("#twitter").unbind("click").click(function() {
       return window.open("https://twitter.com/nutritioustim", '_blank');
     });
-    return $("#linkedin").unbind("click").click(function() {
+    $("#linkedin").unbind("click").click(function() {
       return window.open("http://linkedin.com/pub/0/9b2/506", '_blank');
+    });
+    return $("#bkeeping-entry").unbind("click").click(function() {
+      return window.open("http://bkeeping.com", '_blank');
     });
   });
 }).call(this);

@@ -53,12 +53,16 @@ html {
 
         @extend .centered-content;
 
-        font-family: "Gentium Book Basic", serif;
-        font-style: italic;
-        font-size: 48px;
-        font-weight: bold;
+        .header-content-entry {
 
-        margin-top: 23px;
+          font-family: "Gentium Book Basic", serif;
+          font-style: italic;
+          font-size: 48px;
+          font-weight: bold;
+
+          margin-top: 23px;
+          cursor: pointer;
+        }
       }
     }
     .footer {
