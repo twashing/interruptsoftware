@@ -73,6 +73,9 @@
   $("#linkedin").unbind("click").click(function() {
     return window.open("http://linkedin.com/pub/0/9b2/506", '_blank');
   });
+  $("#github").unbind("click").click(function() {
+    return window.open("https://github.com/twashing", '_blank');
+  });
   $("#bkeeping-entry").unbind("click").click(function() {
     return window.open("http://bkeeping.com", '_blank');
   });
