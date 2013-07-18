@@ -54,10 +54,12 @@ html {
     width: 100%;
     white-space: nowrap; }
     .slider .slide-stretchable .slide-wrapper {
+      border: 1px black solid;
       width: 100%;
       display: inline-block;
       vertical-align: top; }
       .slider .slide-stretchable .slide-wrapper .slide-container {
+        border: 1px red solid;
         position: relative;
         display: block;
         margin-left: auto;

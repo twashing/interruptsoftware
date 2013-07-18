@@ -26,7 +26,7 @@ html {
 .logo {
   border: 1px #eee solid;
   width: 6rem;
-  height: 6rem; 
+  height: 6rem;
   position: relative;
   float: left;
   text-align: center;
@@ -56,12 +56,13 @@ html {
 }
 
 
+
 /* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
 .slider {
 
   margin-top: 12rem;
   width: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   overflow-y: hidden;
 
   .slide-stretchable {
@@ -70,12 +71,15 @@ html {
     white-space: nowrap;
 
     .slide-wrapper {
-      
+
+      border: 1px black solid;
       width: 100%;
       display: inline-block;
       vertical-align: top;
 
       .slide-container {
+
+        border: 1px red solid;
         position: relative;
         display: block;
         margin-left: auto;
@@ -92,24 +96,24 @@ html {
 }
 
 .navigation {
-    
+
   margin-top: 12rem;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   .container {
-    
+
     width: 1200px;
     #right-nav {
-    
+
       width: 14rem;
       height: 36rem;
       float: right;
       padding: 0.5rem;
       border-radius: 5px;
       background-color: rgba(255, 255, 255, 0.9);
-    
+
       /* generic nav-item */
       .nav-item {
         width: 3.6rem;
@@ -117,13 +121,13 @@ html {
         margin-bottom: 0.5rem;
         position: relative;
         float: left;
-    
+
         text-align: center;
         font-family: 'open-sans', serif;
         font-size: 1.7rem;
         line-height: 3.5rem;
         cursor: pointer;
-    
+
         /* For Modern CSS icons */
         .metrouicss {
           top: 0.4rem;
@@ -133,9 +137,9 @@ html {
           }
         }
       }
-    
+
       /* colors for nov items */
-      #home { 
+      #home {
         width: 3.4rem;
         height: 3.4rem;
         border: 1px #eee solid;
@@ -145,7 +149,7 @@ html {
       #approach { background-color: #81ba10; }
       #services { background-color: #da2020; }
       #about { background-color: #0fa7d2; }
-    
+
       /* label to the right */
       .nav-item-label {
         position: relative;
@@ -167,6 +171,3 @@ html {
     }
   }
 }
-
-
-
