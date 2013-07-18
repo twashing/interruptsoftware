@@ -55,7 +55,7 @@
       backgroundColor: $(this).css("background-color")
     }, 500);
     return $(".slide-container-content").animate({
-      color: $(this).attr("id") === "services" ? "white" : "black"
+      color: "black"
     }, 500);
   });
   /*

@@ -47,7 +47,7 @@ $(document).ready ->
     # change background color accordingly
     $("body").animate({ backgroundColor: $(this).css("background-color") }, 500)
     $(".slide-container-content").animate({
-                                            color: if $(this).attr("id") is "services" then "white" else "black"
+                                            color: "black"
                                           }, 500)
   )
 
