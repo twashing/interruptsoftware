@@ -25,6 +25,15 @@ $(document).ready ->
                           $(@).find("span:first").animate({opacity:0}, 100)
                       )
 
+  $("body").hover(
+                   (elem) ->
+                     $(".header").animate({opacity:1}, 250)
+                   ,
+                   (elem) ->
+                     $(".header").animate({opacity:0}, 250)
+                 )
+
+
   ###
     Initialize and instrument horizontal sliding
   ###

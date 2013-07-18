@@ -26,45 +26,54 @@
         opacity: 0
       }, 100);
     });
-    /*
-        Initialize and instrument horizontal sliding
-      */
-    $(".slider").serialScroll({
-      target: '.slider',
-      items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach',
-      duration: 500,
+    return $("body").hover(function(elem) {
+      return $(".header").animate({
+        opacity: 1
+      }, 250);
+    }, function(elem) {
+      return $(".header").animate({
+        opacity: 0
+      }, 250);
+    });
+  });
+  /*
+      Initialize and instrument horizontal sliding
+    */
+  $(".slider").serialScroll({
+    target: '.slider',
+    items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach',
+    duration: 500,
+    axis: 'x',
+    force: true
+  });
+  $(".nav-item").click(function() {
+    $('.slider').scrollTo($("#wrapper-" + ($(this).attr("id"))), 500, {
       axis: 'x',
-      force: true
+      easing: 'easeInOutQuad'
     });
-    $(".nav-item").click(function() {
-      $('.slider').scrollTo($("#wrapper-" + ($(this).attr("id"))), 500, {
-        axis: 'x',
-        easing: 'easeInOutQuad'
-      });
-      $("body").animate({
-        backgroundColor: $(this).css("background-color")
-      }, 500);
-      return $(".slide-container-content").animate({
-        color: $(this).attr("id") === "services" ? "white" : "black"
-      }, 500);
-    });
-    /*
-        Clink redirects for twitter link et al
-      */
-    $("#cv").unbind("click").click(function() {
-      return window.open("/include/TimothyWashington-contract.pdf", '_blank');
-    });
-    $("#email").unbind("click").click(function() {
-      return window.open("mailto:twashing@gmail.com", '_blank');
-    });
-    $("#twitter").unbind("click").click(function() {
-      return window.open("https://twitter.com/nutritioustim", '_blank');
-    });
-    $("#linkedin").unbind("click").click(function() {
-      return window.open("http://linkedin.com/pub/0/9b2/506", '_blank');
-    });
-    return $("#bkeeping-entry").unbind("click").click(function() {
-      return window.open("http://bkeeping.com", '_blank');
-    });
+    $("body").animate({
+      backgroundColor: $(this).css("background-color")
+    }, 500);
+    return $(".slide-container-content").animate({
+      color: $(this).attr("id") === "services" ? "white" : "black"
+    }, 500);
+  });
+  /*
+      Clink redirects for twitter link et al
+    */
+  $("#cv").unbind("click").click(function() {
+    return window.open("/include/TimothyWashington-contract.pdf", '_blank');
+  });
+  $("#email").unbind("click").click(function() {
+    return window.open("mailto:twashing@gmail.com", '_blank');
+  });
+  $("#twitter").unbind("click").click(function() {
+    return window.open("https://twitter.com/nutritioustim", '_blank');
+  });
+  $("#linkedin").unbind("click").click(function() {
+    return window.open("http://linkedin.com/pub/0/9b2/506", '_blank');
+  });
+  $("#bkeeping-entry").unbind("click").click(function() {
+    return window.open("http://bkeeping.com", '_blank');
   });
 }).call(this);
