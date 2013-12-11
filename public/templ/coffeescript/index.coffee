@@ -1,9 +1,7 @@
 
 
-/* JQuery document ready handler */
+# JQuery document ready handler
 $(document).ready ->
-
-
 
   ###
     Hide nav label
