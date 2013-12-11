@@ -1,6 +1,6 @@
 # Interruptsoftware
 
-Source code repository for the site: Interruptsoftware.ca
+Source code repository for the site: Interruptsoftware.com
 
 ## Prerequisites
 
