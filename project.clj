@@ -13,6 +13,5 @@
                     :dependencies [[ring-mock "0.1.5"]]}}
   
   :min-lein-version "2.0.0"
-  :java-agents [[com.newrelic.agent.java/newrelic-agent "3.2.2"]]
 )
 
