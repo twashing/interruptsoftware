@@ -72,7 +72,7 @@
 
 
   $("#cv").unbind("click").click(function() {
-    return window.open("/include/TimothyWashington-contract.pdf", '_blank');
+    return window.open("/include/TimothyWashington-Contract.pdf", '_blank');
   });
 
   $("#email").unbind("click").click(function() {
