@@ -76,7 +76,7 @@
   });
 
   $("#email").unbind("click").click(function() {
-    return window.open("mailto:twashing@gmail.com", '_blank');
+    return window.open("mailto:twashing@interruptsoftware.com", '_blank');
   });
 
   $("#twitter").unbind("click").click(function() {
