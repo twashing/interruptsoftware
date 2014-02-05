@@ -86,25 +86,60 @@
                 Project Management
 
               %h5.slide-content
-                %p
+                %p I think most software projects are good candidates for an Agile software development approach. Consider eXtreme Programming (XP) and Scrum, both Agile Methodologies. They are closely aligned, yet with subtle differences. XP uses strict priority order, and prescribes engineering practices (see here). I think it's appropriate to start with Scrum, then introduce elements of XP where needed (ie, Continuous Integration, TDD, etc). 
+                %ul
+                  %li With regard to roles within a project, at the very least, most will need the i) Product Owner ii) Team iii) Scrum Master and iv) the Project Manager. 
+                  %li Sprints of 2 weeks are a good starting point. This would include a Planning Meeting, where the i) tasks / Stories for the sprint are identified ii) Estimated and iii) Prioritized. Teams should also conclude each sprint with a review or Retrospective Meeting. This is where the progress is reviewed and lessons for the next sprint identified. And of course the software will be Delivered to and reviewed by the customer. 
+                  %li I find Daily Scrums to be overkill for most projects, unless teams can strictly keep them to 5 minutes. However, it's good practice to do constant Backlog Refinement. That being the process of creating stories, decomposing stories into smaller ones, refining, prioritizing and sizing existing stories using effort / points. 
+                  %li That leads to the next feature, adding a Points System to tasks. An abstract point system is used to discuss the difficulty of the story, without assigning actual hours.
+                  %li Product Backlog is an ordered list of "requirements" that is maintained for a product. It consists of features, bug fixes, non-functional requirements, etc. - whatever needs to be done in order to successfully deliver a working software system. 
+                  %li Sprint Backlog is a subcomponent of the Product Backlog. It is the list of work the Development Team must address during the next sprint. The velocity previous sprints will guide the team when selecting stories/features for the new sprint. 
+                  %li Increment is the sum of all the Product Backlog Items completed during a sprint and all previous sprints. 
+                  %li Burn Down Chart is a publicly displayed chart showing remaining work in the sprint backlog. Updated routinely, it gives a simple view of the sprint progress.
+
+                %ul
+                  %li Spike - A time boxed period used to research a concept and/or create a simple prototype. 
+                  %li Velocity - The total effort a team is capable of in a sprint. The number is derived by evaluating the story points completed from the last few sprint's stories/features. 
+                  %li Tracking - Both these tools have excellent project management features: Pivotal Tracker and FogBugz. 
+
+                %p A few other key project artifacts are itemized below. These are needed to maintain efficient management of developer hours: 
 
               %h3.secondary-title
                 Thoughts On Pair Programming
 
               %h5.slide-content
-                %p
+                %p I believe software team cohesion, is closely tied to how productive and empowered all team members feel. So we discussed starting with a solid development methodology. This usually means an Agile software development approach. A next good step is pair programming. I like the rock-solid code that is usually produced with pair-programming. I find some of the effects of pairing, are i) each programmer is more thoughtful wrt how they are designing the system(s); and ii) both programmers usually a wider breadth of technical knowledge and experience between them. This is because the person coding is usually required to verbally explain and justify their technical decisions. iii) And fewer tangents are made, due to the constant support of an ever-present partner. Also, pairs can and should switch between coding and supporting. This allows rest for each team member, and usually means the active coder is more fully alert. 
+
+                %p Full-time pair-programming is a good idea, if your team can afford it. However, it's sometimes necessary for a programmer to either i) quickly try out a solution or technology, to better understand the problem domain. Or ii) it's often necessary for someone to simply take time to think clearly about a problem (could involved reading books, blogs, etc). So in a full pairing engagement, time apart from coding could reasonably be managed by the pairs. 
 
               %h3.secondary-title
                 Testing and Test Automation Solutions 
 
               %h5.slide-content
-                %p
+                %p Of course the testing framework would depend on the language in which we choose to implement the system. There are several levels and approaches to testing that are appropriate in each scenario. 
+
+                %ul
+                  %li Unit Tests (vs BDD) - Unit Tests addresses individual units of code. Alternatively, BDD, an outgrowth of TDD, focuses on the behavioural specification of software units
+                  %li Acceptance tests (vs Generative testing) - Acceptance tests address the end-to-end functioning of the system. This is in contrast to Integration tests, which only test several layers of the system (but not everything). Generative testing is a newer idea. It is one where the code itself generates test cases. We typically write code to generate test cases according to one or more assumptions you would like to test. This is a good approach for more complex systems; when we want to test unanticipated inputs, over a wide range. 
+                  %li Simulation testing - Simulation testing, derived from disciplines such as engineering, disaster recovery, etc., is meant to be a rigorous, scalable, and reproducible approach to testing. Artifacts from each step (modelling, defining activity streams, execution, result capture, and validation) are captured in a time-aware database, so steps can be run (and re-run, and enhanced) independently of each other. 
+                  %li Continuous Integration (or Automated build) - Continuous integration (CI) merges all developer working copies with a shared mainline several times a day. Its main aim is to prevent integration problems, upon delivery of the software. 
+
+                %p So for example, consider a Ruby Rails versus a Clojure Compojure application. Generally, the pattern would be: 
+                %ul
+                  %li Ruby - RSpec (BDD) > Cucumber (Acceptance tests) > CruiseControl (Continuous Integration). This is a well-understood and battle-tested collection of test tools. It gives great test coverage for the simple version of our webapp. Generative or Simulation testing is not warranted in a simpler web application scenario. 
+                  %li Clojure - Speclj (BDD) > Test.generative (Generative tests) > Pallet (Continuous Integration). Speclj is a clean and straightforward approach to testing, while focusing on the behaviour of software units. Test.generative allows us to test the more general assumptions we have about the system. We then let the test tool generate potentially thousands of tests that validate our assumptions. This would be more appropriate than Acceptance tests, for a dynamic and streaming types of applications. And Pallet is a dev ops automation platform, with excellent integration with hudson/jenkins, and Clojure build tools. Simulation testing is probably not warranted if the application is more speculative in nature. Ie, users will often create and deploy new algorithms, quickly negating prescribed simulations. 
 
               %h3.secondary-title
                 Scenario Breakdown
 
               %h5.slide-content
-                %p
+                %p Before selecting a toolset, it's very important to know a few things about the system 
+                %ul
+                  %li What are the core function(s) ? 
+                  %li What is the expected time-to-delivery ?
+                  %li Where the delivered application will live (incl. network reliability), and what DBs and with which services it must communicate ?
+                  %li What are its users, and how much load the application is expected to see ?
+                  %li Who will be maintaining the application upon delivery, and what are their skill-sets ?
 
               %h3.secondary-title
                 Scenario A)
