@@ -193,7 +193,7 @@ html {
     #right-nav {
 
       width: 14rem;
-      height: 40rem;
+      height: 42rem;
       float: right;
       padding: 0.5rem;
       border-radius: 5px;
@@ -230,6 +230,8 @@ html {
         box-shadow: 2px 2px 3px #ddd;
         line-height: 3.1rem;
       }
+      //#blog { background-color: #FF8A31; }
+      #blog { background-color: #D91504; }
       #introduction { background-color: #ffcf00; }
       #approach { background-color: #81ba10; }
       #services { background-color: #cfba58; }

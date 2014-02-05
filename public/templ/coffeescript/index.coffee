@@ -2,6 +2,7 @@
 # JQuery document ready handler
 $(document).ready ->
 
+
   ###
     Hide nav label
   ###
@@ -38,11 +39,17 @@ $(document).ready ->
 
   $(".nav-item").click(->
 
+
     # slide to the relevant section
     $('.slider').scrollTo($("#wrapper-#{$(this).attr("id")}"), 500, { axis:'x' , easing: 'easeInOutQuad'})
 
+
     # change background color accordingly
-    $("body").animate({ backgroundColor: $(this).css("background-color") }, 500)
+    if $(this).attr("id") is "blog"
+      $("body").animate({ backgroundColor: "#FF8A31" }, 500)
+    else
+      $("body").animate({ backgroundColor: $(this).css("background-color") }, 500)
+    
     $(".slide-container-content").animate({
                                             color: "black"
                                           }, 500)

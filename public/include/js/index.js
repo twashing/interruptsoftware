@@ -58,9 +58,15 @@
       axis: 'x',
       easing: 'easeInOutQuad'
     });
-    $("body").animate({
-      backgroundColor: $(this).css("background-color")
-    }, 500);
+    if ($(this).attr("id") === "blog") {
+      $("body").animate({
+        backgroundColor: "#FF8A31"
+      }, 500);
+    } else {
+      $("body").animate({
+        backgroundColor: $(this).css("background-color")
+      }, 500);
+    }
     return $(".slide-container-content").animate({
       color: "black"
     }, 500);
