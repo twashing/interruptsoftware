@@ -83,6 +83,9 @@ html {
   font-family: 'open-sans', serif;
   font-size: 2rem; }
 
+.post-title {
+  font-size: 3rem; }
+
 .slide-content {
   font-family: 'open-sans', serif;
   font-size: 1.3rem;
