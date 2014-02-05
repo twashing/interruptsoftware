@@ -116,13 +116,44 @@
                 Scenario A)
               </h3>
               <h5 class='slide-content'>
-                <p></p>
+                <p>This is a Rich Internet Application (akin to Pixelthrone), solely as a web tool, communicating with 3rd party cloud services. It will be a responsive front-end that is capable on smart phones, tablets, and varied screen sizes.</p>
+                <ul>HAML / SCSS / Coffeescript / PureJS - Haml, Scss and Coffeescript compile down to html, css and javascript, respectively. They're higher level syntaxes that let developers write equivalent output code, in a much shorter amount of time. The added benefits greatly outweigh the added abstraction. PureJS is a lightweight templating tool, that eschews the moustache templating approach. My opinion is that the moustache approach, incorrectly tangles together document structure and logic in the same place. PureJS, instead uses path-like expressions for data locations.</ul>
+                <ul>Backbone - Backbone has a focused and elegant approach to rendering choices. It also has a clean and lightweight approach to managing the internal state of the application (model and controller). And the RESTful server communication is also very consistent and well thought out. In short, these design advantages are what help optimize development and production costs, time, and future planning.</ul>
+                <ul>Bootstrap - Bootstrap is an excellent front end framework with which many developers already have a strong knowledge level. However, there are advantages and disadvantages of this option, and some alternatives. </ul>
+                <p>Advantages</p>
+                <ul>
+                  <li>Every HTML element that could potentially be used is accounted for. Meaning even rare tags, like <dl> , will be elegantly styled and positioned.</li>
+                  <li>It lays a foundation for consistency that would take a good amount of time to achieve manually. Further, when a developer passes off the deliverable to the client, others will be able to 'extend' the original work without disturbing the general aesthetic.</li>
+                  <li>It's facility for rapid prototyping, and again, most team's familiarity, means it would be quick to use and efficient.</li>
+                </ul>
+                <p>Disadvantages</p>
+                <ul>
+                  <li>Suboptimal for creating a performance driven web app</li>
+                  <li>The framework can become too heavy, because so many things (html elements, etc) are included. It can be tough to quickly find what you're looking for. Additionally, troubleshooting unexpected margins and borders and whatnot can be difficult. </li>
+                  <li>It's not bespoke, or tending toward a higher quality brand. It is a generic solution that a lot of startups use.</li>
+                  <li>Customizing such a pervasive framework can be very tricky. Changing one thing might mean unintended effects on other elements.</li>
+                </ul>
+                <p>Alternatives </p>
+                <ul>
+                  <li>Foundation is a responsive front-end framework. It let's developers quickly prototype and build sites or apps that work on any kind of device. </li>
+                  <li>HTML5 Boilerplate is a professional front-end template for building adaptable web apps or sites. It does not impose a specific development framework, freeing the developer to manipulate the code to their needs.</li>
+                </ul>
               </h5>
               <h3 class='secondary-title'>
                 Scenario B)
               </h3>
               <h5 class='slide-content'>
-                <p></p>
+                <p>
+                  A basic, SQL-backed webapp; simple set of functions, moderate usage, and Junior Sys Admins maintaining. 
+                </p>
+                <ul>
+                  <li>HAML / SCSS / Coffeescript / PureJS - Haml, Scss and Coffeescript compile down to html, css and javascript, respectively. They're higher level syntaxes that let developers write equivalent output code, in a much shorter amount of time. The added benefits greatly outweigh the added abstraction. PureJS is a lightweight templating tool, that eschews the moustache templating approach (see here). I'll reiterate my opinion that the moustache approach, incorrectly tangles together document structure and logic in the same place. PureJS, instead uses path-like expressions for data locations.</li>
+                  <li>Ruby / Rails / JSON data exchange - Ruby is an excellent dynamic, object-oriented language. It has language features (first-class-functions, simple syntax design, etc) that let programmers quickly build out capable, general-purpose solutions. Sinatra is good for simple webapps. However Rails gives i) better support for REST endpoints ii) more compatible libraries and iii) easier setup and migration of SQL database schemas and data. There's a good set of Rails / Sinatra tradeoffs here. And JSON is a well-known and supported data exchange format, especially for RESTful, AJAX calls </li>
+                  <ul>
+                    <li>not Sinatra - see Rails / Sinatra tradeoffs here</li>
+                  </ul>
+                  <li>PostgreSQL - The app data is rectangular and related. That makes SQL technology a good fit. schema and queries will be well-known before hand, meaning they won't require a lot of mutation after delivery. Postgres is a reliable, stable, and well-known RDBMS. It is open source, and has a license that's suitable for commercial purposes (see here).</li>
+                </ul>
               </h5>
               <h3 class='secondary-title'>
                 Scenario C)
