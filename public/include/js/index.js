@@ -62,6 +62,7 @@
       $("body").animate({
         backgroundColor: "#FF8A31"
       }, 500);
+      $("#wrapper-blog").css("height", "80%");
     } else {
       $("body").animate({
         backgroundColor: $(this).css("background-color")

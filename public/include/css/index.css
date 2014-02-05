@@ -125,6 +125,8 @@ html {
       .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
         width: 930px;
         white-space: normal; }
+    .slider .slide-stretchable #wrapper-blog {
+      overflow-y: scroll; }
 
 .navigation {
   margin-top: 12rem;

@@ -65,14 +65,29 @@
               <h1 class='primary-title'>
                 Blog
               </h1>
-              <h4 class='slide-content'>
+              <h2 class='secondary-title'>
+                A Developer's Toolbox (Rich Internet Applications)
+              </h2>
+              <h3 class='secondary-title'>
+                Overview
+              </h3>
+              <h5 class='slide-content'>
                 <p>
-                  Post 1
+                  I'm often asked what are the best tools and technology stack for building a Web Application. For the purposes of this article, I'll focus on more advanced front-end representations - what are known as Rich Internet Applications (RIA(s)). I think it's useful to step back and consider the purpose and conceptions of Rich Internet Applications (RIA, synonymous with Single-Page Applications (SPA)). We can start by thinking back to when most applications were on the desktop. As the internet grew in popularity, Javascript was introduced into browsers (and Flash). Web pages grew in sophistication, as to begin to resemble full desktop apps. Now, we have things like Google docs, which are basically our old desktop apps extruded onto the web. I mention all of this in order to get us thinking about how we should be treating these new web apps. Ie, we should be treating these web apps like full applications. And with that, my opinion is that, to the highest degree possible, we should let a webapps do its own rendering, state changes, business logic, etc. It's a much cleaner design to i) pass raw HTML template chunks and ii) JSON data from RESTful services. The web app will have enough intelligence to take these, and generate a web view, UI functions, state transitions between the UI, etc. I advocate these principles to enforce a clean separation of concerns. It future-proofs the app, and allows for easily scaling machine resources, or adding new functionality. 
                 </p>
                 <p>
-                  Post 2
+                  With this in mind, as an example, let's consider three MVC Web Frameworks - Ember, Angular, and Backbone. We'll take a semantic comparison between these libraries, and more, why a certain library would benefit us from a production, cost, time, future planning standpoint. So you can properly judge my position, I'll state from the beginning, my opinion that Backbone is usually the best tool for a front-end MVC solution. My experience is that it optimizes i) developer time (ie. speed to market), ii) production efficiency (it's very lightweight), iii) scalability, and iv) future flexibility. To begin, I present a useful Client-side JS MV* Framework Roundup. It gives a nod to the TodoMVC project. TodoMVC implements a simple todo app in all the web MVC frameworks. It's meant to help you select the best one for your needs. 
                 </p>
-              </h4>
+                <p>
+                  Like Rails, Ember is meant to be an opinionated framework, using common idioms. Views are handled via 2-way binding against rendered moustache templates. Angular is meant to be a way of declaring dynamic views in web-applications. It does this by letting you extend HTML vocabulary for your application. Angular also defines its own set of attributes and markup, which are processed by its JS library to provide browser-specific behaviour. Backbone is intended to be a lightweight and focused way of building single-page applications (or RIAs). It gives structure to web applications by providing models with key-value binding and custom events, collections, views with declarative event handling, etc. It connects it all to an existing API over a RESTful JSON interface. 
+                </p>
+                <p>
+                  With the above, I'll begin with my preference to eschew the moustache approach to templates, used by Ember. It tangles together the raw HTML template chunks, with transformation logic. And it unnecessarily forces web designers to know Javascript or some other logical transformation language, reducing developer efficiency. There are better, more declarative path-based solutions, like PureJS. Ember also implements rendering logic on the server. This tangles together application functions, reducing future flexibility and scalability. The tangling I described earlier is also why I eschew Angular. 
+                </p>
+                <p>
+                  Now, broadly listing a technology stack, will not address enough cases. Below, I'll outline three scenarios, or types of web applications, and an appropriate technology stack baseline. With each set of choices, I'll explain the tool and the rationale behind that choice. But I also want to step back again, and take a more holistic approach to my solutions. Before the Scenario Breakdown, I'll describe my approaches to i) Project Management, ii) thoughts on Pair Programming, and iii) a good approach for Testing and Test Automation.
+                </p>
+              </h5>
             </div>
           </div>
         </div>
