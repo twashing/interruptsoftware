@@ -71,7 +71,7 @@
                   I'm often asked what are the best tools and technology stack for building a Web Application. For the purposes of this article, I'll focus on more advanced front-end representations - what are known as Rich Internet Applications (RIA(s)). I think it's useful to step back and consider the purpose and conceptions of Rich Internet Applications (RIA, synonymous with Single-Page Applications (SPA)). We can start by thinking back to when most applications were on the desktop. As the internet grew in popularity, Javascript was introduced into browsers (and Flash). Web pages grew in sophistication, as to begin to resemble full desktop apps. Now, we have things like Google docs, which are basically our old desktop apps extruded onto the web. I mention all of this in order to get us thinking about how we should be treating these new web apps. Ie, we should be treating these web apps like full applications. And with that, my opinion is that, to the highest degree possible, we should let a webapps do its own rendering, state changes, business logic, etc. It's a much cleaner design to i) pass raw HTML template chunks and ii) JSON data from RESTful services. The web app will have enough intelligence to take these, and generate a web view, UI functions, state transitions between the UI, etc. I advocate these principles to enforce a clean separation of concerns. It future-proofs the app, and allows for easily scaling machine resources, or adding new functionality. 
 
                 %p
-                  With this in mind, as an example, let's consider three MVC Web Frameworks - Ember, Angular, and Backbone. We'll take a semantic comparison between these libraries, and more, why a certain library would benefit us from a production, cost, time, future planning standpoint. So you can properly judge my position, I'll state from the beginning, my opinion that Backbone is usually the best tool for a front-end MVC solution. My experience is that it optimizes i) developer time (ie. speed to market), ii) production efficiency (it's very lightweight), iii) scalability, and iv) future flexibility. To begin, I present a useful Client-side JS MV* Framework Roundup. It gives a nod to the TodoMVC project. TodoMVC implements a simple todo app in all the web MVC frameworks. It's meant to help you select the best one for your needs. 
+                  With this in mind, as an example, let's consider three MVC Web Frameworks - <a href="http://emberjs.com/">Ember</a>, <a href="http://angularjs.org/">Angular</a>, and <a href="http://backbonejs.org/">Backbone</a>. We'll take a semantic comparison between these libraries, and more, why a certain library would benefit us from a production, cost, time, future planning standpoint. So you can properly judge my position, I'll state from the beginning, my opinion that Backbone is usually the best tool for a front-end MVC solution. My experience is that it optimizes i) developer time (ie. speed to market), ii) production efficiency (it's very lightweight), iii) scalability, and iv) future flexibility. To begin, I present a useful <a href="http://blog.susestudio.com/2013/03/client-side-js-mv-framework-roundup.html">Client-side JS MV* Framework Roundup</a>. It gives a nod to the <a href="http://todomvc.com/">TodoMVC</a> project. TodoMVC implements a simple todo app in all the web MVC frameworks. It's meant to help you select the best one for your needs. 
 
                 %p
                   Like Rails, Ember is meant to be an opinionated framework, using common idioms. Views are handled via 2-way binding against rendered moustache templates. Angular is meant to be a way of declaring dynamic views in web-applications. It does this by letting you extend HTML vocabulary for your application. Angular also defines its own set of attributes and markup, which are processed by its JS library to provide browser-specific behaviour. Backbone is intended to be a lightweight and focused way of building single-page applications (or RIAs). It gives structure to web applications by providing models with key-value binding and custom events, collections, views with declarative event handling, etc. It connects it all to an existing API over a RESTful JSON interface. 
@@ -81,6 +81,82 @@
 
                 %p
                   Now, broadly listing a technology stack, will not address enough cases. Below, I'll outline three scenarios, or types of web applications, and an appropriate technology stack baseline. With each set of choices, I'll explain the tool and the rationale behind that choice. But I also want to step back again, and take a more holistic approach to my solutions. Before the Scenario Breakdown, I'll describe my approaches to i) Project Management, ii) thoughts on Pair Programming, and iii) a good approach for Testing and Test Automation. 
+
+              %h3.secondary-title
+                Project Management
+
+              %h5.slide-content
+                %p
+
+              %h3.secondary-title
+                Thoughts On Pair Programming
+
+              %h5.slide-content
+                %p
+
+              %h3.secondary-title
+                Testing and Test Automation Solutions 
+
+              %h5.slide-content
+                %p
+
+              %h3.secondary-title
+                Scenario Breakdown
+
+              %h5.slide-content
+                %p
+
+              %h3.secondary-title
+                Scenario A)
+
+              %h5.slide-content
+                %p
+
+              %h3.secondary-title
+                Scenario B)
+
+              %h5.slide-content
+                %p
+
+              %h3.secondary-title
+                Scenario C)
+
+              %h5.slide-content
+                %p
+                  A complex, stateful UI, backed by several "big data" stores. Client wants to capture and analyse a constant stream of financial data. Researchers will take this data and need to create and deploy new algorithms and analytics on top of the data. This means real-time analytics, on a constant stream of data; high usage by very senior quantitative analysts and data scientists; maintained by Senior IT Personnel. 
+                %ul
+
+                  %li HAML / SCSS - Haml and Scss compile down to html and css, respectively. They're higher level syntaxes that let developers write equivalent output code, in a much shorter amount of time. The added benefits greatly outweigh the added abstraction. 
+
+                  %li Coffeescript / PureJS / RequireJS / BackboneJS - Coffeescript compiles down to Javascript. It provides greater expressive power over javascript, using less code. The added benefits greatly outweigh the added abstraction. PureJS is a lightweight templating tool, that eschews the moustache templating approach (see here). I'll reiterate my opinion that the moustache approach, incorrectly tangles together document structure and logic in the same place. PureJS, instead uses path-like expressions for data locations. RequireJS is a very good tool for building component systems necessary in a large, complex thick-client. BackboneJS is a lightweight, well-thought out MVC tool for managing in-browser app state. 
+                  %ul
+                    %li 
+                      Thing
+                  %ul
+                    %li almost Clojurescript, Enfocus, Functional Reactive Programming - These technologies would be a much better fit than the abouve, for the kind of real-time sensitive interactions in the app. Clojurescript especially, is ideal for computationally intensive, interactive applications (see here). However maintenance ability and cost is high. I would recommend this over RequireJS and BackboneJS if you have very good IT specialists as maintainers. Enfocus is a templating tool for Clojurescript. Like PureJS, it uses path-like expressions for data locations. Functional Reactive Programming (FRP) is an approach that uses Functional programming techniques to operate on data structures over time. Ideally, we'll want an FRP library that lets us more cleanly transform, compose, and query streams of data (mouse moves, stock streams, etc). 
+                    %li ◦ not Websockets - There's more standard HTTP Server Sent Events (EventSource API) 
+                  %li Clojure / Pedestal (for SSE support)  / Storm / JSON data exchange - Clojure provides a number of language features (first-class functions, homoiconic, immutable data, etc) that make it ideal for building complex, data intensive apps. Pedestal is a tool set for building web applications in Clojure. For this app, it has a number of useful features, such as built in SSE support. Storm is a distributed realtime computation system. It provides a set of utilities for doing realtime computation. I chose it over Hadoop, as Storm is used for real time processing while Hadoop is used for batch processing. JSON is a well-known and supported data exchange format, especially for RESTful, AJAX calls. 
+                  %ul
+                    %li almost EDN - would be a better data exchange format than JSON. This data format is extensible, has rich objects, and is serializable. But it's new, not in wide enough use, and not enough people understand it. I would only recommend this format if the client has very Senior maintainers. 
+                  %li Datomic - I think Datomic is ideal as it i) decouples DB functions such as read & write (see here). It also ii) has a flexible schema model, allowing for changes to data structures, as users learn more about the domain. It also iii) has a sound data model based on time and immutability (more faithfully representing data over time) and iv) a logic-based query language (focus on facts). The downside is the specialized knowledge needed to maintain and query the database. But the advantages, and simplicity of the query language, mitigate those tradeoffs. All these other databases are close considerations. But they don't fit the bill due to their specialized nature. Whereas Datomic covers more ground, in terms of leveraging the data. You can see some DB tradeoffs here. 
+                  %ul
+                    %li not Cassandra - Our app will write to DB, more than it reads. And this is Cassandra's main advantage. Most reads will come from big data stream services (via Storm). 
+                    %li not Redis - Good for rapidly changing data sets (but not that much will be needed); but it works best when those data sets all must fit into memory  
+                    %li not Neo4j - This is good for graph-style, rich or complex, interconnected data.
+                    %li not Couchbase - Good for low-latency and high availability 
+                    %li not VoltDB - Good for reacting fast on large amounts of data 
+
+
+              %h3.secondary-title
+                Further
+
+              %h5.slide-content
+                %p
+                  These technologies are simply a good baseline when considering building out a Rich Internet Application. There are other options, as with the rising popularity of Javascript on all devices. There's <a href="http://nodejs.org/">NodeJS</a> on the server, <a href="http://phonegap.com/">PhoneGap</a> native apps on the mobile device. Tools like <a href="https://github.com/rogerwang/node-webkit">Node-Webkit</a> also allow you to create desktop applications with Javascript. And with <a href="http://tessel.io/">Tessel</a>, we can even use it on our micro-controllers (ie <a href="http://www.arduino.cc/">Arduino</a>).
+
+                %p
+                  Beyond tools simply, teams should consider the kinds of language features and architectures appropriate for their needs. Features such as immutable data structures or first class functions (ie closures) offer a lot of benefits and usually be added in as a library or 3rd-party solution. Beyond that, even, techniques like Combinators and Functional Reactive Programming offer better control, albeit with increased abstraction. You can think creatively. I, personally, prefer tools that offer the greatest amount of expressive power. And at the same time optimize my i) developer time (ie. speed to market), ii) production efficiency (it's very lightweight), iii) scalability, and iv) future flexibility. 
+
 
 
         .slide-wrapper#wrapper-introduction
