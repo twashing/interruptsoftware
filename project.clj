@@ -7,11 +7,12 @@
                   :exclusions [javax.servlet/servlet-api]]
                  [ring/ring-servlet "1.2.0-RC1"]]
 
+  :resource-paths ["resources/public/"]
   :plugins [[lein-ring "0.8.5"]]
   :ring {:handler interruptsoftware.handler/app}
-  :profiles { :dev {:resource-paths ["public/"]
-                    :dependencies [[ring-mock "0.1.5"]]}}
-  
+  :profiles { :dev {:resource-paths ["resources/public/"]
+                    :dependencies [[ring-mock "0.1.5"]
+                                   [ring/ring-jetty-adapter "1.2.1"]]}}
+
   :min-lein-version "2.0.0"
 )
-

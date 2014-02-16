@@ -8,17 +8,16 @@
 
 (defroutes app-routes
 
-  (GET "/" [] 
-    
+  (GET "/" []
+
     (-> (ring-resp/response (slurp (io/resource "include/index.html")))
         (ring-resp/content-type "text/html")))
 
   ;; ======
   ;; Resource Routes
-  (route/files "/")
-  (route/resources "/")
+  (route/files "/" {:root "resources/public/"})
+  (route/resources "/" {:root "resources/public/"})
   (route/not-found "Not Found"))
 
 (def app
   (handler/site app-routes))
-
