@@ -11,6 +11,11 @@
   src: url("/include/vendor/Metro-UI-CSS/fonts/iconFont.eot?#iefix") format("embedded-opentype"), url("/include/vendor/Metro-UI-CSS/fonts/iconFont.svg#iconFont") format("svg"), url("/include/vendor/Metro-UI-CSS/fonts/iconFont.woff") format("woff"), url("/include/vendor/Metro-UI-CSS/fonts/iconFont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 @-webkit-keyframes animation_scale {
   0%, 100% {
     -webkit-transform: scale(1); }
@@ -35,57 +40,14 @@
 
   50% {
     transform: scale(0.85); } }
-.centered-content, html body .header .header-content, .slider .slide-stretchable .slide-wrapper .slide-container {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  top: 0; }
+/* 
 
-html {
-  zoom: 0.6;
-  height: 100%; }
-  html body {
-    font-family: 'League Gothic';
-    -webkit-font-smoothing: antialiased;
-    height: 100%;
-    min-width: 1200px;
-    min-height: 1250px;
-    /* stickey header & Footer taken from:
+  Typography 
 
-       http://stackoverflow.com/questions/10474354/layout-with-fixed-header-and-footer-fixed-width-sidebar-and-flexible-content
-       http://jsfiddle.net/QH68c/1
-
-       also, there's: http://aozora.github.io/bootplus/examples/sticky-footer-navbar.html
-    */ }
-    html body .header {
-      background: #ddd;
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      box-shadow: 0px 4px 5px #888888; }
-      html body .header .header-content .header-content-entry {
-        font-family: "Gentium Book Basic", serif;
-        font-style: italic;
-        font-size: 40px;
-        font-weight: bold;
-        margin-top: 23px;
-        margin-right: 2rem;
-        float: left;
-        cursor: pointer; }
-      html body .header .header-content #cloudeditor-entry {
-        font-family: 'PT Sans', Arial, Tahoma, Verdana, sans-serif;
-        font-style: normal;
-        font-weight: normal; }
-    html body .footer {
-      background: #f88;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 40px; }
+*/
+body {
+  font-family: "open-sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased; }
 
 .logo {
   border: 1px #eee solid;
@@ -99,22 +61,21 @@ html {
   font-size: 4rem;
   background: url("/images/transistor.jpg") 11% no-repeat; }
 
-.primary-title {
-  font-family: 'league-gothic', 'regular', serif;
-  font-size: 10rem;
+h1 {
+  font-family: "league-gothic", "regular", serif;
+  font-size: 6rem;
+  margin: 0;
   font-weight: lighter; }
 
 .secondary-title {
-  font-family: 'open-sans', serif;
-  font-size: 2rem; }
+  font-size: 1.2em; }
 
 .post-title {
-  font-size: 3rem; }
+  font-size: 1.8rem; }
 
 .slide-content {
-  font-family: 'open-sans', serif;
-  font-size: 1.3rem;
-  line-height: 1.6rem; }
+  font-size: 0.9rem;
+  line-height: 1.4; }
   .slide-content .colleague {
     font-style: italic;
     color: #999; }
@@ -137,27 +98,28 @@ html {
     .slider .slide-stretchable .slide-wrapper {
       width: 100%;
       height: 100%;
-      margin-top: 12rem;
       display: inline-block;
       vertical-align: top; }
-      .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
-        width: 10rem;
-        height: 10rem;
-        margin-top: 2rem;
-        top: -6rem;
-        left: -10.4rem;
-        line-height: 1;
-        position: absolute;
-        font-family: league-gothic, regular, serif;
-        font-size: 160px;
-        font-weight: normal; }
-      .slider .slide-stretchable .slide-wrapper .slide-container #me-pic {
-        background: url("/images/me.jpg") no-repeat;
-        background-size: 22rem;
-        background-position-x: -4.5rem; }
-      .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
-        width: 930px;
-        white-space: normal; }
+      .slider .slide-stretchable .slide-wrapper .slide-container {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 55rem;
+        top: 5rem;
+        padding-left: 5rem;
+        padding-right: 12rem; }
+        .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
+          top: 0;
+          left: 0;
+          position: absolute; }
+        .slider .slide-stretchable .slide-wrapper .slide-container #me-pic {
+          background: url("/images/me.jpg") no-repeat;
+          background-size: 22rem;
+          background-position-x: -4.5rem; }
+        .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
+          white-space: normal; }
     .slider .slide-stretchable #wrapper-blog {
       overflow-y: scroll; }
 
@@ -207,9 +169,8 @@ html {
 
 #right-nav {
   position: fixed;
-  top: 12rem;
+  top: 5rem;
   right: 1rem;
-  width: 14rem;
   padding: 0.5rem;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -218,7 +179,7 @@ html {
   @media (max-width: 40em) {
     #right-nav {
       position: fixed;
-      width: 80%;
+      width: 100%;
       top: 5em;
       left: 0;
       -webkit-transition: 0.5s;
@@ -242,22 +203,21 @@ html {
     text-decoration: none;
     text-align: left;
     font-family: 'open-sans', serif;
-    font-size: 1.7rem;
-    line-height: 3.5rem;
+    font-size: 1rem;
     cursor: pointer;
     color: black;
     /* circle/icon to the left */
     /* label to the right */ }
-    #right-nav .nav-item .icon, #right-nav .nav-item .circle, #right-nav .nav-item .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav .nav-item .slide-left-overhang {
+    #right-nav .nav-item .icon, #right-nav .nav-item .circle {
       display: inline-block;
       vertical-align: middle;
       position: relative;
       width: 2em;
       height: 2em; }
-    #right-nav .nav-item .circle, #right-nav .nav-item .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav .nav-item .slide-left-overhang {
+    #right-nav .nav-item .circle {
       border-radius: 50%;
       border: 1px solid #eeeeee; }
-    body.no-touch #right-nav .nav-item:hover .circle, body.no-touch #right-nav .nav-item:hover .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container body.no-touch #right-nav .nav-item:hover .slide-left-overhang, body.no-touch #right-nav .nav-item:hover .icon {
+    body.no-touch #right-nav .nav-item:hover .circle, body.no-touch #right-nav .nav-item:hover .icon {
       -webkit-animation: animation_scale 1s infinite;
       /* Safari 4+ */
       -moz-animation: animation_scale 1s infinite;
@@ -268,15 +228,15 @@ html {
       /* IE 10+ */ }
     #right-nav .nav-item .nav-item-label {
       display: inline-block; }
-  #right-nav #introduction .circle, #right-nav #introduction .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #introduction .slide-left-overhang {
+  #right-nav #introduction .circle {
     background-color: white; }
-  #right-nav #approach .circle, #right-nav #approach .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #approach .slide-left-overhang {
+  #right-nav #approach .circle {
     background-color: #d91504; }
-  #right-nav #services .circle, #right-nav #services .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #services .slide-left-overhang {
+  #right-nav #services .circle {
     background-color: #ffcf00; }
-  #right-nav #blog .circle, #right-nav #blog .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #blog .slide-left-overhang {
+  #right-nav #blog .circle {
     background-color: #81ba10; }
-  #right-nav #about .circle, #right-nav #about .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #about .slide-left-overhang {
+  #right-nav #about .circle {
     background-color: #0fa7d2; }
   #right-nav .spacer {
     height: 2rem; }

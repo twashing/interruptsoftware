@@ -1,4 +1,5 @@
 
+
 @import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700italic);
 
 @font-face {
@@ -17,6 +18,13 @@
   font-weight: normal;
   font-style: normal;
 }
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 
 $white: #fff;
 $black: #000;
@@ -76,82 +84,20 @@ $blue: #0fa7d2;
 
 
 
-.centered-content {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  top: 0;
+/* 
+
+  Typography 
+
+*/
+
+$sans: 'open-sans', Helvetica, sans-serif;
+$league: 'league-gothic', 'regular', serif;
+
+body {
+  font-family: $sans;
+  -webkit-font-smoothing: antialiased;
 }
 
-
-
-
-html {
-
-  zoom: 0.6;
-  height: 100%;
-
-  body {
-
-    font-family: 'League Gothic';
-    -webkit-font-smoothing: antialiased;
-
-    height: 100%;
-    min-width: 1200px;
-    min-height: 1250px;
-
-
-    /* stickey header & Footer taken from:
-
-       http://stackoverflow.com/questions/10474354/layout-with-fixed-header-and-footer-fixed-width-sidebar-and-flexible-content
-       http://jsfiddle.net/QH68c/1
-
-       also, there's: http://aozora.github.io/bootplus/examples/sticky-footer-navbar.html
-    */
-    .header {
-
-      background: #ddd;
-      position:absolute;
-      opacity: 0;
-      top: 0;
-      width:100%;
-      height:60px;
-      box-shadow: 0px 4px 5px #888888;
-
-      .header-content {
-
-        @extend .centered-content;
-
-        .header-content-entry {
-
-          font-family: "Gentium Book Basic", serif;
-          font-style: italic;
-          font-size: 40px;
-          font-weight: bold;
-
-          margin-top: 23px;
-          margin-right: 2rem;
-          float: left;
-          cursor: pointer;
-        }
-        #cloudeditor-entry {
-          font-family: 'PT Sans', Arial, Tahoma, Verdana, sans-serif;
-          font-style: normal;
-          font-weight: normal;
-        }
-      }
-    }
-    .footer {
-      background:#f88;
-      position:absolute;
-      bottom:0;
-      width:100%;
-      height:40px;
-    }
-  }
-}
 
 
 .logo {
@@ -167,22 +113,25 @@ html {
   background: url('/images/transistor.jpg') 11% no-repeat;
 }
 
-.primary-title {
-  font-family: 'league-gothic', 'regular', serif;
-  font-size: 10rem;
+h1 {
+  font-family: $league;
+  font-size: 6rem;
+  margin: 0;
   font-weight: lighter;
 }
+
 .secondary-title {
-  font-family: 'open-sans', serif;
-  font-size: 2rem;
+  font-size: 1.2em;
 }
 .post-title {
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
+
 .slide-content {
-  font-family: 'open-sans', serif;
-  font-size: 1.3rem;
-  line-height: 1.6rem;
+
+  font-size: 0.9rem;
+  line-height: 1.4;
+
   .colleague {
     font-style: italic;
     color: #999;
@@ -215,38 +164,35 @@ html {
 
       width: 100%;
       height: 100%;
-      margin-top: 12rem;
       display: inline-block;
       vertical-align: top;
 
       .slide-container {
 
-        @extend .centered-content;
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 55rem;
+        top: 5rem;
+
+        padding-left: 5rem;
+        padding-right: 12rem;
+
         .slide-left-overhang {
-
-          @extend .circle;
-          width: 10rem;
-          height: 10rem;
-          margin-top: 2rem;
-          top: -6rem;
-          left: -10.4rem;
-          line-height: 1;
+          top: 0;
+          left: 0;
           position: absolute;
-
-          font-family: league-gothic, regular, serif;
-          font-size: 160px;
-          font-weight: normal;
         }
+
         #me-pic {
           background: url('/images/me.jpg') no-repeat;
-          //background-size: 17rem;
-          //background-position-x: -3rem;
           background-size: 22rem;
           background-position-x: -4.5rem;
         }
 
         .slide-container-content {
-          width: 930px;
           white-space: normal;
         }
       }
@@ -277,6 +223,8 @@ html {
   height: 2em;
 }
 
+// http://metroui.org.ua/icons.html
+
 .icon-lines:before {    content:"\e105" }
 
 .icon-file:before { content: "\e00f"; }
@@ -302,6 +250,16 @@ html {
 }
 
 #right-nav {
+
+  position: fixed;
+  
+  top: 5rem;
+  right: 1rem;
+
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+
 
   @include breakpoint(small){
 
@@ -332,16 +290,6 @@ html {
 
 
   
-  position: fixed;
-  
-  top: 12rem;
-  right: 1rem;
-
-  width: 14rem;
-
-  padding: 0.5rem;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.9);
 
 
   /* Nav Item */
@@ -354,8 +302,7 @@ html {
     text-decoration: none;
     text-align: left;
     font-family: 'open-sans', serif;
-    font-size: 1.7rem;
-    line-height: 3.5rem;
+    font-size: 1rem;
     cursor: pointer;
     color: $black;
 
