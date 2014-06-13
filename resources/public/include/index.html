@@ -4,9 +4,10 @@
     <meta charset='UTF-8'>
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <title>; ) Interrupt Software</title>
-    <link href='/include/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='/include/vendor/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet'>
-    <link href='/include/vendor/Metro-UI-CSS/css/modern.css' rel='stylesheet'>
+    <!-- %link( rel="stylesheet" href="/include/vendor/bootstrap/css/bootstrap.min.css" ) -->
+    <!-- %link( rel="stylesheet" href="/include/vendor/bootstrap/css/bootstrap-responsive.min.css" ) -->
+    <!-- %link( rel="stylesheet" href="/include/vendor/Metro-UI-CSS/css/modern.css" ) -->
+    <link href='/include/vendor/normalize.min.css' rel='stylesheet'>
     <link href='/include/css/index.css' rel='stylesheet'>
     <script src='/include/vendor/jquery-2.0.0.min.js' type='text/javascript'></script>
     <script src='/include/vendor/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
@@ -16,12 +17,6 @@
     <script src='/include/vendor/jquery.color-2.1.2.min.js' type='text/javascript'></script>
   </head>
   <body>
-    <!-- .header -->
-    <!-- .header-content -->
-    <!-- .header-content-entry.secondary-title#bkeeping-entry -->
-    <!-- bkeeping -->
-    <!-- .header-content-entry.secondary-title#cloudeditor-entry -->
-    <!-- cloudeditor -->
     <div class='slider'>
       <div class='slide-stretchable'>
         <div class='slide-wrapper' id='wrapper-home'>
@@ -459,104 +454,69 @@
         </div>
       </div>
     </div>
-    <div class='navigation'>
-      <div class='container'>
-        <div id='right-nav'>
-          <div class='nav-item circle' id='home'>
-            <span></span>
-          </div>
-          <div class='nav-item-label'>
-            home
-          </div>
-          <div class='nav-item circle' id='blog'></div>
-          <div class='nav-item-label'>
-            blog
-          </div>
-          <div class='nav-item circle' id='introduction'></div>
-          <div class='nav-item-label'>
-            introduction
-          </div>
-          <div class='nav-item circle' id='approach'></div>
-          <div class='nav-item-label'>
-            approach
-          </div>
-          <div class='nav-item circle' id='services'></div>
-          <div class='nav-item-label'>
-            services
-          </div>
-          <div class='nav-item circle' id='about'></div>
-          <div class='nav-item-label'>
-            about
-          </div>
-          <div class='nav-item circle spacer'></div>
-          <div class='nav-item-label spacer'>
-            &nbsp;
-          </div>
-          <!-- / CV -->
-          <div class='nav-item squeeze' id='cv'>
-            <div class='metrouicss'>
-              <div class='icons'>
-                <li>
-                  <div class='icon-lines'></div>
-                </li>
-              </div>
-            </div>
-          </div>
-          <div class='nav-item-label squeeze'>
-            cv
-          </div>
-          <!-- / Email -->
-          <div class='nav-item squeeze' id='email'>
-            <div class='metrouicss'>
-              <div class='icons'>
-                <li>
-                  <div class='icon-mail'></div>
-                </li>
-              </div>
-            </div>
-          </div>
-          <div class='nav-item-label squeeze'>
-            email
-          </div>
-          <!-- / Twitter -->
-          <div class='nav-item squeeze' id='twitter'>
-            <div class='metrouicss'>
-              <div class='icons'>
-                <li>
-                  <div class='icon-twitter'></div>
-                </li>
-              </div>
-            </div>
-          </div>
-          <div class='nav-item-label squeeze'>
-            twitter
-          </div>
-          <!-- / LinkedIn -->
-          <div class='nav-item squeeze' id='linkedin'>
-            <div class='metrouicss'>
-              <div class='icons'>
-                <li>
-                  <div class='icon-linkedin'></div>
-                </li>
-              </div>
-            </div>
-          </div>
-          <div class='nav-item-label squeeze'>
-            linkedIn
-          </div>
-          <!-- / Github -->
-          <div class='nav-item squeeze' id='github'>
-            <div class='metrouicss'>
-              <div class='icons'>
-                <li>
-                  <div class='icon-github-2'></div>
-                </li>
-              </div>
-            </div>
-          </div>
-          <div class='nav-item-label squeeze'>
-            github
-          </div>
+    <div class='icon-lines icon' id='right-nav-button'></div>
+    <div id='right-nav'>
+      <!-- / Nav Items -->
+      <a class='nav-item' href='#introduction' id='introduction'>
+        <div class='circle'></div>
+        <div class='nav-item-label'>
+          introduction
+        </div>
+      </a>
+      <a class='nav-item' href='#approach' id='approach'>
+        <div class='circle'></div>
+        <div class='nav-item-label'>
+          approach
+        </div>
+      </a>
+      <a class='nav-item' href='#services' id='services'>
+        <div class='circle'></div>
+        <div class='nav-item-label'>
+          services
+        </div>
+      </a>
+      <a class='nav-item' href='#blog' id='blog'>
+        <div class='circle'></div>
+        <div class='nav-item-label'>
+          blog
+        </div>
+      </a>
+      <a class='nav-item' href='#about' id='about'>
+        <div class='circle'></div>
+        <div class='nav-item-label'>
+          about
+        </div>
+      </a>
+      <div class='spacer'></div>
+      <!-- / Icons -->
+      <div class='nav-item' id='cv'>
+        <div class='icon icon-file'></div>
+        <div class='nav-item-label'>
+          cv
+        </div>
+      </div>
+      <div class='nav-item' id='email'>
+        <div class='icon icon-mail'></div>
+        <div class='nav-item-label'>
+          email
+        </div>
+      </div>
+      <div class='nav-item' id='twitter'>
+        <div class='icon icon-twitter'></div>
+        <div class='nav-item-label'>
+          twitter
+        </div>
+      </div>
+      <div class='nav-item' id='linkedin'>
+        <div class='icon icon-linkedin'></div>
+        <div class='nav-item-label'>
+          linkedIn
+        </div>
+      </div>
+      <div class='nav-item' id='github'>
+        <div class='icon icon-github-2'></div>
+        <div class='nav-item-label'>
+          github
         </div>
       </div>
     </div>

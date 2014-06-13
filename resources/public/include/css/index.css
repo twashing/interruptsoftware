@@ -2,11 +2,39 @@
 @font-face {
   font-family: 'league-gothic';
   src: url("/include/fonts/League-Gothic/LeagueGothic-Regular.otf"); }
-
 @font-face {
   font-family: 'open-sans';
   src: url("/include/fonts/open-sans/OpenSans-Regular.ttf"); }
+@font-face {
+  font-family: "iconFont";
+  src: url("/include/vendor/Metro-UI-CSS/fonts/iconFont.eot");
+  src: url("/include/vendor/Metro-UI-CSS/fonts/iconFont.eot?#iefix") format("embedded-opentype"), url("/include/vendor/Metro-UI-CSS/fonts/iconFont.svg#iconFont") format("svg"), url("/include/vendor/Metro-UI-CSS/fonts/iconFont.woff") format("woff"), url("/include/vendor/Metro-UI-CSS/fonts/iconFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@-webkit-keyframes animation_scale {
+  0%, 100% {
+    -webkit-transform: scale(1); }
 
+  50% {
+    -webkit-transform: scale(0.85); } }
+@-moz-keyframes animation_scale {
+  0%, 100% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(0.85); } }
+@-o-keyframes animation_scale {
+  0%, 100% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(0.85); } }
+@keyframes animation_scale {
+  0%, 100% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(0.85); } }
 .centered-content, html body .header .header-content, .slider .slide-stretchable .slide-wrapper .slide-container {
   position: relative;
   display: block;
@@ -59,9 +87,6 @@ html {
       width: 100%;
       height: 40px; }
 
-.circle, .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
-  border-radius: 50%; }
-
 .logo {
   border: 1px #eee solid;
   width: 6rem;
@@ -94,6 +119,11 @@ html {
     font-style: italic;
     color: #999; }
 
+/*
+  
+  Sliding main content
+
+*/
 /* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
 .slider {
   width: 100%;
@@ -131,69 +161,122 @@ html {
     .slider .slide-stretchable #wrapper-blog {
       overflow-y: scroll; }
 
-.navigation {
-  margin-top: 12rem;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0; }
-  .navigation .container {
-    width: 1200px; }
-    .navigation .container #right-nav {
-      width: 14rem;
-      height: 42rem;
-      float: right;
-      padding: 0.5rem;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.9);
-      /* generic nav-item */
-      /* colors for nov items */
-      /* label to the right */ }
-      .navigation .container #right-nav .nav-item {
-        width: 3.6rem;
-        height: 3.6rem;
-        margin-bottom: 0.5rem;
-        position: relative;
-        float: left;
-        text-align: center;
-        font-family: 'open-sans', serif;
-        font-size: 1.7rem;
-        line-height: 3.5rem;
-        cursor: pointer;
-        /* For Modern CSS icons */ }
-        .navigation .container #right-nav .nav-item .metrouicss {
-          top: 0.4rem; }
-          .navigation .container #right-nav .nav-item .metrouicss .icons > li {
-            list-style-type: none;
-            zoom: 2; }
-      .navigation .container #right-nav #home {
-        width: 3.4rem;
-        height: 3.4rem;
-        box-shadow: 2px 2px 3px #ddd;
-        line-height: 3.1rem; }
-      .navigation .container #right-nav #blog {
-        background-color: #D91504; }
-      .navigation .container #right-nav #introduction {
-        background-color: #ffcf00; }
-      .navigation .container #right-nav #approach {
-        background-color: #81ba10; }
-      .navigation .container #right-nav #services {
-        background-color: #cfba58; }
-      .navigation .container #right-nav #about {
-        background-color: #0fa7d2; }
-      .navigation .container #right-nav .nav-item-label {
-        position: relative;
-        float: left;
-        width: 9rem;
-        height: 3.6rem;
-        margin-bottom: 0.5rem;
-        padding-left: 0.8rem;
-        font-family: 'open-sans', serif;
-        font-size: 1.7rem;
-        line-height: 3.5rem; }
-      .navigation .container #right-nav .squeeze {
-        margin: 0;
-        height: 3.2rem;
-        line-height: 2rem; }
-      .navigation .container #right-nav .spacer {
-        height: 2rem; }
+/*
+
+  Navigation
+
+*/
+.icon {
+  font-family: "iconFont";
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 2em;
+  width: 2em;
+  height: 2em; }
+
+.icon-lines:before {
+  content: "\e105"; }
+
+.icon-file:before {
+  content: "\e00f"; }
+
+.icon-mail:before {
+  content: "\e01a"; }
+
+.icon-twitter:before {
+  content: "\e0c0"; }
+
+.icon-linkedin:before {
+  content: "\e0dd"; }
+
+.icon-github-2:before {
+  content: "\e0c9"; }
+
+#right-nav-button {
+  display: none; }
+  @media (max-width: 40em) {
+    #right-nav-button {
+      display: block;
+      top: 0;
+      left: 0;
+      position: fixed;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.5);
+      font-size: 2.3em;
+      text-align: center; } }
+
+#right-nav {
+  position: fixed;
+  top: 12rem;
+  right: 1rem;
+  width: 14rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Nav Item */
+  /* colors for nov items */ }
+  @media (max-width: 40em) {
+    #right-nav {
+      position: fixed;
+      width: 80%;
+      top: 5em;
+      left: 0;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      -o-transform: translateX(-100%);
+      transform: translateX(-100%); }
+      body.show-nav #right-nav {
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%); } }
+  #right-nav .nav-item {
+    display: block;
+    padding-bottom: 0.5em;
+    text-decoration: none;
+    text-align: left;
+    font-family: 'open-sans', serif;
+    font-size: 1.7rem;
+    line-height: 3.5rem;
+    cursor: pointer;
+    color: black;
+    /* circle/icon to the left */
+    /* label to the right */ }
+    #right-nav .nav-item .icon, #right-nav .nav-item .circle, #right-nav .nav-item .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav .nav-item .slide-left-overhang {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width: 2em;
+      height: 2em; }
+    #right-nav .nav-item .circle, #right-nav .nav-item .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav .nav-item .slide-left-overhang {
+      border-radius: 50%;
+      border: 1px solid #eeeeee; }
+    body.no-touch #right-nav .nav-item:hover .circle, body.no-touch #right-nav .nav-item:hover .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container body.no-touch #right-nav .nav-item:hover .slide-left-overhang, body.no-touch #right-nav .nav-item:hover .icon {
+      -webkit-animation: animation_scale 1s infinite;
+      /* Safari 4+ */
+      -moz-animation: animation_scale 1s infinite;
+      /* Fx 5+ */
+      -o-animation: animation_scale 1s infinite;
+      /* Opera 12+ */
+      animation: animation_scale 1s infinite;
+      /* IE 10+ */ }
+    #right-nav .nav-item .nav-item-label {
+      display: inline-block; }
+  #right-nav #introduction .circle, #right-nav #introduction .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #introduction .slide-left-overhang {
+    background-color: white; }
+  #right-nav #approach .circle, #right-nav #approach .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #approach .slide-left-overhang {
+    background-color: #d91504; }
+  #right-nav #services .circle, #right-nav #services .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #services .slide-left-overhang {
+    background-color: #ffcf00; }
+  #right-nav #blog .circle, #right-nav #blog .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #blog .slide-left-overhang {
+    background-color: #81ba10; }
+  #right-nav #about .circle, #right-nav #about .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang, .slider .slide-stretchable .slide-wrapper .slide-container #right-nav #about .slide-left-overhang {
+    background-color: #0fa7d2; }
+  #right-nav .spacer {
+    height: 2rem; }

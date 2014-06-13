@@ -10,6 +10,71 @@
   src: url('/include/fonts/open-sans/OpenSans-Regular.ttf');
 }
 
+@font-face {
+  font-family: "iconFont";
+  src: url('/include/vendor/Metro-UI-CSS/fonts/iconFont.eot');
+  src: url('/include/vendor/Metro-UI-CSS/fonts/iconFont.eot?#iefix') format('embedded-opentype'), url('/include/vendor/Metro-UI-CSS/fonts/iconFont.svg#iconFont') format('svg'), url('/include/vendor/Metro-UI-CSS/fonts/iconFont.woff') format('woff'), url('/include/vendor/Metro-UI-CSS/fonts/iconFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$white: #fff;
+$black: #000;
+$grey: #eee;
+
+$red: #D91504;
+$yellow: #ffcf00;
+$green: #81ba10;
+$blue: #0fa7d2;
+
+
+
+@-webkit-keyframes animation_scale {
+  0%, 100%  { -webkit-transform: scale(1.0); }
+  50%       { -webkit-transform: scale(0.85); }
+}
+@-moz-keyframes animation_scale {
+  0%, 100%  { -moz-transform: scale(1.0); }
+  50%       { -moz-transform: scale(0.85); }
+}
+@-o-keyframes animation_scale {
+  0%, 100%  { -o-transform: scale(1.0); }
+  50%       { -o-transform: scale(0.85); }
+}
+@keyframes animation_scale {
+  0%, 100%  { transform: scale(1.0); }
+  50%       { transform: scale(0.85); }
+}
+
+
+@mixin breakpoint($point){
+
+  @if $point == "large" {
+    @media (min-width: 40em) {
+      @content
+    }
+  }
+    
+  // @else if $point == "medium" {
+  //   @media (min-width: 32em) {
+  //     @content
+  //   }
+  // }
+
+  @else if $point == "small" {
+    @media (max-width: 40em) {
+      @content
+    }
+  }
+      
+}
+  
+
+
+
+
+
+
 
 .centered-content {
   position: relative;
@@ -20,10 +85,14 @@
   top: 0;
 }
 
+
+
+
 html {
 
   zoom: 0.6;
   height: 100%;
+
   body {
 
     font-family: 'League Gothic';
@@ -85,10 +154,6 @@ html {
 }
 
 
-.circle {
-  border-radius: 50%;
-}
-
 .logo {
   border: 1px #eee solid;
   width: 6rem;
@@ -125,6 +190,12 @@ html {
 }
 
 
+
+/*
+  
+  Sliding main content
+
+*/
 
 /* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
 .slider {
@@ -186,81 +257,150 @@ html {
   }
 }
 
-.navigation {
 
-  margin-top: 12rem;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  .container {
 
-    width: 1200px;
-    #right-nav {
 
-      width: 14rem;
-      height: 42rem;
-      float: right;
-      padding: 0.5rem;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.9);
 
-      /* generic nav-item */
-      .nav-item {
-        width: 3.6rem;
-        height: 3.6rem;
-        margin-bottom: 0.5rem;
-        position: relative;
-        float: left;
+/*
 
-        text-align: center;
-        font-family: 'open-sans', serif;
-        font-size: 1.7rem;
-        line-height: 3.5rem;
-        cursor: pointer;
+  Navigation
 
-        /* For Modern CSS icons */
-        .metrouicss {
-          top: 0.4rem;
-          .icons > li {
-            list-style-type: none;
-            zoom: 2;
-          }
-        }
-      }
+*/
 
-      /* colors for nov items */
-      #home {
-        width: 3.4rem;
-        height: 3.4rem;
-        box-shadow: 2px 2px 3px #ddd;
-        line-height: 3.1rem;
-      }
-      //#blog { background-color: #FF8A31; }
-      #blog { background-color: #D91504; }
-      #introduction { background-color: #ffcf00; }
-      #approach { background-color: #81ba10; }
-      #services { background-color: #cfba58; }
-      #about { background-color: #0fa7d2; }
+.icon {
+  font-family: "iconFont";
+  text-align: center;
 
-      /* label to the right */
-      .nav-item-label {
-        position: relative;
-        float: left;
-        width: 9rem;
-        height: 3.6rem;
-        margin-bottom: 0.5rem;
-        padding-left: 0.8rem;
-        font-family: 'open-sans', serif;
-        font-size: 1.7rem;
-        line-height: 3.5rem;
-      }
-      .squeeze {
-        margin: 0;
-        height: 3.2rem;
-        line-height: 2rem;
-      }
-      .spacer { height: 2rem; }
-    }
+  font-size: 1.1em;
+  line-height: 2em;
+  width:  2em;
+  height: 2em;
+}
+
+.icon-lines:before {    content:"\e105" }
+
+.icon-file:before { content: "\e00f"; }
+.icon-mail:before {     content:"\e01a" }
+.icon-twitter:before {  content:"\e0c0" }
+.icon-linkedin:before { content:"\e0dd" }
+.icon-github-2:before { content:"\e0c9" }
+
+
+#right-nav-button {
+  display: none;
+
+  @include breakpoint(small){
+    display: block;
+    top: 0;
+    left: 0;
+    position: fixed;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 2.3em;
+    text-align: center;
   }
 }
+
+#right-nav {
+
+  @include breakpoint(small){
+
+    position: fixed;
+    width: 100%;
+    top: 5em;
+    left: 0;
+
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+
+    body.show-nav & {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      -o-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+  }
+
+
+  
+  position: fixed;
+  
+  top: 12rem;
+  right: 1rem;
+
+  width: 14rem;
+
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+
+
+  /* Nav Item */
+
+  .nav-item {
+
+    display: block;
+    padding-bottom: 0.5em;
+  
+    text-decoration: none;
+    text-align: left;
+    font-family: 'open-sans', serif;
+    font-size: 1.7rem;
+    line-height: 3.5rem;
+    cursor: pointer;
+    color: $black;
+
+    /* circle/icon to the left */
+
+    .icon, .circle {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width:  2em;
+      height: 2em;
+    }
+
+    .circle {
+      border-radius: 50%;
+      border: 1px solid $grey;
+    }
+
+    body.no-touch &:hover .circle,
+    body.no-touch &:hover .icon, {
+      -webkit-animation: animation_scale 1s infinite; /* Safari 4+ */
+      -moz-animation:    animation_scale 1s infinite; /* Fx 5+ */
+      -o-animation:      animation_scale 1s infinite; /* Opera 12+ */
+      animation:         animation_scale 1s infinite; /* IE 10+ */
+    }
+
+    /* label to the right */
+
+    .nav-item-label {
+      display: inline-block;
+    }
+
+    
+  }
+
+  /* colors for nov items */
+
+  #introduction .circle { background-color: $white; }
+  #approach .circle { background-color: $red; }
+  #services .circle { background-color: $yellow; }
+  #blog .circle { background-color: $green; }
+  #about .circle { background-color: $blue; }
+
+  .spacer { height: 2rem; }
+
+}
+//   }
+// }
