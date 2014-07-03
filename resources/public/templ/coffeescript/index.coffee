@@ -13,29 +13,41 @@ $(document).ready ->
   );
 
 
-  ###
-    Initialize and instrument horizontal sliding
-  ###
-  $(".slider").serialScroll({ target: '.slider', items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach', duration: 500, axis: 'x', force: true })
-
-  $(".nav-item").click(->
 
 
-    # slide to the relevant section
-    $('.slider').scrollTo($("#wrapper-#{$(this).attr("id")}"), 500, { axis:'x' , easing: 'easeInOutQuad'})
 
 
-    # change background color accordingly
-    if $(this).attr("id") is "blog"
-      $("body").animate({ backgroundColor: "#FF8A31" }, 500)
-      $("#wrapper-blog").css("height", "80%")
-    else
-      $("body").animate({ backgroundColor: $(this).css("background-color") }, 500)
+
+
+
+
+
+
+
+
+  # ###
+  #   Initialize and instrument horizontal sliding
+  # ###
+  # $(".slider").serialScroll({ target: '.slider', items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach', duration: 500, axis: 'x', force: true })
+
+  # $(".nav-item").click(->
+
+
+  #   # slide to the relevant section
+  #   $('.slider').scrollTo($("#wrapper-#{$(this).attr("id")}"), 500, { axis:'x' , easing: 'easeInOutQuad'})
+
+
+  #   # change background color accordingly
+  #   if $(this).attr("id") is "blog"
+  #     $("body").animate({ backgroundColor: "#FF8A31" }, 500)
+  #     $("#wrapper-blog").css("height", "80%")
+  #   else
+  #     $("body").animate({ backgroundColor: $(this).css("background-color") }, 500)
     
-    $(".slide-container-content").animate({
-                                            color: "black"
-                                          }, 500)
-  )
+  #   $(".slide-container-content").animate({
+  #                                           color: "black"
+  #                                         }, 500)
+  # )
 
   ###
     Clink redirects for twitter link et al

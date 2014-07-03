@@ -47,7 +47,12 @@
 */
 body {
   font-family: "open-sans", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -ms-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease; }
 
 .logo {
   border: 1px #eee solid;
@@ -67,61 +72,105 @@ h1 {
   margin: 0;
   font-weight: lighter; }
 
-.secondary-title {
-  font-size: 1.2em; }
-
-.post-title {
+h2 {
   font-size: 1.8rem; }
 
-.slide-content {
-  font-size: 0.9rem;
-  line-height: 1.4; }
-  .slide-content .colleague {
-    font-style: italic;
-    color: #999; }
+h3 {
+  font-size: 1.2em; }
+
+.caption {
+  font-style: italic;
+  color: #999; }
+
+p {
+  font-size: 0.8em;
+  line-height: 1.5; }
 
 /*
-  
-  Sliding main content
+
+  Main content
+
 
 */
-/* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
-.slider {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden; }
-  .slider .slide-stretchable {
+.view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none; }
+  .view.in, .view.out, .view.active {
+    display: block; }
+  .transition .view {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .left .view.in {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  .left .view.active {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%); }
+  .left .view.out {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%); }
+  .right .view.in {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%); }
+  .right .view.active {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%); }
+  .right .view.out {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  .view .content {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    height: 100%;
-    white-space: nowrap; }
-    .slider .slide-stretchable .slide-wrapper {
-      width: 100%;
-      height: 100%;
-      display: inline-block;
-      vertical-align: top; }
-      .slider .slide-stretchable .slide-wrapper .slide-container {
-        position: relative;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    max-width: 55rem;
+    top: 5rem;
+    padding-left: 5rem;
+    padding-right: 12rem; }
+  .view .title {
+    position: relative;
+    display: block;
+    margin-bottom: 1em;
+    font-family: "league-gothic", "regular", serif;
+    font-size: 6rem;
+    margin: 0;
+    font-weight: lighter; }
+    .view .title .overhang {
+      position: absolute;
+      left: -1em;
+      top: 0; }
+    .view .title .circle {
+      width: 1em;
+      height: 1em; }
+      .view .title .circle img {
         width: 100%;
-        max-width: 55rem;
-        top: 5rem;
-        padding-left: 5rem;
-        padding-right: 12rem; }
-        .slider .slide-stretchable .slide-wrapper .slide-container .slide-left-overhang {
-          top: 0;
-          left: 0;
-          position: absolute; }
-        .slider .slide-stretchable .slide-wrapper .slide-container #me-pic {
-          background: url("/images/me.jpg") no-repeat;
-          background-size: 22rem;
-          background-position-x: -4.5rem; }
-        .slider .slide-stretchable .slide-wrapper .slide-container .slide-container-content {
-          white-space: normal; }
-    .slider .slide-stretchable #wrapper-blog {
-      overflow-y: scroll; }
+        border-radius: 100%; }
 
 /*
 
@@ -175,7 +224,7 @@ h1 {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
   /* Nav Item */
-  /* colors for nov items */ }
+  /* colors for nav items */ }
   @media (max-width: 40em) {
     #right-nav {
       position: fixed;
@@ -228,15 +277,15 @@ h1 {
       /* IE 10+ */ }
     #right-nav .nav-item .nav-item-label {
       display: inline-block; }
-  #right-nav #introduction .circle {
+  #right-nav .introduction .circle {
     background-color: white; }
-  #right-nav #approach .circle {
+  #right-nav .approach .circle {
     background-color: #d91504; }
-  #right-nav #services .circle {
+  #right-nav .services .circle {
     background-color: #ffcf00; }
-  #right-nav #blog .circle {
+  #right-nav .blog .circle {
     background-color: #81ba10; }
-  #right-nav #about .circle {
+  #right-nav .about .circle {
     background-color: #0fa7d2; }
   #right-nav .spacer {
     height: 2rem; }

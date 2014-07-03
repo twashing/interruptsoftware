@@ -1,44 +1,95 @@
 (function() {
   var __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
+  var bgColours = {
+    '#introduction': 'white',
+    '#approach': 'rgb(255, 140, 53)',
+    '#services': 'rgb(255, 221, 76)',
+    '#blog': 'rgb(178, 224, 85)',
+    '#about': 'rgb(78, 191, 223)', // #64D7E7
+  }
+
+  var $main = $('#main')
+  ,   $body = $('body')
+
   $(document).ready(function() {
+
     if ((__indexOf.call(window, 'ontouchstart') >= 0) || window.DocumentTouch && document instanceof DocumentTouch) {
       $('body').addClass('touch');
     } else {
       $('body').addClass('no-touch');
     }
-    $('#right-nav-button').on('click', function() {
-      return $('body').toggleClass('show-nav');
+
+
+    // Simplest router of all time
+    // ********************************************************
+
+    var activeView = false,
+        transitioning = false
+
+    var goToAnchor = function(newView, index){
+
+      if( transitioning ) return
+      if( ! newView ) return
+      if( activeView === newView ) return
+      if( ! $(newView) ) return
+
+      console.log('go to anchor ' + newView)
+
+      transitioning = true
+
+      var bgcol = bgColours[ newView ]
+      if( ! bgcol ) bgcol = 'white'
+
+      if( activeView ){
+
+        var $activeView = $(activeView),
+            $newView = $(newView)
+
+        var direction = ( index > $activeView.index() ) ? 'right' : 'left'
+
+        $main.addClass(direction)
+        $newView.addClass('in')
+
+        setTimeout(function(){
+          $main.addClass('transition')
+          $activeView.removeClass('active').addClass('out')
+          $newView.removeClass('in').addClass('active')
+          $body.css( 'background-color', bgcol )
+        }, 50)
+
+        setTimeout(function() { 
+          $activeView.removeClass('out')
+          $newView.removeClass('in').addClass('active')
+          $main.removeClass('transition left right')
+
+          activeView = newView
+          transitioning = false
+        }, 550);
+
+      } else {
+
+        $(newView).addClass('active')
+        $body.css( 'background-color', bgcol )
+        activeView = newView
+        transitioning = false
+
+      }
+      
+    }
+
+    // Catch anchor links
+    $(document).delegate('a[href^="#"]', "click", function(e) {
+      e.preventDefault();
+      window.location.hash = this.hash
+      goToAnchor( this.hash, $(this).index() );
     });
 
-    /*
-      Initialize and instrument horizontal sliding
-     */
-    $(".slider").serialScroll({
-      target: '.slider',
-      items: '#wrapper-home, #wrapper-introduction, #wrapper-approach, #wrapper-services, #wrapper-approach',
-      duration: 500,
-      axis: 'x',
-      force: true
-    });
-    $(".nav-item").click(function() {
-      $('.slider').scrollTo($("#wrapper-" + ($(this).attr("id"))), 500, {
-        axis: 'x',
-        easing: 'easeInOutQuad'
-      });
-      if ($(this).attr("id") === "blog") {
-        $("body").animate({
-          backgroundColor: "#FF8A31"
-        }, 500);
-        $("#wrapper-blog").css("height", "80%");
-      } else {
-        $("body").animate({
-          backgroundColor: $(this).css("background-color")
-        }, 500);
-      }
-      return $(".slide-container-content").animate({
-        color: "black"
-      }, 500);
+    goToAnchor( window.location.hash || '#introduction' );
+
+
+    $('#right-nav-button').on('click', function() {
+      return $('body').toggleClass('show-nav');
     });
 
     /*

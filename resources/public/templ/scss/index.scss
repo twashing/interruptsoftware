@@ -30,10 +30,10 @@ $white: #fff;
 $black: #000;
 $grey: #eee;
 
-$red: #D91504;
+$orange: rgb(255, 140, 53);
 $yellow: #ffcf00;
-$green: #81ba10;
-$blue: #0fa7d2;
+$green:  #81ba10;
+$blue:   #0fa7d2;
 
 
 
@@ -80,10 +80,6 @@ $blue: #0fa7d2;
 
 
 
-
-
-
-
 /* 
 
   Typography 
@@ -96,6 +92,12 @@ $league: 'league-gothic', 'regular', serif;
 body {
   font-family: $sans;
   -webkit-font-smoothing: antialiased;
+
+  -webkit-transition: background-color 0.5s ease;
+     -moz-transition: background-color 0.5s ease;
+      -ms-transition: background-color 0.5s ease;
+       -o-transition: background-color 0.5s ease;
+          transition: background-color 0.5s ease;
 }
 
 
@@ -120,88 +122,221 @@ h1 {
   font-weight: lighter;
 }
 
-.secondary-title {
-  font-size: 1.2em;
-}
-.post-title {
-  font-size: 1.8rem;
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.2em; }
+
+.content {
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
-.slide-content {
-
-  font-size: 0.9rem;
-  line-height: 1.4;
-
-  .colleague {
-    font-style: italic;
-    color: #999;
-  }
+.caption {
+  font-style: italic;
+  color: #999;
 }
+
+
 
 
 
 /*
-  
-  Sliding main content
+
+  Main content
+
 
 */
 
-/* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
-.slider {
+#main {
 
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+}
 
-  .slide-stretchable {
+.view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 
-    width: 100%;
-    height: 100%;
-    white-space: nowrap;
+  display: none;
 
-    .slide-wrapper {
+  // Transitioning
+  &.in, &.out, &.active { display: block; }
 
-      width: 100%;
-      height: 100%;
-      display: inline-block;
-      vertical-align: top;
-
-      .slide-container {
-
-        position: relative;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        max-width: 55rem;
-        top: 5rem;
-
-        padding-left: 5rem;
-        padding-right: 12rem;
-
-        .slide-left-overhang {
-          top: 0;
-          left: 0;
-          position: absolute;
-        }
-
-        #me-pic {
-          background: url('/images/me.jpg') no-repeat;
-          background-size: 22rem;
-          background-position-x: -4.5rem;
-        }
-
-        .slide-container-content {
-          white-space: normal;
-        }
-      }
+  .transition & {
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+  }
+  
+  .left & {
+    &.in {
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+       -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+           transform: translateX(-100%);
     }
-    #wrapper-blog {
-      overflow-y: scroll;
+
+    &.active {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+       -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+           transform: translateX(0%);
+    }
+
+    &.out {
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+       -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+           transform: translateX(100%);
     }
   }
+
+  .right & {
+    &.in {
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+       -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+           transform: translateX(100%);
+    }
+
+    &.active {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+       -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+           transform: translateX(0%);
+    }
+
+    &.out {
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+       -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+           transform: translateX(-100%);
+    }
+  }
+  
+
+  .content {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 55rem;
+    top: 5rem;
+
+    padding-left: 5rem;
+    padding-right: 12rem;
+  }
+
+  .title {
+    position: relative;
+    display: block;
+    margin-bottom: 1em;
+
+    font-family: $league;
+    font-size: 6rem;
+    margin: 0;
+    font-weight: lighter;
+
+    .overhang {
+      position: absolute;
+      left: -1em;
+      top: 0;
+    }
+
+    .circle {
+      width: 1em;
+      height: 1em;
+
+      img { 
+        width: 100%;
+        border-radius: 100%;
+      }
+    }
+
+
+  }
+    
 }
+
+
+
+
+
+
+
+
+
+// /*
+  
+//   Sliding main content
+
+// */
+
+// /* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
+// .slider {
+
+//   width: 100%;
+//   height: 100%;
+//   overflow-x: hidden;
+//   overflow-y: hidden;
+
+//   .slide-stretchable {
+
+//     width: 100%;
+//     height: 100%;
+//     white-space: nowrap;
+
+//     .slide-wrapper {
+
+//       width: 100%;
+//       height: 100%;
+//       display: inline-block;
+//       vertical-align: top;
+
+//       .slide-container {
+
+//         position: relative;
+//         display: block;
+//         margin-left: auto;
+//         margin-right: auto;
+//         width: 100%;
+//         max-width: 55rem;
+//         top: 5rem;
+
+//         padding-left: 5rem;
+//         padding-right: 12rem;
+
+//         .slide-left-overhang {
+//           top: 0;
+//           left: 1rem;
+//           position: absolute;
+//         }
+
+//         #me-pic {
+//           background: url('/images/me.jpg') no-repeat;
+//           background-size: 22rem;
+//           background-position-x: -4.5rem;
+//         }
+
+//         .slide-container-content {
+//           white-space: normal;
+//         }
+//       }
+//     }
+//     #wrapper-blog {
+//       overflow-y: scroll;
+//     }
+//   }
+// }
 
 
 
@@ -338,13 +473,13 @@ h1 {
     
   }
 
-  /* colors for nov items */
+  /* colors for nav items */
 
-  #introduction .circle { background-color: $white; }
-  #approach .circle { background-color: $red; }
-  #services .circle { background-color: $yellow; }
-  #blog .circle { background-color: $green; }
-  #about .circle { background-color: $blue; }
+  .introduction .circle { background-color: $white; }
+  .approach .circle { background-color: $orange; }
+  .services .circle { background-color: $yellow; }
+  .blog .circle { background-color: $green; }
+  .about .circle { background-color: $blue; }
 
   .spacer { height: 2rem; }
 
