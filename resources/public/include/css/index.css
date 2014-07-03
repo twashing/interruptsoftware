@@ -54,18 +54,6 @@ body {
   -o-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease; }
 
-.logo {
-  border: 1px #eee solid;
-  width: 6rem;
-  height: 6rem;
-  position: relative;
-  float: left;
-  text-align: center;
-  line-height: 1.25;
-  font-family: 'open-sans', serif;
-  font-size: 4rem;
-  background: url("/images/transistor.jpg") 11% no-repeat; }
-
 h1 {
   font-family: "league-gothic", "regular", serif;
   font-size: 6rem;
@@ -78,13 +66,13 @@ h2 {
 h3 {
   font-size: 1.2em; }
 
+.content {
+  font-size: 0.8rem;
+  line-height: 1.5; }
+
 .caption {
   font-style: italic;
   color: #999; }
-
-p {
-  font-size: 0.8em;
-  line-height: 1.5; }
 
 /*
 
@@ -151,23 +139,29 @@ p {
     width: 100%;
     max-width: 55rem;
     top: 5rem;
-    padding-left: 5rem;
+    margin-bottom: 5rem;
+    padding-left: 8rem;
     padding-right: 12rem; }
+    @media (max-width: 40em) {
+      .view .content {
+        padding: 0 1em; } }
   .view .title {
     position: relative;
     display: block;
     margin-bottom: 1em;
     font-family: "league-gothic", "regular", serif;
     font-size: 6rem;
+    line-height: 1;
     margin: 0;
     font-weight: lighter; }
     .view .title .overhang {
       position: absolute;
-      left: -1em;
+      left: -7rem;
       top: 0; }
     .view .title .circle {
-      width: 1em;
-      height: 1em; }
+      width: 5rem;
+      height: 5rem;
+      margin: 0.5rem; }
       .view .title .circle img {
         width: 100%;
         border-radius: 100%; }
@@ -209,8 +203,8 @@ p {
     #right-nav-button {
       display: block;
       top: 0;
-      left: 0;
-      position: fixed;
+      right: 0;
+      position: absolute;
       cursor: pointer;
       background: rgba(255, 255, 255, 0.5);
       font-size: 2.3em;
@@ -222,7 +216,6 @@ p {
   right: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.9);
   /* Nav Item */
   /* colors for nav items */ }
   @media (max-width: 40em) {
@@ -231,30 +224,37 @@ p {
       width: 100%;
       top: 5em;
       left: 0;
+      background-color: rgba(255, 255, 255, 0.9);
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
       -o-transition: 0.5s;
       transition: 0.5s;
-      -webkit-transform: translateX(-100%);
-      -moz-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
-      -o-transform: translateX(-100%);
-      transform: translateX(-100%); }
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      -o-transform: translateX(100%);
+      transform: translateX(100%); }
       body.show-nav #right-nav {
         -webkit-transform: translateX(0%);
         -moz-transform: translateX(0%);
         -ms-transform: translateX(0%);
         -o-transform: translateX(0%);
         transform: translateX(0%); } }
+  #right-nav a.nav-item {
+    padding-bottom: 0.5em; }
   #right-nav .nav-item {
     display: block;
-    padding-bottom: 0.5em;
     text-decoration: none;
     text-align: left;
     font-family: 'open-sans', serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     cursor: pointer;
     color: black;
+    -webkit-transition: color 200ms;
+    -moz-transition: color 200ms;
+    -ms-transition: color 200ms;
+    -o-transition: color 200ms;
+    transition: color 200ms;
     /* circle/icon to the left */
     /* label to the right */ }
     #right-nav .nav-item .icon, #right-nav .nav-item .circle {
@@ -266,6 +266,8 @@ p {
     #right-nav .nav-item .circle {
       border-radius: 50%;
       border: 1px solid #eeeeee; }
+    body.no-touch #right-nav .nav-item:hover {
+      color: white; }
     body.no-touch #right-nav .nav-item:hover .circle, body.no-touch #right-nav .nav-item:hover .icon {
       -webkit-animation: animation_scale 1s infinite;
       /* Safari 4+ */
@@ -288,4 +290,4 @@ p {
   #right-nav .about .circle {
     background-color: #0fa7d2; }
   #right-nav .spacer {
-    height: 2rem; }
+    height: 1rem; }
