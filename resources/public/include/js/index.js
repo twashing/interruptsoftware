@@ -2,11 +2,11 @@
   var __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   var bgColours = {
-    '#introduction': 'white',
-    '#approach': 'rgb(255, 140, 53)',
-    '#services': 'rgb(255, 221, 76)',
-    '#blog': 'rgb(178, 224, 85)',
-    '#about': 'rgb(78, 191, 223)', // #64D7E7
+    '#introduction': 'red',
+    '#approach':     'orange',
+    '#services':     'yellow',
+    '#blog':         'green',
+    '#about':        'blue',
   }
 
   var $main = $('#main')
@@ -55,7 +55,7 @@
           $main.addClass('transition')
           $activeView.removeClass('active').addClass('out')
           $newView.removeClass('in').addClass('active')
-          $body.css( 'background-color', bgcol )
+          $body.removeClass('red orange yellow green blue').addClass( bgcol )
         }, 50)
 
         setTimeout(function() { 
@@ -70,7 +70,7 @@
       } else {
 
         $(newView).addClass('active')
-        $body.css( 'background-color', bgcol )
+          $body.removeClass('red orange yellow green blue').addClass( bgcol )
         activeView = newView
         transitioning = false
 
@@ -92,30 +92,30 @@
       return $('body').toggleClass('show-nav');
     });
 
-    /*
-      Clink redirects for twitter link et al
-     */
-    $("#cv").unbind("click").click(function() {
-      return window.open("/include/TimothyWashington-Contract.pdf", '_blank');
-    });
-    $("#email").unbind("click").click(function() {
-      return window.open("mailto:twashing@interruptsoftware.com");
-    });
-    $("#twitter").unbind("click").click(function() {
-      return window.open("https://twitter.com/nutritioustim", '_blank');
-    });
-    $("#linkedin").unbind("click").click(function() {
-      return window.open("http://linkedin.com/pub/0/9b2/506", '_blank');
-    });
-    $("#github").unbind("click").click(function() {
-      return window.open("https://github.com/twashing", '_blank');
-    });
-    $("#bkeeping-entry").unbind("click").click(function() {
-      return window.open("http://bkeeping.com", '_blank');
-    });
-    return $("#cloudeditor-entry").unbind("click").click(function() {
-      return window.open("http://storydesk.com/cloudeditor", '_blank');
-    });
+    // /*
+    //   Clink redirects for twitter link et al
+    //  */
+    // $("#cv").unbind("click").click(function() {
+    //   return window.open("/include/TimothyWashington-Contract.pdf", '_blank');
+    // });
+    // $("#email").unbind("click").click(function() {
+    //   return window.open("mailto:twashing@interruptsoftware.com");
+    // });
+    // $("#twitter").unbind("click").click(function() {
+    //   return window.open("https://twitter.com/nutritioustim", '_blank');
+    // });
+    // $("#linkedin").unbind("click").click(function() {
+    //   return window.open("http://linkedin.com/pub/0/9b2/506", '_blank');
+    // });
+    // $("#github").unbind("click").click(function() {
+    //   return window.open("https://github.com/twashing", '_blank');
+    // });
+    // $("#bkeeping-entry").unbind("click").click(function() {
+    //   return window.open("http://bkeeping.com", '_blank');
+    // });
+    // return $("#cloudeditor-entry").unbind("click").click(function() {
+    //   return window.open("http://storydesk.com/cloudeditor", '_blank');
+    // });
   });
 
 }).call(this);

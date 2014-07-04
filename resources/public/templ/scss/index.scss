@@ -6,10 +6,10 @@
   font-family: 'league-gothic';
   src: url('/include/fonts/League-Gothic/LeagueGothic-Regular.otf');
 }
-@font-face {
-  font-family: 'open-sans';
-  src: url('/include/fonts/open-sans/OpenSans-Regular.ttf');
-}
+// @font-face {
+//   font-family: 'open-sans';
+//   src: url('/include/fonts/open-sans/OpenSans-Regular.ttf');
+// }
 
 @font-face {
   font-family: "iconFont";
@@ -30,10 +30,33 @@ $white: #fff;
 $black: #000;
 $grey: #eee;
 
+$red:    #ff0000;
 $orange: #D91504;
 $yellow: #ffcf00;
 $green:  #81ba10;
 $blue:   #0fa7d2;
+
+.bg-red    { background-color: $red; }
+.bg-orange { background-color: $orange; }
+.bg-yellow { background-color: $yellow; }
+.bg-green  { background-color: $green; }
+.bg-blue   { background-color: $blue; }
+
+.col-red    { color: $red; }
+.col-orange { color: $orange; }
+.col-yellow { color: $yellow; }
+.col-green  { color: $green; }
+.col-blue   { color: $blue; }
+
+body.no-touch {
+  .hover-red:hover    { color: $red !important; }
+  .hover-orange:hover { color: $orange !important; }
+  .hover-yellow:hover { color: $yellow !important; }
+  .hover-green:hover  { color: $green !important; }
+  .hover-blue:hover   { color: $blue !important; }
+}
+
+
 
 
 
@@ -86,7 +109,7 @@ $blue:   #0fa7d2;
 
 */
 
-$sans: 'open-sans', Helvetica, sans-serif;
+$sans: 'Open Sans', Helvetica, sans-serif;
 $league: 'league-gothic', 'regular', serif;
 
 body {
@@ -142,7 +165,7 @@ h3 { font-size: 1.2em; }
 .view {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 20%;
   bottom: 0;
   right: 0;
 
@@ -213,17 +236,14 @@ h3 { font-size: 1.2em; }
   
 
   .content {
+
     position: relative;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 55rem;
+    width: 80%;
+    max-width: 40rem;
     top: 5rem;
+    margin-left: 12%;
     margin-bottom: 5rem;
-
-    padding-left: 8rem;
-    padding-right: 12rem;
 
     @include breakpoint(small){
       padding: 0 1em;
@@ -272,72 +292,6 @@ h3 { font-size: 1.2em; }
 
 
 
-// /*
-  
-//   Sliding main content
-
-// */
-
-// /* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
-// .slider {
-
-//   width: 100%;
-//   height: 100%;
-//   overflow-x: hidden;
-//   overflow-y: hidden;
-
-//   .slide-stretchable {
-
-//     width: 100%;
-//     height: 100%;
-//     white-space: nowrap;
-
-//     .slide-wrapper {
-
-//       width: 100%;
-//       height: 100%;
-//       display: inline-block;
-//       vertical-align: top;
-
-//       .slide-container {
-
-//         position: relative;
-//         display: block;
-//         margin-left: auto;
-//         margin-right: auto;
-//         width: 100%;
-//         max-width: 55rem;
-//         top: 5rem;
-
-//         padding-left: 5rem;
-//         padding-right: 12rem;
-
-//         .slide-left-overhang {
-//           top: 0;
-//           left: 1rem;
-//           position: absolute;
-//         }
-
-//         #me-pic {
-//           background: url('/images/me.jpg') no-repeat;
-//           background-size: 22rem;
-//           background-position-x: -4.5rem;
-//         }
-
-//         .slide-container-content {
-//           white-space: normal;
-//         }
-//       }
-//     }
-//     #wrapper-blog {
-//       overflow-y: scroll;
-//     }
-//   }
-// }
-
-
-
-
 
 /*
 
@@ -359,7 +313,7 @@ h3 { font-size: 1.2em; }
 
 .icon-lines:before {    content:"\e105" }
 
-.icon-file:before { content: "\e00f"; }
+.icon-file:before {     content: "\e00f" }
 .icon-mail:before {     content:"\e01a" }
 .icon-twitter:before {  content:"\e0c0" }
 .icon-linkedin:before { content:"\e0dd" }
@@ -381,15 +335,22 @@ h3 { font-size: 1.2em; }
   }
 }
 
-#right-nav {
-
+#nav {
   position: fixed;
   
-  top: 5rem;
-  right: 1rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
 
-  padding: 0.5rem;
-  border-radius: 5px;
+  background: #555;
+  color: white;
+
+  body.red & { background-color: $red; }
+  body.orange & { background-color: $orange; }
+  body.yellow & { background-color: $yellow; }
+  body.green & { background-color: $green; }
+  body.blue & { background-color: $blue; }
 
   @include breakpoint(small){
 
@@ -404,11 +365,11 @@ h3 { font-size: 1.2em; }
     -o-transition: 0.5s;
     transition: 0.5s;
 
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -o-transform: translateX(100%);
-    transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
 
     body.show-nav & {
       -webkit-transform: translateX(0%);
@@ -420,6 +381,68 @@ h3 { font-size: 1.2em; }
   }
 
 
+  .inner {
+    top: 5em;
+    margin: 0 auto;
+    position: relative;
+    width: 70%;
+  }
+
+
+  .logo {
+    font-family: $league;
+    font-size: 5em;
+    margin-bottom: 2rem;
+  }
+
+
+  .local {
+    margin-bottom: 1em;
+    text-align: left;
+    font-family: $sans;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: bold;
+    color: white;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+
+      -webkit-transition: color 200ms;
+         -moz-transition: color 200ms;
+          -ms-transition: color 200ms;
+           -o-transition: color 200ms;
+              transition: color 200ms;
+    }
+  }
+ 
+  .global {
+
+    text-align: left;
+    font-family: $sans;
+    font-size: 0.9rem;
+    font-weight: normal;
+
+    a {
+      display: block;
+      text-decoration: none;
+      
+      color: white;
+
+      body.no-touch &:hover { color: black; }
+
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        width:  2em;
+        height: 2em;
+      }
+
+    }
+  }
   
 
 
@@ -433,7 +456,7 @@ h3 { font-size: 1.2em; }
   
     text-decoration: none;
     text-align: left;
-    font-family: 'open-sans', serif;
+    font-family: $sans;
     font-size: 0.95rem;
     cursor: pointer;
     color: $black;
@@ -482,13 +505,6 @@ h3 { font-size: 1.2em; }
   }
 
   /* colors for nav items */
-
-  .introduction .circle { background-color: $white; }
-  .approach .circle { background-color: $orange; }
-  .services .circle { background-color: $yellow; }
-  .blog .circle { background-color: $green; }
-  .about .circle { background-color: $blue; }
-
   .spacer { height: 1rem; }
 
 }

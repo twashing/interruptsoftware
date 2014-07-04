@@ -9,6 +9,8 @@
     %link( rel="stylesheet" href="/include/vendor/normalize.min.css" )
     %link( rel="stylesheet" href="/include/css/index.css" )
 
+    %link( rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' )
+
   %body
 
     #main
@@ -22,8 +24,8 @@
           .title
             Interrupt Software
 
-            .overhang
-              ; )
+            / .overhang
+            /   ; )
 
           %h3
             Custom Software Development &#x2F; Advanced Functionality &amp; Design Excellence
@@ -134,9 +136,9 @@
           .title
             About
 
-            .overhang
-              .circle
-                %img{:src => "/images/me-500.jpg", :alt => "Tim"}/
+            / .overhang
+            /   .circle
+            /     %img{:src => "/images/me-500.jpg", :alt => "Tim"}/
 
           %h3
             Interrupt Software is Timothy Washington.
@@ -144,65 +146,64 @@
             Highly experienced and respected in the digital realm, he is a keen advocate of technology as a world view. He is a senior software developer with over a decade of experience architecting and building custom and enterprise software solutions. Tim is also an avid contributor to the open source community. he is an expert utiliser and visionary. From Lehman Brothers to Conde Nast, his vast portfolio reflects his eclectic expertise, professionalism and passion for his craft and its industry impact.
 
 
+
+
     #right-nav-button.icon-lines.icon
 
-    #right-nav
+    #nav
 
-      // Nav Items
-      
-      %a.nav-item.introduction{ :href=>'#introduction' }
-        .circle
-        .nav-item-label
-          intro
+      .inner
 
-      %a.nav-item.approach{ :href=>'#approach' }
-        .circle
-        .nav-item-label
-          approach
+        .logo
+          ;)
 
-      %a.nav-item.services{ :href=>'#services' }
-        .circle
-        .nav-item-label
-          services
-      
-      %a.nav-item.blog{ :href=>'#blog' }
-        .circle
-        .nav-item-label
-          blog
+        // Nav Items
 
-      %a.nav-item.about{ :href=>'#about' }
-        .circle
-        .nav-item-label
-          about
+        .local
 
-      .spacer
+          %a.introduction.hover-red{ :href=>'#introduction' }
+            Intro
 
-      // Icons
+          %a.approach.hover-orange{ :href=>'#approach' }
+            Approach
 
-      .nav-item#cv
-        .icon.icon-file
-        .nav-item-label
-          cv
+          %a.services.hover-yellow{ :href=>'#services' }
+            Services
+          
+          %a.blog.hover-green{ :href=>'#blog' }
+            Blog
 
-      .nav-item#email
-        .icon.icon-mail
-        .nav-item-label
-          email
+          %a.about.hover-blue{ :href=>'#about' }
+            About
 
-      .nav-item#twitter
-        .icon.icon-twitter
-        .nav-item-label
-          twitter
+        .global
 
-      .nav-item#linkedin
-        .icon.icon-linkedin
-        .nav-item-label
-          linkedIn
+          %a#cv{ :href=>'/include/TimothyWashington-Contract.pdf', :target=>'_BLANK' }
+            .icon.icon-file
+            / .nav-item-label
+            cv
 
-      .nav-item#github
-        .icon.icon-github-2
-        .nav-item-label
-          github
+          %a#email{ :href=>'mailto:twashing@interruptsoftware.com', :target=>'_BLANK' }
+            .icon.icon-mail
+            / .nav-item-label
+            email
+
+          %a#twitter{ :href=>'https://twitter.com/nutritioustim', :target=>'_BLANK' }
+            .icon.icon-twitter
+            / .nav-item-label
+            twitter
+
+          %a#linkedin{ :href=>'http://linkedin.com/pub/0/9b2/506', :target=>'_BLANK' }
+            .icon.icon-linkedin
+            / .nav-item-label
+            linkedIn
+
+          %a#github{ :href=>'https://github.com/twashing', :target=>'_BLANK' }
+            .icon.icon-github-2
+            / .nav-item-label
+            github
+
+
 
     %script( type="text/javascript" src="/include/vendor/jquery-2.0.0.min.js" )
     %script( type="text/javascript" src="/include/vendor/history.js")
