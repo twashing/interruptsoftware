@@ -1,4 +1,3 @@
-@charset "ISO-8859-1";
 @import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700italic);
 @font-face {
   font-family: 'league-gothic';
@@ -181,7 +180,7 @@ h3 {
         max-width: none;
         width: 100%; }
         .view .content:after {
-          content: '← swipe →';
+          content: '\2190 swipe \2192';
           text-align: center;
           padding: 3rem 0;
           font-size: 2rem;
