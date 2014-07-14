@@ -30,11 +30,11 @@ $white: #fff;
 $black: #000;
 $grey: #eee;
 
-$red:    #ff0000;
-$orange: #D91504;
-$yellow: #ffcf00;
-$green:  #81ba10;
-$blue:   #0fa7d2;
+$red:    #E62A2A;
+$orange: #FD7D00;
+$yellow: #68C900; // #FFE000;
+$green:  #01A22E; // #A1CF10;
+$blue:   #0065B4; // #0FA7D2;
 
 .bg-red    { background-color: $red; }
 .bg-orange { background-color: $orange; }
@@ -48,13 +48,14 @@ $blue:   #0fa7d2;
 .col-green  { color: $green; }
 .col-blue   { color: $blue; }
 
-body.no-touch {
-  .hover-red:hover    { color: $red !important; }
-  .hover-orange:hover { color: $orange !important; }
-  .hover-yellow:hover { color: $yellow !important; }
-  .hover-green:hover  { color: $green !important; }
-  .hover-blue:hover   { color: $blue !important; }
-}
+
+// body.no-touch {
+//   .hover-red:hover    { color: $red !important; }
+//   .hover-orange:hover { color: $orange !important; }
+//   .hover-yellow:hover { color: $yellow !important; }
+//   .hover-green:hover  { color: $green !important; }
+//   .hover-blue:hover   { color: $blue !important; }
+// }
 
 
 
@@ -121,6 +122,10 @@ body {
       -ms-transition: background-color 0.5s ease;
        -o-transition: background-color 0.5s ease;
           transition: background-color 0.5s ease;
+  
+  overflow-x: hidden;
+  overflow-y: scroll;
+  &.show-nav { overflow: hidden; }
 }
 
 
@@ -170,6 +175,10 @@ h3 { font-size: 1.2em; }
   right: 0;
 
   display: none;
+
+  @include breakpoint(small){
+    left: 0%;
+  }
 
   // Transitioning
   &.in, &.out, &.active { display: block; }
@@ -243,10 +252,22 @@ h3 { font-size: 1.2em; }
     max-width: 40rem;
     top: 5rem;
     margin-left: 12%;
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
 
     @include breakpoint(small){
-      padding: 0 1em;
+      padding: 0 1rem;
+      margin-left: 0;
+      max-width: none;
+      width: 100%;
+
+      &:after {
+        content: '← swipe →';
+        text-align: center;
+        padding: 3rem 0;
+        font-size: 2rem;
+        color: #ddd;
+        display: block;
+      }
     }
   }
 
@@ -299,6 +320,10 @@ h3 { font-size: 1.2em; }
 
 */
 
+
+// Icons
+// ********************************************************
+
 .icon {
   font-family: "iconFont";
   text-align: center;
@@ -320,20 +345,110 @@ h3 { font-size: 1.2em; }
 .icon-github-2:before { content:"\e0c9" }
 
 
-#right-nav-button {
-  display: none;
 
-  @include breakpoint(small){
-    display: block;
-    top: 0;
-    right: 0;
-    position: absolute;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.5);
-    font-size: 2.3em;
-    text-align: center;
+
+
+// Mobile Header 
+// ********************************************************
+
+#mobile-nav-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+
+  font-size: 2em;
+  text-align: left;
+  background: $orange;
+  color: white;
+
+  display: none;
+  @include breakpoint(small){ display: block; }
+
+  body.no-touch & { cursor: pointer }
+
+  body.red & { background-color: $red; }
+  body.orange & { background-color: $orange; }
+  body.yellow & { background-color: $yellow; }
+  body.green & { background-color: $green; }
+  body.blue & { background-color: $blue; }
+  -webkit-transition: background-color 0.5s ease;
+     -moz-transition: background-color 0.5s ease;
+      -ms-transition: background-color 0.5s ease;
+       -o-transition: background-color 0.5s ease;
+          transition: background-color 0.5s ease;
+
+  > div {
+    display: inline-block;
+    margin: 1rem;
   }
+
+  .logo {
+    font-family: $league;
+  }
+
+  .button {
+    font-family: "iconFont";
+    float: right;
+    width: 2rem;
+    height: 2rem;
+
+    .line {
+      width: 1em;
+      height: 0.15em;
+      background: white;
+      position: relative;
+      display: block;
+      margin: 0.15em 0;
+      padding: 0;
+      -webkit-transition: all 0.5s ease;
+         -moz-transition: all 0.5s ease;
+          -ms-transition: all 0.5s ease;
+           -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+
+      &.hide {
+        body.show-nav & { 
+          height: 0;
+          margin: 0 auto;
+          padding: 0;
+          width: 0;
+        }
+      }
+
+      &.pos {
+        body.show-nav & {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+          margin-bottom: 0;
+          margin-top: 0.4em;
+        }
+      }
+
+      &.neg {
+        body.show-nav & {
+          -webkit-transform: rotate(-45deg);
+             -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+               -o-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+          margin-top: -0.1em;
+        }
+      }
+
+    }
+  }
+
 }
+
+
+
+// Desktop
+// ********************************************************
 
 #nav {
   position: fixed;
@@ -351,14 +466,23 @@ h3 { font-size: 1.2em; }
   body.yellow & { background-color: $yellow; }
   body.green & { background-color: $green; }
   body.blue & { background-color: $blue; }
+  
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+
 
   @include breakpoint(small){
 
     position: fixed;
     width: 100%;
-    top: 5em;
+    top: 4em;
     left: 0;
     background-color: rgba(255, 255, 255, 0.9);
+
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -378,14 +502,26 @@ h3 { font-size: 1.2em; }
       -o-transform: translateX(0%);
       transform: translateX(0%);
     }
+  
+    background-color: white !important;
+    // body.red & { color: $red; }
+    // body.orange & { color: $orange; }
+    // body.yellow & { color: $yellow; }
+    // body.green & { color: $green; }
+    // body.blue & { color: $blue; }
   }
 
 
   .inner {
-    top: 5em;
+    top: 5rem;
     margin: 0 auto;
     position: relative;
     width: 70%;
+    @include breakpoint(small){ 
+      top: 0;
+      width: 100%;
+      margin: 1rem 2rem;
+    }
   }
 
 
@@ -393,6 +529,9 @@ h3 { font-size: 1.2em; }
     font-family: $league;
     font-size: 5em;
     margin-bottom: 2rem;
+    @include breakpoint(small){ display: none }
+
+    a { text-decoration: none; color: inherit; }
   }
 
 
@@ -403,7 +542,9 @@ h3 { font-size: 1.2em; }
     font-size: 1rem;
     line-height: 1.8;
     font-weight: bold;
-    color: white;
+
+    @include breakpoint(large){ color: white; }
+    @include breakpoint(small){ font-size: 1.4rem; }
 
     a {
       display: block;
@@ -415,6 +556,19 @@ h3 { font-size: 1.2em; }
           -ms-transition: color 200ms;
            -o-transition: color 200ms;
               transition: color 200ms;
+
+      body.no-touch &:hover {
+        color: black;
+      }
+
+      @include breakpoint(small){
+        &.hover-red    { color: $red; }
+        &.hover-orange { color: $orange; }
+        &.hover-yellow { color: $yellow; }
+        &.hover-green  { color: $green; }
+        &.hover-blue   { color: $blue; }
+
+      }
     }
   }
  
@@ -430,8 +584,11 @@ h3 { font-size: 1.2em; }
       text-decoration: none;
       
       color: white;
-
       body.no-touch &:hover { color: black; }
+
+      @include breakpoint(small){
+        color: black;
+      }
 
       .icon {
         display: inline-block;

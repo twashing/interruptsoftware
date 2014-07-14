@@ -1,3 +1,4 @@
+@charset "ISO-8859-1";
 @import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700italic);
 @font-face {
   font-family: 'league-gothic';
@@ -14,45 +15,34 @@
   box-sizing: border-box; }
 
 .bg-red {
-  background-color: red; }
+  background-color: #e62a2a; }
 
 .bg-orange {
-  background-color: #d91504; }
+  background-color: #fd7d00; }
 
 .bg-yellow {
-  background-color: #ffcf00; }
+  background-color: #68c900; }
 
 .bg-green {
-  background-color: #81ba10; }
+  background-color: #01a22e; }
 
 .bg-blue {
-  background-color: #0fa7d2; }
+  background-color: #0065b4; }
 
 .col-red {
-  color: red; }
+  color: #e62a2a; }
 
 .col-orange {
-  color: #d91504; }
+  color: #fd7d00; }
 
 .col-yellow {
-  color: #ffcf00; }
+  color: #68c900; }
 
 .col-green {
-  color: #81ba10; }
+  color: #01a22e; }
 
 .col-blue {
-  color: #0fa7d2; }
-
-body.no-touch .hover-red:hover {
-  color: red !important; }
-body.no-touch .hover-orange:hover {
-  color: #d91504 !important; }
-body.no-touch .hover-yellow:hover {
-  color: #ffcf00 !important; }
-body.no-touch .hover-green:hover {
-  color: #81ba10 !important; }
-body.no-touch .hover-blue:hover {
-  color: #0fa7d2 !important; }
+  color: #0065b4; }
 
 @-webkit-keyframes animation_scale {
   0%, 100% {
@@ -90,7 +80,11 @@ body {
   -moz-transition: background-color 0.5s ease;
   -ms-transition: background-color 0.5s ease;
   -o-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease; }
+  transition: background-color 0.5s ease;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+  body.show-nav {
+    overflow: hidden; }
 
 h1 {
   font-family: "league-gothic", "regular", serif;
@@ -125,6 +119,9 @@ h3 {
   bottom: 0;
   right: 0;
   display: none; }
+  @media (max-width: 40em) {
+    .view {
+      left: 0%; } }
   .view.in, .view.out, .view.active {
     display: block; }
   .transition .view {
@@ -176,10 +173,20 @@ h3 {
     max-width: 40rem;
     top: 5rem;
     margin-left: 12%;
-    margin-bottom: 5rem; }
+    padding-bottom: 5rem; }
     @media (max-width: 40em) {
       .view .content {
-        padding: 0 1em; } }
+        padding: 0 1rem;
+        margin-left: 0;
+        max-width: none;
+        width: 100%; }
+        .view .content:after {
+          content: '← swipe →';
+          text-align: center;
+          padding: 3rem 0;
+          font-size: 2rem;
+          color: #ddd;
+          display: block; } }
   .view .title {
     position: relative;
     display: block;
@@ -232,18 +239,80 @@ h3 {
 .icon-github-2:before {
   content: "\e0c9"; }
 
-#right-nav-button {
-  display: none; }
+#mobile-nav-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  font-size: 2em;
+  text-align: left;
+  background: #fd7d00;
+  color: white;
+  display: none;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -ms-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease; }
   @media (max-width: 40em) {
-    #right-nav-button {
+    #mobile-nav-header {
+      display: block; } }
+  body.no-touch #mobile-nav-header {
+    cursor: pointer; }
+  body.red #mobile-nav-header {
+    background-color: #e62a2a; }
+  body.orange #mobile-nav-header {
+    background-color: #fd7d00; }
+  body.yellow #mobile-nav-header {
+    background-color: #68c900; }
+  body.green #mobile-nav-header {
+    background-color: #01a22e; }
+  body.blue #mobile-nav-header {
+    background-color: #0065b4; }
+  #mobile-nav-header > div {
+    display: inline-block;
+    margin: 1rem; }
+  #mobile-nav-header .logo {
+    font-family: "league-gothic", "regular", serif; }
+  #mobile-nav-header .button {
+    font-family: "iconFont";
+    float: right;
+    width: 2rem;
+    height: 2rem; }
+    #mobile-nav-header .button .line {
+      width: 1em;
+      height: 0.15em;
+      background: white;
+      position: relative;
       display: block;
-      top: 0;
-      right: 0;
-      position: absolute;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.5);
-      font-size: 2.3em;
-      text-align: center; } }
+      margin: 0.15em 0;
+      padding: 0;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      body.show-nav #mobile-nav-header .button .line.hide {
+        height: 0;
+        margin: 0 auto;
+        padding: 0;
+        width: 0; }
+      body.show-nav #mobile-nav-header .button .line.pos {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin-bottom: 0;
+        margin-top: 0.4em; }
+      body.show-nav #mobile-nav-header .button .line.neg {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        margin-top: -0.1em; }
 
 #nav {
   position: fixed;
@@ -253,25 +322,31 @@ h3 {
   width: 20%;
   background: #555;
   color: white;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
   /* Nav Item */
   /* colors for nav items */ }
   body.red #nav {
-    background-color: red; }
+    background-color: #e62a2a; }
   body.orange #nav {
-    background-color: #d91504; }
+    background-color: #fd7d00; }
   body.yellow #nav {
-    background-color: #ffcf00; }
+    background-color: #68c900; }
   body.green #nav {
-    background-color: #81ba10; }
+    background-color: #01a22e; }
   body.blue #nav {
-    background-color: red; }
+    background-color: #0065b4; }
   @media (max-width: 40em) {
     #nav {
       position: fixed;
       width: 100%;
-      top: 5em;
+      top: 4em;
       left: 0;
       background-color: rgba(255, 255, 255, 0.9);
+      overflow-x: hidden;
+      overflow-y: scroll;
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
       -o-transition: 0.5s;
@@ -280,7 +355,8 @@ h3 {
       -moz-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
       -o-transform: translateX(-100%);
-      transform: translateX(-100%); }
+      transform: translateX(-100%);
+      background-color: white !important; }
       body.show-nav #nav {
         -webkit-transform: translateX(0%);
         -moz-transform: translateX(0%);
@@ -288,22 +364,38 @@ h3 {
         -o-transform: translateX(0%);
         transform: translateX(0%); } }
   #nav .inner {
-    top: 5em;
+    top: 5rem;
     margin: 0 auto;
     position: relative;
     width: 70%; }
+    @media (max-width: 40em) {
+      #nav .inner {
+        top: 0;
+        width: 100%;
+        margin: 1rem 2rem; } }
   #nav .logo {
     font-family: "league-gothic", "regular", serif;
     font-size: 5em;
     margin-bottom: 2rem; }
+    @media (max-width: 40em) {
+      #nav .logo {
+        display: none; } }
+    #nav .logo a {
+      text-decoration: none;
+      color: inherit; }
   #nav .local {
     margin-bottom: 1em;
     text-align: left;
     font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 1.8;
-    font-weight: bold;
-    color: white; }
+    font-weight: bold; }
+    @media (min-width: 40em) {
+      #nav .local {
+        color: white; } }
+    @media (max-width: 40em) {
+      #nav .local {
+        font-size: 1.4rem; } }
     #nav .local a {
       display: block;
       text-decoration: none;
@@ -313,6 +405,19 @@ h3 {
       -ms-transition: color 200ms;
       -o-transition: color 200ms;
       transition: color 200ms; }
+      body.no-touch #nav .local a:hover {
+        color: black; }
+      @media (max-width: 40em) {
+        #nav .local a.hover-red {
+          color: #e62a2a; }
+        #nav .local a.hover-orange {
+          color: #fd7d00; }
+        #nav .local a.hover-yellow {
+          color: #68c900; }
+        #nav .local a.hover-green {
+          color: #01a22e; }
+        #nav .local a.hover-blue {
+          color: #0065b4; } }
   #nav .global {
     text-align: left;
     font-family: "Open Sans", Helvetica, sans-serif;
@@ -324,6 +429,9 @@ h3 {
       color: white; }
       body.no-touch #nav .global a:hover {
         color: black; }
+      @media (max-width: 40em) {
+        #nav .global a {
+          color: black; } }
       #nav .global a .icon {
         display: inline-block;
         vertical-align: middle;

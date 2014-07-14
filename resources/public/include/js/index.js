@@ -88,9 +88,15 @@
     goToAnchor( window.location.hash || '#introduction' );
 
 
-    $('#right-nav-button').on('click', function() {
+    // Global jQuery UI
+
+    $('#mobile-nav-header').on('click', function() {
       return $('body').toggleClass('show-nav');
     });
+
+    $('#nav .local a').on('click', function(){
+      $('body').removeClass('show-nav');
+    })
 
     // /*
     //   Clink redirects for twitter link et al
