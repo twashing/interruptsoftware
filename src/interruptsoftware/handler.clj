@@ -15,8 +15,8 @@
 
   ;; ======
   ;; Resource Routes
-  (route/files "/" {:root "resources/public/"})
-  (route/resources "/" {:root "resources/public/"})
+  (route/files "/")
+  (route/resources "/")
   (route/not-found "Not Found"))
 
 (def app
