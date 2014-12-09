@@ -5,5 +5,6 @@ group :development do
   gem 'guard-haml'
   gem 'guard-sass'
   gem 'guard-coffeescript'
+  gem 'autoprefixer-rails'
 end
 

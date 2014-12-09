@@ -1,266 +1,669 @@
 
+
 @import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700italic);
 
 @font-face {
   font-family: 'league-gothic';
   src: url('/include/fonts/League-Gothic/LeagueGothic-Regular.otf');
 }
+// @font-face {
+//   font-family: 'open-sans';
+//   src: url('/include/fonts/open-sans/OpenSans-Regular.ttf');
+// }
+
 @font-face {
-  font-family: 'open-sans';
-  src: url('/include/fonts/open-sans/OpenSans-Regular.ttf');
+  font-family: "iconFont";
+  src: url('/include/vendor/Metro-UI-CSS/fonts/iconFont.eot');
+  src: url('/include/vendor/Metro-UI-CSS/fonts/iconFont.eot?#iefix') format('embedded-opentype'), url('/include/vendor/Metro-UI-CSS/fonts/iconFont.svg#iconFont') format('svg'), url('/include/vendor/Metro-UI-CSS/fonts/iconFont.woff') format('woff'), url('/include/vendor/Metro-UI-CSS/fonts/iconFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 
-.centered-content {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  top: 0;
+$white: #fff;
+$black: #000;
+$grey: #eee;
+
+$red:    #E62A2A;
+$orange: #FD7D00;
+$yellow: #68C900; // #FFE000;
+$green:  #01A22E; // #A1CF10;
+$blue:   #0065B4; // #0FA7D2;
+
+.bg-red    { background-color: $red; }
+.bg-orange { background-color: $orange; }
+.bg-yellow { background-color: $yellow; }
+.bg-green  { background-color: $green; }
+.bg-blue   { background-color: $blue; }
+
+.col-red    { color: $red; }
+.col-orange { color: $orange; }
+.col-yellow { color: $yellow; }
+.col-green  { color: $green; }
+.col-blue   { color: $blue; }
+
+
+// body.no-touch {
+//   .hover-red:hover    { color: $red !important; }
+//   .hover-orange:hover { color: $orange !important; }
+//   .hover-yellow:hover { color: $yellow !important; }
+//   .hover-green:hover  { color: $green !important; }
+//   .hover-blue:hover   { color: $blue !important; }
+// }
+
+
+
+
+
+@-webkit-keyframes animation_scale {
+  0%, 100%  { -webkit-transform: scale(1.0); }
+  50%       { -webkit-transform: scale(0.85); }
+}
+@-moz-keyframes animation_scale {
+  0%, 100%  { -moz-transform: scale(1.0); }
+  50%       { -moz-transform: scale(0.85); }
+}
+@-o-keyframes animation_scale {
+  0%, 100%  { -o-transform: scale(1.0); }
+  50%       { -o-transform: scale(0.85); }
+}
+@keyframes animation_scale {
+  0%, 100%  { transform: scale(1.0); }
+  50%       { transform: scale(0.85); }
 }
 
-html {
 
-  zoom: 0.6;
-  height: 100%;
-  body {
+@mixin breakpoint($point){
 
-    font-family: 'League Gothic';
-    -webkit-font-smoothing: antialiased;
-
-    height: 100%;
-    min-width: 1200px;
-    min-height: 1250px;
-
-
-    /* stickey header & Footer taken from:
-
-       http://stackoverflow.com/questions/10474354/layout-with-fixed-header-and-footer-fixed-width-sidebar-and-flexible-content
-       http://jsfiddle.net/QH68c/1
-
-       also, there's: http://aozora.github.io/bootplus/examples/sticky-footer-navbar.html
-    */
-    .header {
-
-      background: #ddd;
-      position:absolute;
-      opacity: 0;
-      top: 0;
-      width:100%;
-      height:60px;
-      box-shadow: 0px 4px 5px #888888;
-
-      .header-content {
-
-        @extend .centered-content;
-
-        .header-content-entry {
-
-          font-family: "Gentium Book Basic", serif;
-          font-style: italic;
-          font-size: 40px;
-          font-weight: bold;
-
-          margin-top: 23px;
-          margin-right: 2rem;
-          float: left;
-          cursor: pointer;
-        }
-        #cloudeditor-entry {
-          font-family: 'PT Sans', Arial, Tahoma, Verdana, sans-serif;
-          font-style: normal;
-          font-weight: normal;
-        }
-      }
-    }
-    .footer {
-      background:#f88;
-      position:absolute;
-      bottom:0;
-      width:100%;
-      height:40px;
+  @if $point == "large" {
+    @media (min-width: 40em) {
+      @content
     }
   }
+    
+  // @else if $point == "medium" {
+  //   @media (min-width: 32em) {
+  //     @content
+  //   }
+  // }
+
+  @else if $point == "small" {
+    @media (max-width: 40em) {
+      @content
+    }
+  }
+      
+}
+  
+
+
+
+/* 
+
+  Typography 
+
+*/
+
+$sans: 'Open Sans', Helvetica, sans-serif;
+$league: 'league-gothic', 'regular', serif;
+
+body {
+  font-family: $sans;
+  -webkit-font-smoothing: antialiased;
+
+  -webkit-transition: background-color 0.5s ease;
+     -moz-transition: background-color 0.5s ease;
+      -ms-transition: background-color 0.5s ease;
+       -o-transition: background-color 0.5s ease;
+          transition: background-color 0.5s ease;
+  
+  overflow-x: hidden;
+  overflow-y: scroll;
+  &.show-nav { overflow: hidden; }
 }
 
 
-.circle {
-  border-radius: 50%;
-}
 
-.logo {
-  border: 1px #eee solid;
-  width: 6rem;
-  height: 6rem;
-  position: relative;
-  float: left;
-  text-align: center;
-  line-height: 1.25;
-  font-family: 'open-sans', serif;
-  font-size: 4rem;
-  background: url('/images/transistor.jpg') 11% no-repeat;
-}
 
-.primary-title {
-  font-family: 'league-gothic', 'regular', serif;
-  font-size: 10rem;
+
+h1 {
+  font-family: $league;
+  font-size: 6rem;
+  margin: 0;
   font-weight: lighter;
 }
-.secondary-title {
-  font-family: 'open-sans', serif;
-  font-size: 2rem;
+
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.2em; }
+
+.content {
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
-.post-title {
-  font-size: 3rem;
+
+.caption {
+  font-style: italic;
+  color: #999;
 }
-.slide-content {
-  font-family: 'open-sans', serif;
-  font-size: 1.3rem;
-  line-height: 1.6rem;
-  .colleague {
-    font-style: italic;
-    color: #999;
+
+
+
+
+
+/*
+
+  Main content
+
+
+*/
+
+#main {
+
+}
+
+.view {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  bottom: 0;
+  right: 0;
+
+  display: none;
+
+  @include breakpoint(small){
+    left: 0%;
   }
-}
 
+  // Transitioning
+  &.in, &.out, &.active { display: block; }
 
+  .transition & {
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+  }
+  
+  .left & {
+    &.in {
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+       -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+           transform: translateX(-100%);
+    }
 
-/* Horizontal sliding taken from this JSFiddle: http://jsfiddle.net/seB5F/378/ */
-.slider {
+    &.active {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+       -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+           transform: translateX(0%);
+    }
 
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+    &.out {
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+       -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+           transform: translateX(100%);
+    }
+  }
 
-  .slide-stretchable {
+  .right & {
+    &.in {
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+       -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+           transform: translateX(100%);
+    }
 
-    width: 100%;
-    height: 100%;
-    white-space: nowrap;
+    &.active {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+       -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+           transform: translateX(0%);
+    }
 
-    .slide-wrapper {
+    &.out {
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+       -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+           transform: translateX(-100%);
+    }
+  }
+  
 
+  .content {
+
+    position: relative;
+    display: block;
+    width: 80%;
+    max-width: 40rem;
+    top: 5rem;
+    margin-left: 12%;
+    padding-bottom: 5rem;
+
+    @include breakpoint(small){
+      padding: 0 1rem;
+      margin-left: 0;
+      max-width: none;
       width: 100%;
-      height: 100%;
-      margin-top: 12rem;
-      display: inline-block;
-      vertical-align: top;
 
-      .slide-container {
-
-        @extend .centered-content;
-        .slide-left-overhang {
-
-          @extend .circle;
-          width: 10rem;
-          height: 10rem;
-          margin-top: 2rem;
-          top: -6rem;
-          left: -10.4rem;
-          line-height: 1;
-          position: absolute;
-
-          font-family: league-gothic, regular, serif;
-          font-size: 160px;
-          font-weight: normal;
-        }
-        #me-pic {
-          background: url('/images/me.jpg') no-repeat;
-          //background-size: 17rem;
-          //background-position-x: -3rem;
-          background-size: 22rem;
-          background-position-x: -4.5rem;
-        }
-
-        .slide-container-content {
-          width: 930px;
-          white-space: normal;
-        }
+      &:after {
+        content: '\2190  swipe \2192';
+        text-align: center;
+        padding: 3rem 0;
+        font-size: 2rem;
+        color: #ddd;
+        display: block;
       }
     }
-    #wrapper-blog {
-      overflow-y: scroll;
-    }
   }
+
+  .title {
+    position: relative;
+    display: block;
+    margin-bottom: 1em;
+
+    font-family: $league;
+    font-size: 6rem;
+    line-height: 1;
+
+    margin: 0;
+    font-weight: lighter;
+
+    .overhang {
+      position: absolute;
+      left: -7rem;
+      top: 0;
+    }
+
+    .circle {
+      width: 5rem;
+      height: 5rem;
+      margin: 0.5rem;
+
+      img { 
+        width: 100%;
+        border-radius: 100%;
+      }
+    }
+
+
+  }
+    
 }
 
-.navigation {
 
-  margin-top: 12rem;
-  width: 100%;
+
+
+
+
+
+
+
+
+/*
+
+  Navigation
+
+*/
+
+
+// Icons
+// ********************************************************
+
+.icon {
+  font-family: "iconFont";
+  text-align: center;
+
+  font-size: 1.1em;
+  line-height: 2em;
+  width:  2em;
+  height: 2em;
+}
+
+// http://metroui.org.ua/icons.html
+
+.icon-lines:before {    content:"\e105" }
+
+.icon-file:before {     content: "\e00f" }
+.icon-mail:before {     content:"\e01a" }
+.icon-twitter:before {  content:"\e0c0" }
+.icon-linkedin:before { content:"\e0dd" }
+.icon-github-2:before { content:"\e0c9" }
+
+
+
+
+
+// Mobile Header 
+// ********************************************************
+
+#mobile-nav-header {
   position: absolute;
   top: 0;
   left: 0;
-  .container {
+  right: 0;
+  height: 4rem;
 
-    width: 1200px;
-    #right-nav {
+  font-size: 2em;
+  text-align: left;
+  background: $orange;
+  color: white;
 
-      width: 14rem;
-      height: 42rem;
-      float: right;
-      padding: 0.5rem;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  @include breakpoint(small){ display: block; }
 
-      /* generic nav-item */
-      .nav-item {
-        width: 3.6rem;
-        height: 3.6rem;
-        margin-bottom: 0.5rem;
-        position: relative;
-        float: left;
+  body.no-touch & { cursor: pointer }
 
-        text-align: center;
-        font-family: 'open-sans', serif;
-        font-size: 1.7rem;
-        line-height: 3.5rem;
-        cursor: pointer;
+  body.red & { background-color: $red; }
+  body.orange & { background-color: $orange; }
+  body.yellow & { background-color: $yellow; }
+  body.green & { background-color: $green; }
+  body.blue & { background-color: $blue; }
+  -webkit-transition: background-color 0.5s ease;
+     -moz-transition: background-color 0.5s ease;
+      -ms-transition: background-color 0.5s ease;
+       -o-transition: background-color 0.5s ease;
+          transition: background-color 0.5s ease;
 
-        /* For Modern CSS icons */
-        .metrouicss {
-          top: 0.4rem;
-          .icons > li {
-            list-style-type: none;
-            zoom: 2;
-          }
+  > div {
+    display: inline-block;
+    margin: 1rem;
+  }
+
+  .logo {
+    font-family: $league;
+  }
+
+  .button {
+    font-family: "iconFont";
+    float: right;
+    width: 2rem;
+    height: 2rem;
+
+    .line {
+      width: 1em;
+      height: 0.15em;
+      background: white;
+      position: relative;
+      display: block;
+      margin: 0.15em 0;
+      padding: 0;
+      -webkit-transition: all 0.5s ease;
+         -moz-transition: all 0.5s ease;
+          -ms-transition: all 0.5s ease;
+           -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+
+      &.hide {
+        body.show-nav & { 
+          height: 0;
+          margin: 0 auto;
+          padding: 0;
+          width: 0;
         }
       }
 
-      /* colors for nov items */
-      #home {
-        width: 3.4rem;
-        height: 3.4rem;
-        box-shadow: 2px 2px 3px #ddd;
-        line-height: 3.1rem;
+      &.pos {
+        body.show-nav & {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+          margin-bottom: 0;
+          margin-top: 0.4em;
+        }
       }
-      //#blog { background-color: #FF8A31; }
-      #blog { background-color: #D91504; }
-      #introduction { background-color: #ffcf00; }
-      #approach { background-color: #81ba10; }
-      #services { background-color: #cfba58; }
-      #about { background-color: #0fa7d2; }
 
-      /* label to the right */
-      .nav-item-label {
-        position: relative;
-        float: left;
-        width: 9rem;
-        height: 3.6rem;
-        margin-bottom: 0.5rem;
-        padding-left: 0.8rem;
-        font-family: 'open-sans', serif;
-        font-size: 1.7rem;
-        line-height: 3.5rem;
+      &.neg {
+        body.show-nav & {
+          -webkit-transform: rotate(-45deg);
+             -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+               -o-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+          margin-top: -0.1em;
+        }
       }
-      .squeeze {
-        margin: 0;
-        height: 3.2rem;
-        line-height: 2rem;
-      }
-      .spacer { height: 2rem; }
+
     }
   }
+
 }
+
+
+
+// Desktop
+// ********************************************************
+
+#nav {
+  position: fixed;
+  
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+
+  background: #555;
+  color: white;
+
+  body.red & { background-color: $red; }
+  body.orange & { background-color: $orange; }
+  body.yellow & { background-color: $yellow; }
+  body.green & { background-color: $green; }
+  body.blue & { background-color: $blue; }
+  
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+
+
+  @include breakpoint(small){
+
+    position: fixed;
+    width: 100%;
+    top: 4em;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+
+    body.show-nav & {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      -o-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+  
+    background-color: white !important;
+    // body.red & { color: $red; }
+    // body.orange & { color: $orange; }
+    // body.yellow & { color: $yellow; }
+    // body.green & { color: $green; }
+    // body.blue & { color: $blue; }
+  }
+
+
+  .inner {
+    top: 5rem;
+    margin: 0 auto;
+    position: relative;
+    width: 70%;
+    @include breakpoint(small){ 
+      top: 0;
+      width: 100%;
+      margin: 1rem 2rem;
+    }
+  }
+
+
+  .logo {
+    font-family: $league;
+    font-size: 5em;
+    margin-bottom: 2rem;
+    @include breakpoint(small){ display: none }
+
+    a { text-decoration: none; color: inherit; }
+  }
+
+
+  .local {
+    margin-bottom: 1em;
+    text-align: left;
+    font-family: $sans;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: bold;
+
+    @include breakpoint(large){ color: white; }
+    @include breakpoint(small){ font-size: 1.4rem; }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+
+      -webkit-transition: color 200ms;
+         -moz-transition: color 200ms;
+          -ms-transition: color 200ms;
+           -o-transition: color 200ms;
+              transition: color 200ms;
+
+      body.no-touch &:hover {
+        color: black;
+      }
+
+      @include breakpoint(small){
+        &.hover-red    { color: $red; }
+        &.hover-orange { color: $orange; }
+        &.hover-yellow { color: $yellow; }
+        &.hover-green  { color: $green; }
+        &.hover-blue   { color: $blue; }
+
+      }
+    }
+  }
+ 
+  .global {
+
+    text-align: left;
+    font-family: $sans;
+    font-size: 0.9rem;
+    font-weight: normal;
+
+    a {
+      display: block;
+      text-decoration: none;
+      
+      color: white;
+      body.no-touch &:hover { color: black; }
+
+      @include breakpoint(small){
+        color: black;
+      }
+
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        width:  2em;
+        height: 2em;
+      }
+
+    }
+  }
+  
+
+
+  /* Nav Item */
+
+  a.nav-item { padding-bottom: 0.5em; }
+
+  .nav-item {
+
+    display: block;
+  
+    text-decoration: none;
+    text-align: left;
+    font-family: $sans;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: $black;
+
+    -webkit-transition: color 200ms;
+       -moz-transition: color 200ms;
+        -ms-transition: color 200ms;
+         -o-transition: color 200ms;
+            transition: color 200ms;
+
+    /* circle/icon to the left */
+
+    .icon, .circle {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width:  2em;
+      height: 2em;
+    }
+
+    .circle {
+      border-radius: 50%;
+      border: 1px solid $grey;
+    }
+  
+
+    body.no-touch &:hover {
+      color: white;
+    }
+
+    body.no-touch &:hover .circle,
+    body.no-touch &:hover .icon, {
+      -webkit-animation: animation_scale 1s infinite; /* Safari 4+ */
+      -moz-animation:    animation_scale 1s infinite; /* Fx 5+ */
+      -o-animation:      animation_scale 1s infinite; /* Opera 12+ */
+      animation:         animation_scale 1s infinite; /* IE 10+ */
+    }
+
+    /* label to the right */
+
+    .nav-item-label {
+      display: inline-block;
+    }
+
+    
+  }
+
+  /* colors for nav items */
+  .spacer { height: 1rem; }
+
+}
+//   }
+// }
