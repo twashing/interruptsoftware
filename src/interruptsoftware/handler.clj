@@ -10,8 +10,8 @@
 
   (GET "/" []
 
-    (-> (ring-resp/response (slurp (io/resource "public/include/index.html")))
-        (ring-resp/content-type "text/html")))
+       (-> (ring-resp/response (slurp (io/resource "public/index.html")))
+           (ring-resp/content-type "text/html")))
 
   ;; ======
   ;; Resource Routes
