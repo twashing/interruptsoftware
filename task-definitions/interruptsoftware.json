@@ -1,7 +1,7 @@
 [
   {
     "name": "interruptsoftware",
-    "image": "twashing/interruptsoftware",
+    "image": "twashing/interruptsoftware:v0.0.2",
     "cpu": 10,
     "memory": 512,
     "essential": true,
