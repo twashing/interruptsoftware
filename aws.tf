@@ -1,9 +1,8 @@
-
 variable "access_key" {}
 variable "secret_key" {}
 
 provider "aws" {
-  region = "us-west-1"
+  region = "us-east-1"
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
 }
@@ -87,7 +86,7 @@ resource "aws_iam_policy_attachment" "interruptsoftware" {
 
 resource "aws_iam_instance_profile" "interruptsoftware" {
     name = "interruptsoftware"
-    roles = ["${aws_iam_role.interruptsoftware.name}"]
+    role = "${aws_iam_role.interruptsoftware.name}"
 }
 
 resource "aws_security_group" "interruptsoftware" {
@@ -117,7 +116,7 @@ resource "aws_security_group" "interruptsoftware" {
 }
 
 resource "aws_instance" "interruptsoftware-instance" {
-  ami = "ami-bb473cdb"
+  ami = "ami-0b260e8b9c98dd02f"
   instance_type = "t2.small"
    security_groups = ["${aws_security_group.interruptsoftware.name}"]
   iam_instance_profile = "interruptsoftware"
@@ -140,6 +139,7 @@ resource "aws_route53_record" "main-a" {
 
 resource "aws_route53_record" "main-ns" {
     zone_id = "${aws_route53_zone.main.zone_id}"
+    allow_overwrite = true
     name = "interruptsoftware.com"
     type = "NS"
     ttl = "300"
